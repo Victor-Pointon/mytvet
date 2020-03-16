@@ -3112,13 +3112,15 @@ input[type="button"].btn-block {
 
 .nav-pills .nav-link {
   border-radius: 0.3125rem; 
-flex-wrap: nowrap;
 }
+
+
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #009b72; }
+  background-color: #009b72; 
+}
 
 .nav-fill .nav-item {
   flex: 1 1 auto;
@@ -3458,7 +3460,8 @@ flex-wrap: nowrap;
 
 .card-header-pills {
   margin-right: -1.125rem;
-  margin-left: -1.125rem; }
+  margin-left: -1.125rem; 
+  flex-wrap: nowrap;}
 
 .card-img-overlay {
   position: absolute;
