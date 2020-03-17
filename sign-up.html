@@ -234,34 +234,52 @@
 
   <div data-overlay class="min-vh-100 bg-light d-flex flex-column justify-content-md-center o-hidden">
     <section class="py-3">
-      <div class="container" id="signup-form">
+      <div class="container">
         <div class="row justify-content-center">
-          <div class="col-xl-4 col-lg-5 col-md-6 mb-5 mb-md-0">
+
+
+
+
+
+
+
+
+
+
+
+          <div class="col-xl-4 col-lg-5 col-md-6 mb-5 mb-md-0" id="modal-signup">
             <div class="card card-body shadow">
               <h1 class="h5 text-center">Create Account</h1>
-              <form>
+              <form id="signup-form">
                 <div class="form-group">
-                  <input type="email" class="form-control" name="sign-up-email" placeholder="Email Address">
+                  <input type="email" id="signup-email" class="form-control" name="sign-up-email"
+                    placeholder="Email Address">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" name="sign-up-password" placeholder="Password">
+                  <input type="password" id="signup-password" class="form-control" name="sign-up-password"
+                    placeholder="Password">
                   <small>Password must be at least 8 characters</small>
                 </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" name="sign-up-password-confirm"
-                    placeholder="Confirm Password">
-                </div>
+
                 <div class="form-group">
                   <div class="custom-control custom-checkbox text-small">
                     <input type="checkbox" class="custom-control-input" id="sign-up-agree">
-                    <label class="custom-control-label" for="sign-up-agree">I agree to the <a target="_blank"
-                        href="utility-legal-terms.html">Terms &amp; Conditions</a>
-                    </label>
+
                   </div>
                 </div>
                 <button class="btn btn-primary btn-block" type="submit">Create Account</button>
               </form>
             </div>
+
+
+
+
+
+
+
+
+
+
             <div class="text-center text-small mt-3">
               Already have an account? <a href="sign-in.html">Sign in here</a>
             </div>
@@ -360,6 +378,13 @@
     // update firestore settings
     db.settings({ timestampsInSnapshots: true });
   </script>
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script>
+
 
 
   <!-- Required vendor scripts (Do not remove) -->
