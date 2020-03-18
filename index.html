@@ -11,15 +11,30 @@
   <!-- End loading animation -->
   <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
   <div class="loader">
     <div class="loading-animation"></div>
   </div>
-
-  <div class="navbar-container">
+  <!-- <div class="alert alert-dismissible d-none d-md-block bg-primary-3 text-white py-4 py-md-3 px-0 mb-0 rounded-0 border-0">
+    <div class="container">
+        <div class="row no-gutters align-items-md-center justify-content-center">
+            <div class="col-lg-11 col-md d-flex flex-column flex-md-row align-items-md-center justify-content-lg-center">
+                <div class="mb-3 mb-md-0"><strong>Intro Sale</strong> $10 per license for Jumpstart's launch. Act fast, ends soon.</div>
+                <a class="btn btn-sm btn-success ml-md-3" target="_blank" href=#>Redeem Offer</a>
+            </div>
+            <div class="col-auto position-absolute right">
+                <button type="button" class="close p-0 position-relative" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                        <img src="assets/img/icons/interface/icon-x.svg" alt="Close" class="icon icon-sm bg-white" data-inject-svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div> -->
+  <div class="navbar-container bg-light">
     <nav class="navbar navbar-expand-lg navbar-light" data-sticky="top">
       <div class="container">
         <a class="navbar-brand navbar-brand-dynamic-color fade-page" href="index.html">
@@ -36,127 +51,185 @@
           </button>
         </div>
         <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-lg-end" id="navigation-menu">
-          <ul class="nav ">
+          <ul class="navbar-nav my-3 my-lg-0">
 
-            <li class="nav-item logged-in">
-              <a class="nav-link modal-trigger" href="#" data-target="modal-account">Account</a>
-            </li>
-            <li class="nav-item logged-out">
-              <a class="nav-link modal-trigger" href="# " data-target="modal-login">Login</a>
-            </li>
+
+
 
             <li class="nav-item">
-              <a class="nav-link logged-in" href="# " id="logout">Logout</a>
+              <div class="dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link nav-item arrow-bottom"
+                  data-toggle="dropdown-grid" href="#" role="button">Exam Papers</a>
+                <div class="row dropdown-menu">
+                  <div class="col-auto" data-dropdown-content>
+                    <div class="dropdown-grid-menu"><a href="documentation/index.html" class="dropdown-item"
+                        target="_blank">Engineering</a><a href="documentation/changelog.html" class="dropdown-item"
+                        target="_blank">Business</a><a href="https://mediumrare.ticksy.com/" class="dropdown-item"
+                        target="_blank">Others</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
-
-            <li class="logged-out">
-              <a class="nav-link modal-trigger" href="# " data-target="modal-signup">Sign Up</a>
+            <li class="nav-item">
+              <div class="nav-item">
+                <a aria-expanded="false" aria-haspopup="true" class=" nav-link nav-item " data-toggle="dropdown-grid"
+                  href="#" role="button">Contact</a>
+                <div class="row dropdown-menu">
+                  <div class="col-auto" data-dropdown-content>
+                    <div class="">
+                    </div>
+                  </div>
+                </div>
             </li>
-
           </ul>
         </div>
       </div>
     </nav>
-
   </div>
 
-  <section class="p-0 border-top border-bottom row no-gutters">
-    <div class="col-lg-7 col-xl-6">
-      <div class="container min-vh-lg-80 d-flex align-items-center">
-        <div class="row justify-content-center">
-          <div class="col col-md-10 col-xl-9 text-center text-lg-left">
-            <section>
-              <div data-aos="fade-right">
-                <h1 class="display-3"><mark data-aos="highlight-text" data-aos-delay="200">TVET Courses</mark> Exam
-                  Papers</h1>
-                <p class="lead">
-                  A collection of past exam papers and memos for (Engineering and Business Studies) TVET Courses.
-                </p>
-              </div>
-              <div class="d-flex flex-column flex-sm-row mt-4 mt-md-5 justify-content-center justify-content-lg-start"
-                data-aos="fade-right" data-aos-delay="300">
-                <a href="#" class="btn btn-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">Sign Up</a>
-                <a href="#" class="btn btn-outline-primary btn-lg mx-sm-2 mx-lg-0 mr-lg-2 my-1 my-sm-0">Login</a>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-5 col-xl-6 d-lg-flex flex-lg-column">
-      <div class="divider divider-side transform-flip-y bg-white d-none d-lg-block"></div>
-      <div class="d-lg-flex flex-column flex-fill controls-hover"
-        data-flickity='{ "imagesLoaded": true, "wrapAround":true, "pageDots":false, "autoPlay":true }'>
-        <div class="carousel-cell text-center">
-          <img class="img-fluid" src="assets/img/heros/hero-square-1.jpg" alt="Image">
-        </div>
-        <div class="carousel-cell text-center">
-          <img class="img-fluid" src="assets/img/heros/hero-square-2.jpg" alt="Image">
-        </div>
-      </div>
-    </div>
-  </section>
+
   <section class="bg-light o-hidden">
     <div class="container">
       <div class="row section-title justify-content-center text-center">
         <div class="col-md-9 col-lg-8 col-xl-7">
-          <h3 class="display-4">How to <mark data-aos="highlight-text" data-aos-delay="250">get started</mark> </h3>
-          <div class="lead">Our collection of past exam papers and memos is from the year 2015 to this current year,
-            updated with the release of every new paper.</div>
+          <h1 class="display-3">TVET <mark data-aos="highlight-text" data-aos-delay="200">Courses</mark></h1>
+          <div class="lead">A collection of past exam papers and memos for TVET Courses.</div>
+          <div class="lead">Brouse our categories.</div>
         </div>
       </div>
-
-      <div class="row align-items-center justify-content-around">
-        <div class="col-md-9 col-lg-5" data-aos="fade-in">
-          <img src="assets/img/square-2.jpg" alt="Image" class="img-fluid rounded shadow">
-          <img src="assets/img/square-1.jpg" alt="Image"
-            class="position-absolute p-0 col-4 col-xl-5 border border-white border-thick rounded-circle top left shadow-lg mt-5 ml-n5 ml-lg-n3 ml-xl-n5 d-none d-md-block"
-            data-jarallax-element="-20 0">
-        </div>
-        <div class="col-md-9 col-lg-6 col-xl-5 mt-4 mt-md-5 mt-lg-0">
-          <ol class="list-unstyled p-0">
-            <li class="d-flex align-items-start my-4 my-md-5">
-              <div class="rounded-circle p-3 p-sm-4 d-flex align-items-center justify-content-center bg-success">
-                <div class="position-absolute text-white h5 mb-0">1</div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <ul class="nav nav-pills lead mb-4 mb-md-5 justify-content-center" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                  aria-selected="true">Engineering</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                  aria-controls="profile" aria-selected="false">Business</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                  aria-controls="contact" aria-selected="false">Other</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row align-items-center justify-content-between flex-lg-row-reverse">
+                  <div class="col-lg-6 col-xl-5 text-center text-lg-left mb-4 mb-md-5 mb-lg-0">
+                    <div class="pl-lg-4 pr-xl-5" data-aos="fade-right">
+                      <h3 class="h1">A great feature you'll <mark data-aos="highlight-text" data-aos-delay="250">love to
+                          use</mark></h3>
+                      <p>
+                        Ned ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        laudantium, totam rem aperiam, eaque ipsa.
+                      </p>
+                      <div class="mt-4">
+                        <div
+                          class="media rounded align-items-center pl-3 pr-3 pr-md-4 py-2 d-inline-flex text-left shadow-sm bg-white">
+                          <img src="assets/img/avatars/male-4.jpg" alt="Harvey Derwent avatar image"
+                            class="avatar avatar-sm flex-shrink-0 mr-3">
+                          <div class="text-dark mb-0">&ldquo;We are working at almost twice the capacity&rdquo;</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-xl-7" data-aos="fade-left">
+                    <img src="assets/img/desktop-app/desktop-app-3.jpg" alt="Screenshot"
+                      class="img-fluid rounded shadow border">
+                  </div>
+                </div>
               </div>
-              <div class="ml-3 ml-md-4">
-                <h4>Create account</h4>
-                <p>
-                  To view to past papers, you first need to be logged in, so create a free account with us
-                </p>
-                <a href="#">Create one now</a>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-lg-6 col-xl-5 text-center text-lg-left mb-4 mb-md-5 mb-lg-0">
+                    <div class="pr-lg-4 pr-xl-5" data-aos="fade-right">
+                      <h3 class="h1">Easy on the eyes, and the wallet.</h3>
+                      <p>
+                        Ned ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        laudantium, totam rem aperiam, eaque ipsa.
+                      </p>
+                      <div class="mt-4">
+                        <div
+                          class="media rounded align-items-center pl-3 pr-3 pr-md-4 py-2 d-inline-flex text-left shadow-sm bg-white">
+                          <img src="assets/img/avatars/male-1.jpg" alt="Harvey Derwent avatar image"
+                            class="avatar avatar-sm flex-shrink-0 mr-3">
+                          <div class="text-dark mb-0">&ldquo;Jumpstart increases productivity.&rdquo;</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-xl-7" data-aos="fade-left">
+                    <img src="assets/img/desktop-app/desktop-app-1.jpg" alt="Screenshot"
+                      class="img-fluid rounded shadow border">
+                  </div>
+                </div>
               </div>
-            </li>
-            <li class="d-flex align-items-start my-4 my-md-5">
-              <div class="rounded-circle p-3 p-sm-4 d-flex align-items-center justify-content-center bg-success">
-                <div class="position-absolute text-white h5 mb-0">2</div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-lg-6 col-xl-5 text-center text-lg-left mb-4 mb-md-5 mb-lg-0">
+                    <div class="pr-lg-4 pr-xl-5" data-aos="fade-right">
+                      <h3 class="h1">You’ll Stay right up to date, <mark data-aos="highlight-text"
+                          data-aos-delay="250">ever</mark>.</h3>
+                      <p>
+                        Ned ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        laudantium, totam rem aperiam, eaque ipsa.
+                      </p>
+                      <div class="mt-4">
+                        <div
+                          class="media rounded align-items-center pl-3 pr-3 pr-md-4 py-2 d-inline-flex text-left shadow-sm bg-white">
+                          <img src="assets/img/avatars/female-4.jpg" alt="Ashley Mance avatar image"
+                            class="avatar avatar-sm flex-shrink-0 mr-3">
+                          <div class="text-dark mb-0">&ldquo;Jumpstart is a dream come true.&rdquo;</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-xl-7" data-aos="fade-left">
+                    <img src="assets/img/desktop-app/desktop-app-2.jpg" alt="Screenshot"
+                      class="img-fluid rounded shadow border">
+                  </div>
+                </div>
               </div>
-              <div class="ml-3 ml-md-4">
-                <h4>Access to papers</h4>
-                <p>
-                  Once logged in, you will have full access to every single exam paper on our database for FREE! No
-                  restrictions!
-                </p>
-              </div>
-            </li>
-            <li class="d-flex align-items-start my-4 my-md-5">
-              <div class="rounded-circle p-3 p-sm-4 d-flex align-items-center justify-content-center bg-success">
-                <div class="position-absolute text-white h5 mb-0">3</div>
-              </div>
-              <div class="ml-3 ml-md-4">
-                <h4>Share and enjoy</h4>
-                <p>
-                  All exam papers are of great quality and are available for you to view and download as you need.
-                </p>
-              </div>
-            </li>
-          </ol>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+  <section class="bg-light pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card card-body shadow-sm h-100">
+            <div class="display-4 text-primary mb-3" data-countup data-start="" data-end="1300" data-duration=""
+              data-decimal-places="" data-prefix="" data-separator="" data-grouping="" data-suffix="" data-easing="">
+            </div>
+            <div>Question Papers</div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card card-body shadow-sm h-100">
+            <div class="display-4 text-primary mb-3" data-countup data-start="" data-end="1300" data-duration=""
+              data-decimal-places="" data-prefix="" data-separator="" data-grouping="" data-suffix="" data-easing="">
+            </div>
+            <div>Memos</div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card card-body shadow-sm h-100">
+            <div class="display-4 text-primary mb-3" data-countup data-start="" data-end="2300" data-duration=""
+              data-decimal-places="" data-prefix="" data-separator="" data-grouping="" data-suffix="+" data-easing="">
+            </div>
+            <div>Downloads</div>
+          </div>
+        </div>
 
-
+      </div>
+    </div>
+  </section>
   <section class="pb-0">
     <div class="container">
       <div class="row section-title justify-content-center text-center">
@@ -197,43 +270,9 @@
       </div>
     </div>
   </section>
-  <section>
-    <div class="row section-title justify-content-center text-center">
-      <div class="col-md-9 col-lg-8 col-xl-7">
-        <h3 class="display-4"> <mark data-aos="highlight-text" data-aos-delay="250">Contact</mark> Us</h3>
-        <div class="lead">Get in touch with us</div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-md-auto" data-aos="fade-up">
-          <div class="px-md-4 px-lg-5 mb-5 mb-md-0">
-            <h5>Email us</h5>
-            <a href="#" class="lead">hello@jumpstart.io</a>
-          </div>
-        </div>
-        <div class="col-md-auto" data-aos="fade-up" data-aos-delay="100">
-          <div class="px-md-4 px-lg-5 mb-5 mb-md-0">
-            <h5>Location</h5>
-            <address>
-              <p>Pretoria</p>
-              <p>South Africa</p>
-            </address>
 
 
-          </div>
-        </div>
-        <div class="col-md-auto" data-aos="fade-up" data-aos-delay="200">
-          <div class="px-md-4 px-lg-5 mb-5 mb-md-0">
-            <h5>Social Media</h5>
-            <a href="#" class="lead">Facebook</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-primary-3 text-white links-white pt-4 pb-4">
+  <footer class=" text-black links-black pt-4 pb-4">
     <div class="container">
 
 
@@ -242,7 +281,7 @@
       <div class="row text-small justify-content-center text-center">
         <div class="col-md-9 col-lg-8 col-xl-7">
 
-          <div class="lead">TVET Engineering</div>
+
         </div>
       </div>
       <!-- Pages column -->
@@ -279,7 +318,7 @@
           <ul class="list-unstyled d-flex mb-0">
             <li class="mx-3">
               <a href="#" class="hover-fade-out">
-                <img src="assets/img/icons/social/dribbble.svg" alt="Dribbble" class="icon icon-xs bg-white"
+                <img src="assets/img/icons/social/dribbble.svg" alt="Website" class="icon icon-xs bg-white"
                   data-inject-svg>
               </a>
             </li>
@@ -289,35 +328,19 @@
                   data-inject-svg>
               </a>
             </li>
-            <li class="mx-3">
-              <a href="#" class="hover-fade-out">
-                <img src="assets/img/icons/social/github.svg" alt="Github" class="icon icon-xs bg-white"
-                  data-inject-svg>
-              </a>
-            </li>
+
             <li class="mx-3">
               <a href="#" class="hover-fade-out">
                 <img src="assets/img/icons/social/facebook.svg" alt="Facebook" class="icon icon-xs bg-white"
                   data-inject-svg>
               </a>
             </li>
-            <li class="mx-3">
-              <a href="#" class="hover-fade-out">
-                <img src="assets/img/icons/social/google.svg" alt="Google" class="icon icon-xs bg-white"
-                  data-inject-svg>
-              </a>
-            </li>
+
           </ul>
         </div>
       </div>
     </div>
   </footer>
-  <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up"
-    data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
-    <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
-  </a>
-
-
 
   <!-- Required vendor scripts (Do not remove) -->
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
