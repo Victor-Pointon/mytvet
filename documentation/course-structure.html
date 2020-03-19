@@ -14,12 +14,13 @@
 
   <div class="navbar-container sticky-lg-top bg-primary-3">
     <nav class="navbar navbar-expand-lg navbar-dark px-lg-3">
-      <div class="container">
+      <div class="container-fluid">
         <a class="navbar-brand navbar-brand-dynamic-color fade-page" href="../index.html">
           <img alt="Jumpstart" data-inject-svg src="../assets/img/logos/jumpstart.svg">
         </a>
         <div class="d-flex align-items-center order-lg-3">
-
+          <a href="#" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Buy
+            Jumpstart</a>
           <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
             data-target=".navbar-collapse" data-toggle="collapse" type="button">
             <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg
@@ -84,8 +85,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="file-structure.html" class="nav-link py-1 px-0 text-small"><a href="course-structure.html"
-                    class="nav-link py-1 px-0 text-small">Course Structure </a> </a>
+                <a href="course-structure.html" class="nav-link py-1 px-0 text-small"><a href="course-structure.html" class="nav-link py-1 px-0 text-small"></a>Course Structure </a> </a>
 
               </li>
 
@@ -301,101 +301,61 @@
         <div class="row justify-content-around">
           <div class="col-lg-10 col-xl-8 py-4 py-md-5">
             <div>
-              <h1>Changelog</h1>
+              <h1>Back to Top Button</h1>
               <div class="lead mb-0">
-                <p>What&#39;s new in the latest version of Jumpstart.</p>
+                <p>Provide an easy and smooth way for your users to return to the top of the current page. This is a
+                  great example of combining provided utilities and plugins to achieve a great effect.</p>
               </div>
               <hr class="my-4 my-md-5">
             </div>
-            <article id="200" class="mb-4 mb-md-5">
+            <article id="explaining-the-html" class="mb-4 mb-md-5">
               <h3>
-                <p><code>2.0.0</code> - Style Overhaul</p>
+                <p>Explaining the HTML</p>
               </h3>
               <div>
-                <p>9 December 2019</p>
+                <p>The button is constructed from an <code>&lt;a&gt;</code> element with the following parameters:</p>
                 <ul>
-                  <li>Color and style changes throughout template</li>
-                  <li>Update dependencies</li>
+                  <li><code>btn btn-primary rounded-circle</code> classes to provide shape and color</li>
+                  <li><code>btn-back-to-top</code> class for positioning</li>
+                  <li><code>data-smooth-scroll</code> attribute to handle animating scroll to top of page</li>
+                  <li><code>data-aos=&quot;fade-up&quot;</code> to handle hide/show of the button and provide subtle
+                    animation</li>
+                  <li><code>data-aos-offset=&quot;2000&quot;</code> shows the button after the user scrolls 2000 pixels
+                    down the page. This works because the element is <code>position: fixed</code> so its original place
+                    is within the initial viewport. Setting <code>data-aos-offset</code> to
+                    2000 pixels causes the button to be shown when the user scrolls 2000 pixels past the element&#39;s
+                    naturally visible location.</li>
+                  <li><code>data-aos-mirror=&quot;true&quot;</code> and <code>data-aos-once=&quot;false&quot;</code>
+                    ensures that the button will animate out again when the user scrolls back up</li>
                 </ul>
+                <p>Inside the <code>&lt;a&gt;</code> element is an <code>&lt;img&gt;</code> with class
+                  <code>icon bg-white</code> for size and color. <code>data-inject-svg</code> allows us to color the SVG
+                  through CSS classes.</p>
+                <pre><code class="language-html">&lt;a href=&quot;#top&quot; class=&quot;btn btn-primary rounded-circle btn-back-to-top&quot; data-smooth-scroll data-aos=&quot;fade-up&quot; data-aos-offset=&quot;2000&quot; data-aos-mirror=&quot;true&quot; data-aos-once=&quot;false&quot;&gt;
+  &lt;img src=&quot;assets/img/icons/interface/icon-arrow-up.svg&quot; alt=&quot;Icon&quot; class=&quot;icon bg-white&quot; data-inject-svg&gt;
+&lt;/a&gt;</code></pre>
 
               </div>
             </article>
 
-            <article id="120" class="mb-4 mb-md-5">
-
+            <article id="where-to-insert-html" class="mb-4 mb-md-5">
               <h3>
-                <p><code>1.2.0</code> - Added to navigation bars and documentation</p>
+                <p>Where to insert HTML</p>
               </h3>
               <div>
-                <p>12 August 2019</p>
-                <ul>
-                  <li>Added new nav bars
-                    <ul>
-                      <li>Added new page <code>navigation-bars.html</code>
-                      </li>
-                      <li>Added new utility class <code>w-lg-100</code>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>Added to documentation
-                    <ul>
-                      <li>Added <code>documentation/guides-loading-animations.html</code>
-                      </li>
-                      <li>Added <code>documentation/guides-back-to-top-button.html</code>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <p>The button HTML can be placed anywhere in the <code>&lt;body&gt;</code> but it makes sense to add the
+                  code at the end of the <code>&lt;body&gt;</code>.</p>
 
               </div>
             </article>
 
-            <article id="110" class="mb-4 mb-md-5">
+            <article id="setting-scroll-trigger" class="mb-4 mb-md-5">
               <h3>
-                <p><code>1.1.0</code> - Added features, pages and documentation</p>
+                <p>Setting scroll trigger</p>
               </h3>
               <div>
-                <p>31 July 2019</p>
-                <ul>
-                  <li>Added two new account pages
-                    <ul>
-                      <li>Added <code>account-settings.html</code>
-                      </li>
-                      <li>Added <code>account-invoice.html</code>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>Added modals
-                    <ul>
-                      <li>Updated <code>plugins.html</code>
-                      </li>
-                      <li>Added <code>scss/custom/components/optional/modals.scss</code>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>Fixed iPhone bug in overlay-nav
-                    <ul>
-                      <li>Updated mrare/js/overlay-nav.js</li>
-                      <li>Updated mrare/js/sticky.js</li>
-                    </ul>
-                  </li>
-                  <li>Added Documentation around starter template and logo
-                    <ul>
-                      <li>Added guides-using-the-starter-template.html</li>
-                      <li>Added guides-dynamic-logo-color.html</li>
-                    </ul>
-                  </li>
-                </ul>
-
-              </div>
-            </article>
-
-            <article id="100" class="mb-4 mb-md-5">
-              <h3>
-                <p><code>1.0.0</code> - initial release</p>
-              </h3>
-              <div>
-                <p>Nothing to see here!</p>
+                <p>Simply adjust the <code>data-aos-offset</code> value to change the point at which the button is
+                  shown.</p>
 
               </div>
             </article>
@@ -405,19 +365,18 @@
             <ul class="nav flex-column">
 
               <li class="nav-item">
-                <a href="#200" class="px-0 py-1 nav-link text-small" data-smooth-scroll>2.0.0</a>
+                <a href="#explaining-the-html" class="px-0 py-1 nav-link text-small" data-smooth-scroll>Explaining the
+                  HTML</a>
               </li>
 
               <li class="nav-item">
-                <a href="#120" class="px-0 py-1 nav-link text-small" data-smooth-scroll>1.2.0</a>
+                <a href="#where-to-insert-html" class="px-0 py-1 nav-link text-small" data-smooth-scroll>Where to insert
+                  HTML</a>
               </li>
 
               <li class="nav-item">
-                <a href="#110" class="px-0 py-1 nav-link text-small" data-smooth-scroll>1.1.0</a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#100" class="px-0 py-1 nav-link text-small" data-smooth-scroll>1.0.0</a>
+                <a href="#setting-scroll-trigger" class="px-0 py-1 nav-link text-small" data-smooth-scroll>Setting
+                  scroll trigger</a>
               </li>
 
             </ul>
