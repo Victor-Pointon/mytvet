@@ -9507,7 +9507,7 @@ section > .divider-top {
   .docs-sidebar .nav-link[aria-expanded="true"] .icon {
     transform: rotateZ(90deg); }
   .docs-sidebar .nav-link.active {
-    color: #2C3038;
+    color: #009b72;
     opacity: 1; }
 
 table {
