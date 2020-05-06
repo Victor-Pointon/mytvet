@@ -39,46 +39,19 @@
         <a class="navbar0-brand navbar-brand-dynamic-color fade-page" href="../index.html">
           <img alt="Jumpstart" data-inject-svg src="../assets/img/logos/logo.svg">
         </a>
-        <div class="d-flex align-items-center order-lg-3">
 
-          <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
-            data-target=".navbar-collapse" data-toggle="collapse" type="button">
-            <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg
-              src="../assets/img/icons/interface/icon-menu.svg">
-            <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg
-              src="../assets/img/icons/interface/icon-x.svg">
-          </button>
-        </div>
-        <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-lg-end" id="navigation-menu">
-          <ul class="navbar-nav my-3 my-lg-0">
-
-
-
-
+        <div class="nav  justify-content-center" id="navigation-menu">
+          <ul class="nav">
             <li class="nav-item">
-              <div class="dropdown">
-                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link nav-item arrow-bottom"
-                  data-toggle="dropdown-grid" href="#" role="button">Exam Papers</a>
-                <div class="row dropdown-menu">
-                  <div class="col-auto" data-dropdown-content>
-                    <div class="dropdown-grid-menu"><a href="index.html" class="dropdown-item">Engineering</a><a
-                        href="../business.html" class="dropdown-item">Business</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <a class="nav-link" href="#/ms/profile">Account</a>
             </li>
             <li class="nav-item">
-              <div class="nav-item">
-                <a aria-expanded="false" aria-haspopup="true" class=" nav-link nav-item " href="../contact.html"
-                  role="button">Contact</a>
-                <div class="row dropdown-menu">
-                  <div class="col-auto" data-dropdown-content>
-                    <div class="">
-                    </div>
-                  </div>
-                </div>
+              <a class="nav-link" href="#/ms/logout">Logout</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+
           </ul>
         </div>
       </div>
@@ -530,10 +503,13 @@
               <hr class="my-4 my-md-5">
             </div>
             <div>
-              <div class="alert alert-info mb-4 text-center">
-                <p><b>PLEASE NOTE: If you're viewing this page from a phone. Click on the blue bar above to see exam
-                    paper subject list.</p>
-
+              <div class="alert alert-success alert-dismissible fade show text-center" role="alert"> You’re
+                <strong>Signed In</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                    <img src="../assets/img/icons/interface/icon-x.svg" alt="Close" class="icon icon-sm">
+                  </span>
+                </button>
               </div>
             </div>
             <article id="components" class="mb-4 mb-md-5">
