@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Mytvet SA | Login</title>
+  <title>Mytvet SA | Signup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="TVET Electrical, Civil and Build, Mechanical, Boiler Making, Installation Rules, Engineering past exam papers and memos from N1 to N6 including Mathematics, Engineering Science, Industrial Electronics, Electrotechnics Radio & Television Theory and more!">
@@ -36,28 +36,32 @@
         <div class="row justify-content-center">
           <div class="col-xl-4 col-lg-5 col-md-6">
             <div class="card card-body shadow">
-              <h1 class="h5 text-center">Sign In</h1>
+              <h1 class="h5 text-center">Create Account</h1>
               <form>
                 <div class="form-group">
                   <input type="email" class="form-control" name="sign-up-email" placeholder="Email Address">
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control" name="sign-up-password" placeholder="Password">
-                  <div class="text-right text-small mt-2">
-                    <a href="account-forgot-password.html">Forgot Password?</a>
-                  </div>
+                  <small>Password must be at least 8 characters</small>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="sign-up-password-confirm"
+                    placeholder="Confirm Password">
                 </div>
                 <div class="form-group">
                   <div class="custom-control custom-checkbox text-small">
-                    <input type="checkbox" class="custom-control-input" id="sign-in-remember">
-                    <label class="custom-control-label" for="sign-in-remember">Remember me next time</label>
+                    <input type="checkbox" class="custom-control-input" id="sign-up-agree">
+                    <label class="custom-control-label" for="sign-up-agree">I agree to the <a target="_blank"
+                        href="utility-legal-terms.html">Terms &amp; Conditions</a>
+                    </label>
                   </div>
                 </div>
-                <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+                <button class="btn btn-primary btn-block" type="submit">Create Account</button>
               </form>
             </div>
             <div class="text-center text-small mt-3">
-              Don't have an account? <a href="account-sign-up-simple.html">Sign up here</a>
+              Already have an account? <a href="login.html">Sign in here</a>
             </div>
           </div>
         </div>
