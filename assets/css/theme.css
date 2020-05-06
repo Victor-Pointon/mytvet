@@ -8133,7 +8133,7 @@ mark {
   color: inherit;
   padding: 0;
   background: none;
-  background-image: linear-gradient(120deg, rgba(255, 193, 7, 0.4) 0%, rgba(255, 193, 7, 0.4) 100%);
+  background-image: linear-gradient(120deg, rgba(18, 185, 241, 1) 0%, rgba(31, 179, 228, 0.4) 100%);
   background-repeat: no-repeat;
   background-size: 0% .3em;
   background-position: 0 80%;
