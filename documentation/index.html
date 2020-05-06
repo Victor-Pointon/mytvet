@@ -28,6 +28,17 @@
   <script src="https://api.memberstack.io/static/memberstack.js?custom"
     data-memberstack-id="b97330bfdc82c5c20cc724909c66389a"> </script>
 
+
+  <style>
+    [ms-lang="profile_confirm_cancel"] {
+      visibility: hidden;
+    }
+  </style>
+
+  <script>
+    window.textOverride = { "profile_period_end": "Send us an email to cancel membership", } 
+  </script>
+
 <body data-smooth-scroll-offset="120" data-spy="scroll" data-target=".docs-sidebar">
   <div class="loader">
     <div class="loading-animation"></div>
@@ -49,7 +60,7 @@
               <a class="nav-link" href="#/ms/logout">Logout</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="../contact.html">Contact</a>
             </li>
 
           </ul>
@@ -502,9 +513,18 @@
               </div>
               <hr class="my-4 my-md-5">
             </div>
+
+
+
+
+
+
+
+
+
             <div>
               <div class="alert alert-success alert-dismissible fade show text-center" role="alert"> You’re
-                <strong>Signed In</strong>
+                <strong>Logged in!</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">
                     <img src="../assets/img/icons/interface/icon-x.svg" alt="Close" class="icon icon-sm">
