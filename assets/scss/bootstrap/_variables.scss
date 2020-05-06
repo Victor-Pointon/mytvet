@@ -159,7 +159,10 @@ $sizes: map-merge(
 
 // Body
 //
-// Settings for the `<body>` element.
+// Settings for the `<!-- Memberstack --> 
+<script src="https://api.memberstack.io/static/memberstack.js?custom" data-memberstack-id="b97330bfdc82c5c20cc724909c66389a"> </script> 
+
+<body>` element.
 
 $body-bg:                   $white !default;
 $body-color:                $gray-900 !default;
