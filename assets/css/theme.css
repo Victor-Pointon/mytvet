@@ -3854,8 +3854,8 @@ input[type="button"].btn-block {
     color: #000b08; }
 
 .alert-secondary {
-  color: #ffffff;
-  background-color: #257bd1;
+  color: #5e5f61;
+  background-color: #D3E4F5;
   border-color: #f9fafb; }
   .alert-secondary hr {
     border-top-color: #eaedf1; }
