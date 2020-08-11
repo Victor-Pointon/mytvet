@@ -9357,7 +9357,7 @@ img.flex-fill {
       min-width: 14px;
       padding: 0; }
 
-.blob {
+/* BAD FOR SEO AS NOT FOUND BU GOOGLE.blob {
   position: absolute;
   z-index: 0;
   transform: scale(3);
@@ -9384,7 +9384,7 @@ img.flex-fill {
   .blob.right {
     right: -5vw; }
   .blob.left {
-    left: -5vw; }
+    left: -5vw; } */
 
 .breadcrumb {
   align-items: center; }
