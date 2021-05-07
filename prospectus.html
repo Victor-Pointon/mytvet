@@ -92,7 +92,7 @@
     document.addEventListener("adobe_dc_view_sdk.ready", function () {
       var adobeDCView = new AdobeDC.View({ clientId: "2d0ecad4b33e4cf898a072190540293b", divId: "adobe-dc-view" });
       adobeDCView.previewFile({
-        content: { promise: "<FILE_BLOB_PROMISE>" },
+        content: { promise: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Survey.pd" },
         metaData: { fileName: "<FILE_NAME>" }
       }, { embedMode: "IN_LINE" });
     });
