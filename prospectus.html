@@ -86,6 +86,32 @@
     </nav>
   </div>
 
+  <div id="adobe-dc-view" style="width: 800px;"></div>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("adobe_dc_view_sdk.ready", function () {
+      var adobeDCView = new AdobeDC.View({ clientId: "2d0ecad4b33e4cf898a072190540293b", divId: "adobe-dc-view" });
+      adobeDCView.previewFile({
+        content: { promise: "<FILE_BLOB_PROMISE>" },
+        metaData: { fileName: "<FILE_NAME>" }
+      }, { embedMode: "IN_LINE" });
+    });
+  </script>
+
+
+
+  <div id="adobe-dc-view"></div>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("adobe_dc_view_sdk.ready", function () {
+      var adobeDCView = new AdobeDC.View({ clientId: "2d0ecad4b33e4cf898a072190540293b", divId: "adobe-dc-view" });
+      adobeDCView.previewFile({
+        content: { location: { url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Survey.pdf" } },
+        metaData: { fileName: "Bodea Survey.pdf" }
+      }, {});
+    });
+  </script>
+
 
 
   <section class=" ">
@@ -104,6 +130,12 @@
         </div>
         <br> <br>
       </div>
+
+
+
+
+
+
       <div class="row justify-content-center">
         <div class="col-xl-8 col-lg-9 col-md-10">
 
