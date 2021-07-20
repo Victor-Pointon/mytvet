@@ -92,15 +92,44 @@
             </ul>
           </div>
 
+          <!-- Search bar script starts -->
+          <script>
+            function myFunction() {
+              // Declare variables
+              var input, filter, ul, li, a, i, txtValue;
+              input = document.getElementById('myInput');
+              filter = input.value.toUpperCase();
+              ul = document.getElementById("myUL");
+              li = ul.getElementsByTagName('li');
+
+              // Loop through all list items, and hide those who don't match the search query
+              for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+                } else {
+                  li[i].style.display = "none";
+                }
+              }
+            }
+          </script>
+
           <div class="mb-3 mb-md-4">
             <h6 class="mb-2">Subjects</h6>
             <br>
-            <span class="badge badge-primary badge-pill">B</span>
-            <br>
-            <ul class="nav flex-column">
+            <div class="form-group">
+              <input class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for subject"
+                type="text">
+            </div>
+
+            <ul class="nav flex-column" id="myUL" style="list-style-type:none; padding-left:0">
 
               <li class="nav-item">
-                <a href="brick-laying-and-plastering.html" class="nav-link py-1 px-0 text-small ">Brick Laying
+
+                <span class="badge badge-primary badge-pill">B</span>
+                <br>
+                <a href="brick-laying-and-plastering.html" class="nav-link py-1 px-0 text-small">Brick Laying
                   and
                   Plastering
 
@@ -480,12 +509,13 @@
                 <div class="mb-3 mb-md-2">
 
 
-                  <br>
-                  <span class="badge badge-primary badge-pill">Q</span>
-                  <br>
+
               </li>
 
               <li class="nav-item">
+                <br>
+                <span class="badge badge-primary badge-pill">Q</span>
+                <br>
                 <a href="quantity-surveying.html" class="nav-link py-1 px-0 text-small">Quantity Surveying
 
                 </a>
