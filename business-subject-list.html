@@ -108,7 +108,7 @@
           <div class="lead">Past exam papers and memos from 2015 to this current year.</div>
         </div>
       </div>
-      <div>
+      <!-- <div>
         <div class="alert alert-secondary alert-dismissible fade show text-center" role="alert">
           <strong>Dear students,</strong> <br><br> Leave us a positive review
           <a href="https://g.page/r/CUjjF0Kxk2EHEAg/review" class="lead" target="_blank">Here</a>, then <a
@@ -121,224 +121,286 @@
             </span>
           </button>
         </div>
-      </div>
-      <div class="row justify-content-center">
+      </div> -->
+
+      <script>
+        function myFunction() {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('myInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByTagName('li');
+
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+      </script>
+
+
+
+
+      <div class="row justify-content-center alert-secondary">
         <div class="col-xl-8 col-lg-9 col-md-10">
-          <span class="badge badge-primary badge-pill">C</span>
-          <br><br>
-          <a href="business/computer-practice.html"
-            class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Computer Practice</h6>
+          <h6></h6>
+          <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-9 col-md-10">
+              <div class="form-group">
+                <input class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for subject"
+                  type="text">
+              </div>
             </div>
-          </a>
+          </div>
+        </div>
+      </div>
+      <br><br>
 
 
-          <a href="business/computerised-financial-systems.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Computerised Financial Systems</h6>
-            </div>
-          </a>
+      <ul class="row justify-content-center" id="myUL" style="list-style-type:none; padding-left:0">
+        <div class="col-xl-8 col-lg-9 col-md-10">
 
+          <li>
+            <span class="badge badge-primary badge-pill">C</span>
+            <br><br>
+            <a href="business/computer-practice.html"
+              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Computer Practice</h6>
+              </div>
+            </a>
+          </li>
 
-          <a href="business/cost-and-management-accounting.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Cost and Management Accounting</h6>
-            </div>
-          </a>
 
+          <li><a href="business/computerised-financial-systems.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Computerised Financial Systems</h6>
+              </div>
+            </a></li>
 
 
-          <br>
-          <span class="badge badge-primary badge-pill">E</span>
-          <br><br>
+          <li><a href="business/cost-and-management-accounting.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Cost and Management Accounting</h6>
+              </div>
+            </a></li>
 
-          <a href="business/entrepreneur-and-business-management.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Entrepreneurship and Business Management</h6>
-            </div>
-          </a>
 
 
 
 
-          <br>
-          <span class="badge badge-primary badge-pill">F</span>
-          <br><br>
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">E</span>
+            <br><br>
+            <a href="business/entrepreneur-and-business-management.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Entrepreneurship and Business Management</h6>
+              </div>
+            </a>
+          </li>
 
-          <a href="business/financial-accounting.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Financial Accounting</h6>
-            </div>
-          </a>
 
 
-          <br>
-          <span class="badge badge-primary badge-pill">I</span>
-          <br><br>
 
-          <a href="business/introductory-accounting.html"
-            class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Introductory Accounting</h6>
-            </div>
-          </a>
 
 
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">F</span>
+            <br><br>
+            <a href="business/financial-accounting.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Financial Accounting</h6>
+              </div>
+            </a>
+          </li>
 
-          <br>
-          <span class="badge badge-primary badge-pill">L</span>
-          <br><br>
 
-          <a href="business/labour-relations.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Labour Relations</h6>
-            </div>
-          </a>
 
 
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">I</span>
+            <br><br>
+            <a href="business/introductory-accounting.html"
+              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Introductory Accounting</h6>
+              </div>
+            </a>
+          </li>
 
 
 
 
-          <br>
-          <span class="badge badge-primary badge-pill">M</span>
-          <br><br>
 
-          <a href="business/management-communications.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Management Communications</h6>
-            </div>
-          </a>
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">L</span>
+            <br><br>
+            <a href="business/labour-relations.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Labour Relations</h6>
+              </div>
+            </a>
+          </li>
 
 
 
-          <a href="business/marketing-communications.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Marketing Communications</h6>
-            </div>
-          </a>
 
 
 
-          <a href="business/marketing-management.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Marketing Management</h6>
-            </div>
-          </a>
 
 
-          <a href="business/marketing-research.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Marketing Research</h6>
-            </div>
-          </a>
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">M</span>
+            <br><br>
+            <a href="business/management-communications.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Management Communications</h6>
+              </div>
+            </a>
+          </li>
 
 
-          <a href="business/municipal-administration.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Municipal Administration</h6>
-            </div>
-          </a>
 
+          <li><a href="business/marketing-communications.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Marketing Communications</h6>
+              </div>
+            </a></li>
 
 
 
+          <li><a href="business/marketing-management.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Marketing Management</h6>
+              </div>
+            </a></li>
 
 
-          <br>
-          <span class="badge badge-primary badge-pill">P</span>
-          <br><br>
+          <li><a href="business/marketing-research.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Marketing Research</h6>
+              </div>
+            </a></li>
 
-          <a href="business/personnel-management.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Personnel Management</h6>
-            </div>
-          </a>
 
-          <a href="business/personnel-training.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Personnel Training</h6>
-            </div>
-          </a>
+          <li><a href="business/municipal-administration.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Municipal Administration</h6>
+              </div>
+            </a></li>
 
 
-          <a href="business/public-administration.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Public Administration</h6>
-            </div>
-          </a>
 
 
 
 
-          <a href="business/public-finance.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Public Finance</h6>
-            </div>
-          </a>
 
 
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">P</span>
+            <br><br>
+            <a href="business/personnel-management.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Personnel Management</h6>
+              </div>
+            </a>
+          </li>
 
+          <li><a href="business/personnel-training.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Personnel Training</h6>
+              </div>
+            </a></li>
 
-          <a href="business/public-law.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Public Law</h6>
-            </div>
-          </a>
 
+          <li><a href="business/public-administration.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Public Administration</h6>
+              </div>
+            </a></li>
 
 
 
 
+          <li><a href="business/public-finance.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Public Finance</h6>
+              </div>
+            </a></li>
 
 
 
 
+          <li><a href="business/public-law.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Public Law</h6>
+              </div>
+            </a></li>
 
-          <a href="business/public-relations.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Public Relations</h6>
-            </div>
-          </a>
 
 
 
 
 
 
-          <br>
-          <span class="badge badge-primary badge-pill">S</span>
-          <br><br>
 
 
 
-          <a href="business/sales-management.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Sales Management</h6>
-            </div>
-          </a>
+          <li><a href="business/public-relations.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Public Relations</h6>
+              </div>
+            </a></li>
+
+
+
+
+
+
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">S</span>
+            <br><br>
+            <a href="business/sales-management.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Sales Management</h6>
+              </div>
+            </a>
+          </li>
         </div>
 
 
-      </div>
+      </ul>
       <br><br>
       <div class="row justify-content-center mt-3 mt-md-4">
         <div class="col-auto">
