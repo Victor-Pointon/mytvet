@@ -107,7 +107,7 @@
           <div class="lead">Past exam papers and memos from 2015 to this current year.</div>
         </div>
       </div>
-      <div>
+      <!-- <div>
         <div class="alert alert-secondary alert-dismissible fade show text-center" role="alert">
           <strong>Dear students,</strong> <br><br> Leave us a positive review
           <a href="https://g.page/r/CUjjF0Kxk2EHEAg/review" class="lead" target="_blank">Here</a>, then <a
@@ -120,358 +120,429 @@
             </span>
           </button>
         </div>
-      </div>
-      <div class="row justify-content-center">
+      </div> -->
+
+
+      <script>
+        function myFunction() {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('myInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByTagName('li');
+
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+      </script>
+
+
+
+
+      <div class="row justify-content-center alert-secondary">
         <div class="col-xl-8 col-lg-9 col-md-10">
-          <span class="badge badge-primary badge-pill">B</span>
-          <br><br>
-          <a href="engineering/brick-laying-and-plastering.html"
-            class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Bricklaying and Plastering</h6>
+          <h6></h6>
+          <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-9 col-md-10">
+              <div class="form-group">
+                <input class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search subject"
+                  type="text">
+              </div>
             </div>
-          </a>
-
-
-          <a href="engineering/building-administration.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Building Administration</h6>
-            </div>
-          </a>
-
-
-          <a href="engineering/building-and-civil-technology.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Building and Civil Technology</h6>
-            </div>
-          </a>
-
-
-          <a href="engineering/building-and-structural-construction.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Building and Structural Construction</h6>
-            </div>
-          </a>
-
-
-          <a href="engineering/building-and-structural-surveying.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Building and Structural Surveying</h6>
-            </div>
-          </a>
-
-          <a href="engineering/building-drawing.html"
-            class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Building Drawing</h6>
-            </div>
-          </a>
-
-
-          <a href="engineering/building-science.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Building Science</h6>
-            </div>
-          </a>
-          <br>
-          <span class="badge badge-primary badge-pill">C</span>
-          <br><br>
-
-          <a href="engineering/communication-electronics.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Communication Electronics</h6>
-            </div>
-          </a>
-
-
-          <a href="engineering/control-systems.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Control Systems</h6>
-            </div>
-          </a>
-
-          <br>
-          <span class="badge badge-primary badge-pill">D</span>
-          <br><br>
-
-          <a href="engineering/diesel-trade-theory.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Diesel Trade Theory</h6>
-            </div>
-          </a>
-
-          <a href="engineering/digital-electronics.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Digital Electronics</h6>
-            </div>
-          </a>
-
-
-          <br>
-          <span class="badge badge-primary badge-pill">E</span>
-          <br><br>
-
-          <a href="engineering/electro-technology.html"
-            class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Electro-Technology</h6>
-            </div>
-          </a>
-
-          <a href="engineering/electrical-trade-theory.html"
-            class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Electrical Trade Theory</h6>
-            </div>
-          </a>
-
-
-
-          <a href="engineering/electrotechnics.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Electrotechnics</h6>
-            </div>
-          </a>
-
-
-
-
-          <a href="engineering/engineering-drawing.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Engineering Drawing</h6>
-            </div>
-          </a>
-
-
-
-
-          <a href="engineering/engineering-physics.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Engineering Physics</h6>
-            </div>
-          </a>
-
-
-
-
-          <a href="engineering/engineering-science.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Engineering Science</h6>
-            </div>
-          </a>
-
-
-          <br>
-          <span class="badge badge-primary badge-pill">F</span>
-          <br><br>
-
-          <a href="engineering/fault-finding.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Fault Finding</h6>
-            </div>
-          </a>
-
-
-
-
-          <a href="engineering/fitting-and-machining.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Fitting and Machining</h6>
-            </div>
-          </a>
-
-
-
-
-          <a href="engineering/fluid-mechanics.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Fluid Mechanics</h6>
-            </div>
-          </a>
-
-
-
-          <br>
-          <span class="badge badge-primary badge-pill">I</span>
-          <br><br>
-
-          <a href="engineering/industrial-electronics.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Industrial Electronics</h6>
-            </div>
-          </a>
-
-
-
-          <a href="engineering/installation-rules.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Installation Rules</h6>
-            </div>
-          </a>
-
-
-
-          <a href="engineering/instrument-trade-theory.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Instrument Trade Theory</h6>
-            </div>
-          </a>
-
-          <br>
-          <span class="badge badge-primary badge-pill">L</span>
-          <br><br>
-
-          <a href="engineering/logic-systems.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Logic Systems</h6>
-            </div>
-          </a>
-
-
-          <br>
-          <span class="badge badge-primary badge-pill">M</span>
-          <br><br>
-
-          <a href="engineering/mathematics.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Mathematics</h6>
-            </div>
-          </a>
-
-
-
-
-          <a href="engineering/mechanical-draughting.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Mechanical Draughting</h6>
-            </div>
-          </a>
-
-
-
-
-
-          <a href="engineering/mechanical-drawing-and-design.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Mechanical Drawing and Design</h6>
-            </div>
-          </a>
-
-
-
-
-
-          <a href="engineering/mechanotechnics.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Mechanotechnics</h6>
-            </div>
-          </a>
-
-
-
-
-          <a href="engineering/mechanotechnology.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Mechanotechnology</h6>
-            </div>
-          </a>
-
-
-          <br>
-          <span class="badge badge-primary badge-pill">P</span>
-          <br><br>
-
-
-          <a href="engineering/plumbing-theory.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Plumbing Theory</h6>
-            </div>
-          </a>
-
-
-
-
-
-          <a href="engineering/power-machines.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Power Machines</h6>
-            </div>
-          </a>
-
-
-          <br>
-          <span class="badge badge-primary badge-pill">Q</span>
-          <br><br>
-
-          <a href="engineering/quantity-surveying.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Quantity Surveying</h6>
-            </div>
-          </a>
-
-
-          <br>
-          <span class="badge badge-primary badge-pill">R</span>
-          <br><br>
-
-          <a href="engineering/radio-and-television.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Radio and Television Theory</h6>
-            </div>
-          </a>
-
-
-          <br>
-          <span class="badge badge-primary badge-pill">S</span>
-          <br><br>
-
-          <a href="engineering/strength-of-materials-and-structures.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Strength of Materials and Structures</h6>
-            </div>
-          </a>
-
-
-
-
-          <a href="engineering/supervisory-management.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Supervisory Management</h6>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
+      <br><br>
+      <ul class="row justify-content-center" id="myUL" style="list-style-type:none;">
+        <div class="col-xl-8 col-lg-9 col-md-10">
+
+          <li> <span class="badge badge-primary badge-pill">B</span>
+            <br><br><a href="engineering/brick-laying-and-plastering.html"
+              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Bricklaying and Plastering</h6>
+              </div>
+            </a>
+          </li>
+
+
+          <li><a href="engineering/building-administration.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Building Administration</h6>
+              </div>
+            </a></li>
+
+
+          <li> <a href="engineering/building-and-civil-technology.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Building and Civil Technology</h6>
+              </div>
+            </a></li>
+
+
+          <li><a href="engineering/building-and-structural-construction.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Building and Structural Construction</h6>
+              </div>
+            </a></li>
+
+
+          <li><a href="engineering/building-and-structural-surveying.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Building and Structural Surveying</h6>
+              </div>
+            </a></li>
+
+          <li> <a href="engineering/building-drawing.html"
+              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Building Drawing</h6>
+              </div>
+            </a></li>
+
+
+          <li><a href="engineering/building-science.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Building Science</h6>
+              </div>
+            </a></li>
+          <br>
+
+
+          <li>
+            <span class="badge badge-primary badge-pill">C</span>
+            <br><br>
+            <a href="engineering/communication-electronics.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Communication Electronics</h6>
+              </div>
+            </a>
+          </li>
+
+
+          <li><a href="engineering/control-systems.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Control Systems</h6>
+              </div>
+            </a></li>
+
+
+
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">D</span>
+            <br><br><a href="engineering/diesel-trade-theory.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Diesel Trade Theory</h6>
+              </div>
+            </a>
+          </li>
+
+          <li><a href="engineering/digital-electronics.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Digital Electronics</h6>
+              </div>
+            </a></li>
+
+
+
+
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">E</span>
+            <br><br>
+            <a href="engineering/electro-technology.html"
+              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Electro-Technology</h6>
+              </div>
+            </a>
+          </li>
+
+          <li><a href="engineering/electrical-trade-theory.html"
+              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Electrical Trade Theory</h6>
+              </div>
+            </a></li>
+
+
+
+          <li><a href="engineering/electrotechnics.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Electrotechnics</h6>
+              </div>
+            </a></li>
+
+
+
+
+          <li><a href="engineering/engineering-drawing.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Engineering Drawing</h6>
+              </div>
+            </a></li>
+
+
+
+
+          <li><a href="engineering/engineering-physics.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Engineering Physics</h6>
+              </div>
+            </a></li>
+
+
+
+
+          <li><a href="engineering/engineering-science.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Engineering Science</h6>
+              </div>
+            </a></li>
+
+
+
+
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">F</span>
+            <br><br>
+            <a href="engineering/fault-finding.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Fault Finding</h6>
+              </div>
+            </a>
+          </li>
+
+
+
+
+          <li><a href="engineering/fitting-and-machining.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Fitting and Machining</h6>
+              </div>
+            </a></li>
+
+
+
+
+          <li><a href="engineering/fluid-mechanics.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Fluid Mechanics</h6>
+              </div>
+            </a></li>
+
+
+
+
+
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">I</span>
+            <br><br><a href="engineering/industrial-electronics.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Industrial Electronics</h6>
+              </div>
+            </a>
+          </li>
+
+
+
+          <li><a href="engineering/installation-rules.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Installation Rules</h6>
+              </div>
+            </a></li>
+
+
+
+          <li><a href="engineering/instrument-trade-theory.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Instrument Trade Theory</h6>
+              </div>
+            </a></li>
+
+
+
+          <li><br>
+            <span class="badge badge-primary badge-pill">L</span>
+            <br><br>
+            <a href="engineering/logic-systems.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Logic Systems</h6>
+              </div>
+            </a>
+          </li>
+
+
+
+
+          <li><br>
+            <span class="badge badge-primary badge-pill">M</span>
+            <br><br>
+            <a href="engineering/mathematics.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Mathematics</h6>
+              </div>
+            </a>
+          </li>
+
+
+
+
+          <li><a href="engineering/mechanical-draughting.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Mechanical Draughting</h6>
+              </div>
+            </a></li>
+
+
+
+
+
+          <li><a href="engineering/mechanical-drawing-and-design.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Mechanical Drawing and Design</h6>
+              </div>
+            </a></li>
+
+
+
+
+
+          <li><a href="engineering/mechanotechnics.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Mechanotechnics</h6>
+              </div>
+            </a></li>
+
+
+
+
+          <li><a href="engineering/mechanotechnology.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Mechanotechnology</h6>
+              </div>
+            </a></li>
+
+
+
+
+
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">P</span>
+            <br><br>
+            <a href="engineering/plumbing-theory.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Plumbing Theory</h6>
+              </div>
+            </a>
+          </li>
+
+
+
+
+
+          <li><a href="engineering/power-machines.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Power Machines</h6>
+              </div>
+            </a></li>
+
+
+
+
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">Q</span>
+            <br><br>
+            <a href="engineering/quantity-surveying.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Quantity Surveying</h6>
+              </div>
+            </a>
+          </li>
+
+
+
+
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">R</span>
+            <br><br>
+            <a href="engineering/radio-and-television.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Radio and Television Theory</h6>
+              </div>
+            </a>
+          </li>
+
+
+
+
+          <li>
+            <br>
+            <span class="badge badge-primary badge-pill">S</span>
+            <br><br>
+            <a href="engineering/strength-of-materials-and-structures.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Strength of Materials and Structures</h6>
+              </div>
+            </a>
+          </li>
+
+
+
+
+          <li><a href="engineering/supervisory-management.html"
+              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
+              <div class="col-auto col-md">
+                <h6 class="mb-0">Supervisory Management</h6>
+              </div>
+            </a></li>
+        </div>
+      </ul>
       <br><br>
       <div class="row justify-content-center mt-3 mt-md-4">
         <div class="col-auto">
