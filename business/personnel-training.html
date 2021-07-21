@@ -92,15 +92,44 @@
             </ul>
           </div>
 
+          <!-- Search bar script starts -->
+          <script>
+            function myFunction() {
+              // Declare variables
+              var input, filter, ul, li, a, i, txtValue;
+              input = document.getElementById('myInput');
+              filter = input.value.toUpperCase();
+              ul = document.getElementById("myUL");
+              li = ul.getElementsByTagName('li');
+
+              // Loop through all list items, and hide those who don't match the search query
+              for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+                } else {
+                  li[i].style.display = "none";
+                }
+              }
+            }
+          </script>
+
           <div class="mb-3 mb-md-4">
             <h6 class="mb-2">Subjects</h6>
             <br>
-            <span class="badge badge-primary badge-pill">C</span>
-            <br>
-            <ul class="nav flex-column">
+            <div class="form-group">
+              <input class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for subject"
+                type="text">
+            </div>
+
+            <ul class="nav flex-column" id="myUL" style="list-style-type:none; padding-left:0">
 
               <li class="nav-item">
-                <a href="computer-practice.html" class="nav-link py-1 px-0 text-small ">Computer Practice
+                <br>
+                <span class="badge badge-primary badge-pill">C</span>
+                <br>
+                <a href="computer-practice.html" class="nav-link py-1 px-0 text-small">Computer Practice
                 </a>
                 <div class="mb-3 mb-md-2">
               </li>
@@ -120,59 +149,67 @@
 
               <div class="mb-3 mb-md-2">
 
-                <br>
-                <span class="badge badge-primary badge-pill">E</span>
-                <br>
+
 
                 <li class="nav-item">
+                  <br>
+                  <span class="badge badge-primary badge-pill">E</span>
+                  <br>
                   <a href="entrepreneur-and-business-management.html"
                     class="nav-link py-1 px-0 text-small">Entrepreneurship
                     and Business Management
                   </a>
                 </li>
 
-                <br>
-                <span class="badge badge-primary badge-pill">F</span>
-                <br>
+
 
                 <li class="nav-item">
+                  <br>
+                  <span class="badge badge-primary badge-pill">F</span>
+                  <br>
                   <a href="financial-accounting.html" class="nav-link py-1 px-0 text-small">Financial Accounting
                   </a>
                 </li>
 
-                <br>
-                <span class="badge badge-primary badge-pill">I</span>
-                <br>
 
                 <li class="nav-item">
-                  <a href="introductory-accounting.html" class="nav-link py-1 px-0 text-small">Introductory Accounting
+                  <br>
+                  <span class="badge badge-primary badge-pill">I</span>
+                  <br>
+
+                  <a href="introductory-accounting.html" class="nav-link py-1 px-0 text-small">Introductory
+                    Accounting
                   </a>
                 </li>
 
                 <div class="mb-3 mb-md-2"></div>
 
-                <br>
-                <span class="badge badge-primary badge-pill">L</span>
-                <br>
+
 
                 <li class="nav-item">
+                  <br>
+                  <span class="badge badge-primary badge-pill">L</span>
+                  <br>
                   <a href="labour-relations.html" class="nav-link py-1 px-0 text-small">Labour Relations
                   </a>
                 </li>
 
                 <div class="mb-3 mb-md-2">
 
-                  <br>
-                  <span class="badge badge-primary badge-pill">M</span>
-                  <br>
+
 
                   <li class="nav-item">
+                    <br>
+                    <span class="badge badge-primary badge-pill">M</span>
+                    <br>
                     <a href="management-communications.html" class="nav-link py-1 px-0 text-small">Management
                       Communications
                     </a>
                   </li>
 
                   <div class="mb-3 mb-md-2">
+
+                    <br>
                     <li class="nav-item">
                       <a href="marketing-communications.html" class="nav-link py-1 px-0 text-small">Marketing
                         Communications
@@ -203,12 +240,13 @@
 
                         <div class="mb-3 mb-md-2">
 
-                          <br>
-                          <span class="badge badge-primary badge-pill">P</span>
-                          <br>
+
 
 
                           <li class="nav-item">
+                            <br>
+                            <span class="badge badge-primary badge-pill">P</span>
+                            <br>
                             <a href="personnel-management.html" class="nav-link py-1 px-0 text-small">Personnel
                               Management
                             </a>
@@ -248,27 +286,29 @@
                                     </a>
                                   </li>
 
-
                                   <div class="mb-3 mb-md-2">
-
-                                    <li class="nav-item">
-                                      <a href="public-relations.html" class="nav-link py-1 px-0 text-small">Public
-                                        Relations
-                                      </a>
-                                    </li>
 
                                     <div class="mb-3 mb-md-2">
 
-                                      <br>
-                                      <span class="badge badge-primary badge-pill">S</span>
-                                      <br>
-
-
                                       <li class="nav-item">
-                                        <a href="sales-management.html" class="nav-link py-1 px-0 text-small">Sales
-                                          Management
+                                        <a href="public-relations.html" class="nav-link py-1 px-0 text-small">Public
+                                          Relations
                                         </a>
                                       </li>
+
+                                      <div class="mb-3 mb-md-2">
+
+
+
+
+                                        <li class="nav-item">
+                                          <br>
+                                          <span class="badge badge-primary badge-pill">S</span>
+                                          <br>
+                                          <a href="sales-management.html" class="nav-link py-1 px-0 text-small">Sales
+                                            Management
+                                          </a>
+                                        </li>
 
             </ul>
           </div>
