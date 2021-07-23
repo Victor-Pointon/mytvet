@@ -574,122 +574,161 @@
 
                     </ul>
                   </div>
+
+
+
+
+                  <!-- Search bar script starts -->
+                  <script>
+                    function myFunction() {
+                      // Declare variables
+                      var input, filter, ul, li, a, i, txtValue;
+                      input = document.getElementById('myInput');
+                      filter = input.value.toUpperCase();
+                      ul = document.getElementById("myUL");
+                      li = ul.getElementsByTagName('li');
+
+                      // Loop through all list items, and hide those who don't match the search query
+                      for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        txtValue = a.textContent || a.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                          li[i].style.display = "";
+                        } else {
+                          li[i].style.display = "none";
+                        }
+                      }
+                    }
+                  </script>
+
+
+
                   <div class="tab-content flex-grow-1 mt-4" id="myTabContent-2">
                     <div class="tab-pane fade show active" id="n1-home" role="tabpanel" aria-labelledby="n1-tab">
                       <div class="card">
-                        <div class="card-body">
-                          <div class="alert alert-secondary text-center">
-                            <h6>2019</h6>
-                            Brick Laying and Plastering N1
-                          </div>
+                        <div class="form-group">
+                          <input class="form-control" id="myInput" onkeyup="myFunction()"
+                            placeholder="Search for subject" type="text">
+                        </div>
+                        <ul class="card-body" id="myUL" style="list-style-type:none; padding-left:0">
 
-                          <table>
-                            <tr>
-                              <td>Apr
-                              </td>
-                              <td><a
-                                  href="https://drive.google.com/file/d/1PluP6drp4t-Ork88I05xZNZ-T0Fz7yTV/view?usp=sharing"
-                                  target="_blank"> QP</a><span class="tabs">
-                                  <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+QP+Apr+2019&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D11YPeST5ztVLjGexT3gfn2bzsyvTc36vy
-                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
-                                      src="/assets/img/download.svg">
-                                  </a>
-                              </td>
-                              <td><a
-                                  href="https://drive.google.com/file/d/1Qk-PFfFPp1vFJR7aSDOHB96XFTsHUNre/view?usp=sharing"
-                                  target="_blank">Memo</a><span class="tabs">
-                                  <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+MEMO+Apr+2019&amp;amount=15.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1gamfFAxLDy_jmbk-VgErSxU8DE5I2z3J
-                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
-                                      src="/assets/img/download.svg">
-                                  </a></td>
-                            </tr>
-                            <tr>
-                              <td>Aug
-                              </td>
-                              <td><a
-                                  href="https://drive.google.com/file/d/1XGwb7UztEe2nIgw541RnCUPTGzNsWcQZ/view?usp=sharing"
-                                  target="_blank"> QP</a><span class="tabs">
-                                  <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+QP+Aug+2019&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D17dKdz4bmU1VISV3ozVgRD9Xxm7uY2Krz
-                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
-                                      src="/assets/img/download.svg">
-                                  </a>
-                              </td>
-                              <td><a
-                                  href="https://drive.google.com/file/d/1vLsxhflzPZM2wZva9c0pY3KpLsGQG9Xr/view?usp=sharing"
-                                  target="_blank">Memo</a><span class="tabs">
-                                  <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+MEMO+Aug+2019&amp;amount=15.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1j2CTcYIq8hOOdEr2uKyeFIuJPssOOzf8
-                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
-                                      src="/assets/img/download.svg">
-                                  </a></td>
-                            </tr>
-                            <tr>
-                              <td>Nov
-                              </td>
-                              <td><a
-                                  href="https://drive.google.com/file/d/1q7w7OmwO_g-1t0QiklVvU21Y7qqU_H0f/view?usp=sharing"
-                                  target="_blank">QP</a><span class="tabs">
-                                  <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+QP+Nov+2019&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D18YvUmNlpy-vElPqDJzo2S0k47E4ndNu4
-                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
-                                      src="/assets/img/download.svg">
-                                  </a>
-                              </td>
-                              <td><a
-                                  href="https://drive.google.com/file/d/1VBTCst5D5gIuLRoNPoW3J0GxPcPyIRi5/view?usp=sharing"
-                                  target="_blank">Memo</a><span class="tabs">
-                                  <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+MEMO+Nov+2019&amp;amount=15.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1Dexs97AmysNyn7nU9_hV09uCULFnTv9s
-                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
-                                      src="/assets/img/download.svg">
-                                  </a></td>
-                            </tr>
-                            </tbody>
-                          </table>
-                          <div class="alert alert-secondary text-center">
-                            <h6>2018</h6>
-                            Brick Laying and Plastering N1
-                          </div>
 
-                          <table>
-                            <tr>
-                              <td>Apr
-                              </td>
-                              <td><a
-                                  href="https://drive.google.com/file/d/1jctHfZdQugjJXIzOgVi8_v_eYZAmjmq3/view?usp=sharing"
-                                  target="_blank"> QP</a><span class="tabs"><a
-                                    href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N1+QP+Apr+2018&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D11alNJ1hdN4EUwlUj11YARPTLI_yYYUkL"
-                                    target="_blank">
-                                    <img alt="Mytvet SA" data-inject-svg src="/assets/img/download.svg">
-                                  </a>
-                              </td>
-                              <td><code>Memo</code></td>
-                            </tr>
-                            <tr>
-                              <td>Aug
-                              </td>
-                              <td><a
-                                  href="https://drive.google.com/file/d/1l7Kz6vIKlRv0cjwk-PJqwZYthOOuacvh/view?usp=sharing"
-                                  target="_blank"> QP</a><span class="tabs"><a
-                                    href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N1+QP+Aug+2018&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1x3c5KHt7QVKVaj0KEEpb_tovIc0zkDSg"
-                                    target="_blank">
-                                    <img alt="Mytvet SA" data-inject-svg src="/assets/img/download.svg">
-                                  </a>
-                              </td>
-                              <td><code>Memo</code></td>
-                            </tr>
-                            <tr>
-                              <td>Nov
-                              </td>
-                              <td><a
-                                  href="https://drive.google.com/file/d/1ZPCvWhTFMpUmZs2c5l81yS8sL4U46qVi/view?usp=sharing"
-                                  target="_blank">QP</a><span class="tabs"><a
-                                    href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N1+QP+Nov+2018&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1EOe0fi3ZmdGvCq79HewLu0uQ-EtqXRZz"
-                                    target="_blank">
-                                    <img alt="Mytvet SA" data-inject-svg src="/assets/img/download.svg">
-                                  </a>
-                              </td>
-                              <td><code>Memo</code></td>
-                            </tr>
-                            </tbody>
-                          </table>
+                          <li>
+                            <table>
+                              <div class="alert alert-secondary text-center">
+                                <h6>2019</h6>
+                                Brick Laying and Plastering N1
+                              </div>
+                              <tr>
+                                <td>Apr
+                                </td>
+                                <td><a
+                                    href="https://drive.google.com/file/d/1PluP6drp4t-Ork88I05xZNZ-T0Fz7yTV/view?usp=sharing"
+                                    target="_blank"> QP</a><span class="tabs">
+                                    <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+QP+Apr+2019&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D11YPeST5ztVLjGexT3gfn2bzsyvTc36vy
+                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
+                                        src="/assets/img/download.svg">
+                                    </a>
+                                </td>
+                                <td><a
+                                    href="https://drive.google.com/file/d/1Qk-PFfFPp1vFJR7aSDOHB96XFTsHUNre/view?usp=sharing"
+                                    target="_blank">Memo</a><span class="tabs">
+                                    <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+MEMO+Apr+2019&amp;amount=15.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1gamfFAxLDy_jmbk-VgErSxU8DE5I2z3J
+                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
+                                        src="/assets/img/download.svg">
+                                    </a></td>
+                              </tr>
+                              <tr>
+                                <td>Aug
+                                </td>
+                                <td><a
+                                    href="https://drive.google.com/file/d/1XGwb7UztEe2nIgw541RnCUPTGzNsWcQZ/view?usp=sharing"
+                                    target="_blank"> QP</a><span class="tabs">
+                                    <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+QP+Aug+2019&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D17dKdz4bmU1VISV3ozVgRD9Xxm7uY2Krz
+                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
+                                        src="/assets/img/download.svg">
+                                    </a>
+                                </td>
+                                <td><a
+                                    href="https://drive.google.com/file/d/1vLsxhflzPZM2wZva9c0pY3KpLsGQG9Xr/view?usp=sharing"
+                                    target="_blank">Memo</a><span class="tabs">
+                                    <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+MEMO+Aug+2019&amp;amount=15.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1j2CTcYIq8hOOdEr2uKyeFIuJPssOOzf8
+                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
+                                        src="/assets/img/download.svg">
+                                    </a></td>
+                              </tr>
+                              <tr>
+                                <td>Nov
+                                </td>
+                                <td><a
+                                    href="https://drive.google.com/file/d/1q7w7OmwO_g-1t0QiklVvU21Y7qqU_H0f/view?usp=sharing"
+                                    target="_blank">QP</a><span class="tabs">
+                                    <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+QP+Nov+2019&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D18YvUmNlpy-vElPqDJzo2S0k47E4ndNu4
+                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
+                                        src="/assets/img/download.svg">
+                                    </a>
+                                </td>
+                                <td><a
+                                    href="https://drive.google.com/file/d/1VBTCst5D5gIuLRoNPoW3J0GxPcPyIRi5/view?usp=sharing"
+                                    target="_blank">Memo</a><span class="tabs">
+                                    <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N2+MEMO+Nov+2019&amp;amount=15.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1Dexs97AmysNyn7nU9_hV09uCULFnTv9s
+                                  " target="_blank"><img alt="Mytvet SA" data-inject-svg
+                                        src="/assets/img/download.svg">
+                                    </a></td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </li>
+
+
+                          <li>
+                            <table>
+                              <div class="alert alert-secondary text-center">
+                                <h6>2018</h6>
+                                Brick Laying and Plastering N1
+                              </div>
+                              <tr>
+                                <td>Apr
+                                </td>
+                                <td><a
+                                    href="https://drive.google.com/file/d/1jctHfZdQugjJXIzOgVi8_v_eYZAmjmq3/view?usp=sharing"
+                                    target="_blank"> QP</a><span class="tabs"><a
+                                      href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N1+QP+Apr+2018&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D11alNJ1hdN4EUwlUj11YARPTLI_yYYUkL"
+                                      target="_blank">
+                                      <img alt="Mytvet SA" data-inject-svg src="/assets/img/download.svg">
+                                    </a>
+                                </td>
+                                <td><code>Memo</code></td>
+                              </tr>
+                              <tr>
+                                <td>Aug
+                                </td>
+                                <td><a
+                                    href="https://drive.google.com/file/d/1l7Kz6vIKlRv0cjwk-PJqwZYthOOuacvh/view?usp=sharing"
+                                    target="_blank"> QP</a><span class="tabs"><a
+                                      href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N1+QP+Aug+2018&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1x3c5KHt7QVKVaj0KEEpb_tovIc0zkDSg"
+                                      target="_blank">
+                                      <img alt="Mytvet SA" data-inject-svg src="/assets/img/download.svg">
+                                    </a>
+                                </td>
+                                <td><code>Memo</code></td>
+                              </tr>
+                              <tr>
+                                <td>Nov
+                                </td>
+                                <td><a
+                                    href="https://drive.google.com/file/d/1ZPCvWhTFMpUmZs2c5l81yS8sL4U46qVi/view?usp=sharing"
+                                    target="_blank">QP</a><span class="tabs"><a
+                                      href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14850033&amp;item_name=Bricklaying+and+Plastering+N1+QP+Nov+2018&amp;amount=10.00&amp;return_url=https%3A%2F%2Fdrive.google.com%2Fuc%3Fexport%3Ddownload%26id%3D1EOe0fi3ZmdGvCq79HewLu0uQ-EtqXRZz"
+                                      target="_blank">
+                                      <img alt="Mytvet SA" data-inject-svg src="/assets/img/download.svg">
+                                    </a>
+                                </td>
+                                <td><code>Memo</code></td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </li>
                           <div class="alert alert-secondary text-center">
                             <h6>2017</h6>
                             Brick Laying and Plastering N1
@@ -853,7 +892,7 @@
                             </tr>
                             </tbody>
                           </table>
-                        </div>
+                        </ul>
 
                       </div>
                     </div>
