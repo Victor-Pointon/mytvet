@@ -108,453 +108,18 @@
             </ul>
           </div>
 
-          <!-- Search bar script starts -->
-          <script>
-            function myFunction() {
-              // Declare variables
-              var input, filter, ul, li, a, i, txtValue;
-              input = document.getElementById('myInput');
-              filter = input.value.toUpperCase();
-              ul = document.getElementById("myUL");
-              li = ul.getElementsByTagName('li');
-
-              // Loop through all list items, and hide those who don't match the search query
-              for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                  li[i].style.display = "";
-                } else {
-                  li[i].style.display = "none";
-                }
-              }
-            }
-          </script>
-
-          <div class="mb-3 mb-md-4">
-            <h6 class="mb-2">Subjects</h6>
-            <br>
-            <div class="form-group">
-              <input class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for subject"
-                type="text">
-            </div>
-
-            <ul class="nav flex-column" id="myUL" style="list-style-type:none; padding-left:0">
-
-              <li class="nav-item">
-                <br>
-                <span class="badge badge-primary badge-pill">A</span>
-                <br>
-                <a href="applied-management.html" class="nav-link py-1 px-0 text-small">Applied Management
-                </a>
-                <div class="mb-3 mb-md-2">
-              </li>
-
-              <li class="nav-item">
-                <br>
-                <span class="badge badge-primary badge-pill">C</span>
-                <br>
-                <a href="catering-client-relations.html" class="nav-link py-1 px-0 text-small">Caterer Client Relations
-                </a>
-                <div class="mb-3 mb-md-2">
-              </li>
-
-              <li class="nav-item">
-                <a href="catering-theory-and-practical.html" class="nav-link py-1 px-0 text-small">Catering Theory and
-                  Practical
-                </a>
-                <div class="mb-3 mb-md-2">
-              </li>
-
-
-              <li class="nav-item">
-                <a href="child-health.html" class="nav-link py-1 px-0 text-small">Child Health
-                </a>
-                <div class="mb-3 mb-md-2">
-              </li>
-
-              <li class="nav-item">
-                <a href="communication.html" class="nav-link py-1 px-0 text-small">Communication
-                </a>
-                <div class="mb-3 mb-md-2">
-              </li>
-
-              <li class="nav-item">
-                <a href="communication-and-human-relations.html" class="nav-link py-1 px-0 text-small ">Communication
-                  and
-                  Human Relations
-                </a>
-                <div class="mb-3 mb-md-2">
-              </li>
-
-              <li class="nav-item">
-                <a href="computer-practice.html" class="nav-link py-1 px-0 text-small ">Computer Practice
-                </a>
-                <div class="mb-3 mb-md-2">
-              </li>
-
-              <li class="nav-item">
-                <a href="computerised-financial-systems.html" class="nav-link py-1 px-0 text-small ">Computerised
-                  Financial Systems
-                </a>
-                <div class="mb-3 mb-md-2">
-              </li>
-
-              <li class="nav-item">
-                <a href="cost-and-management-accounting.html" class="nav-link py-1 px-0 text-small">Cost and Management
-                  Accounting
-                </a>
-              </li>
-
-              <div class="mb-3 mb-md-2">
-
-
-
-                <li class="nav-item">
-                  <br>
-                  <span class="badge badge-primary badge-pill">D</span>
-                  <br>
-                  <a href="data-management-farming.html" class="nav-link py-1 px-0 text-small">Data Management: Farming
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="day-care-communication.html" class="nav-link py-1 px-0 text-small">Day Care Communication
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="day-care-management.html" class="nav-link py-1 px-0 text-small">Day Care
-                    Management
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="day-care-personnel-development.html" class="nav-link py-1 px-0 text-small">Day Care
-                    Personnel Development
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <br>
-                  <span class="badge badge-primary badge-pill">E</span>
-                  <br>
-                  <a href="economics.html" class="nav-link py-1 px-0 text-small">Economics
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="educare-didactics-theory-and-practical.html" class="nav-link py-1 px-0 text-small">Educare
-                    Didactics Theory and Practical
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="education.html" class="nav-link py-1 px-0 text-small">Education
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="educational-psychology.html" class="nav-link py-1 px-0 text-small">Educational Psychology
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="entrepreneur-and-business-management.html"
-                    class="nav-link py-1 px-0 text-small">Entrepreneurship
-                    and Business Management
-                  </a>
-                </li>
-
-
-
-                <li class="nav-item">
-                  <br>
-                  <span class="badge badge-primary badge-pill">F</span>
-                  <br>
-                  <a href="financial-accounting.html" class="nav-link py-1 px-0 text-small">Financial Accounting
-                  </a>
-                </li>
-
-
-                <li class="nav-item">
-                  <a href="financial-management-farming.html" class="nav-link py-1 px-0 text-small">Financial
-                    Management: Farming
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="food-and-beverage-services.html" class="nav-link py-1 px-0 text-small">Food and
-                    Beverage
-                    Services
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <br>
-                  <span class="badge badge-primary badge-pill">H</span>
-                  <br>
-                  <a href="hotel-reception.html" class="nav-link py-1 px-0 text-small">Hotel Reception
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="human-resource-management-farming.html" class="nav-link py-1 px-0 text-small">Human Resource
-                    Management: Farming
-                  </a>
-                </li>
-
-
-                <li class="nav-item">
-                  <br>
-                  <span class="badge badge-primary badge-pill">I</span>
-                  <br>
-
-                  <a href="income-tax.html" class="nav-link py-1 px-0 text-small">Income Tax
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="information-processing.html" class="nav-link py-1 px-0 text-small">Information
-                    Processing
-                  </a>
-                </li>
-
-                <div class="mb-3 mb-md-2"></div>
-
-                <li class="nav-item">
-                  <a href="introductory-accounting.html" class="nav-link py-1 px-0 text-small">Introductory
-                    Accounting
-                  </a>
-                </li>
-
-                <div class="mb-3 mb-md-2"></div>
-
-
-
-                <li class="nav-item">
-                  <br>
-                  <span class="badge badge-primary badge-pill">L</span>
-                  <br>
-                  <a href="labour-relations.html" class="nav-link py-1 px-0 text-small">Labour Relations
-                  </a>
-                </li>
-
-                <div class="mb-3 mb-md-2">
-
-                  <li class="nav-item">
-                    <a href="legal-practice.html" class="nav-link py-1 px-0 text-small">Legal Practice
-                    </a>
-                  </li>
-
-
-
-                  <li class="nav-item">
-                    <br>
-                    <span class="badge badge-primary badge-pill">M</span>
-                    <br>
-                    <a href="maintenance-management-farming.html" class="nav-link py-1 px-0 text-small">Maintenance
-                      Management: Farming
-                    </a>
-                  </li>
-
-
-                  <li class="nav-item">
-                    <a href="management-communications.html" class="nav-link py-1 px-0 text-small">Management
-                      Communications
-                    </a>
-                  </li>
-
-
-                  <li class="nav-item">
-                    <a href="management-farming.html" class="nav-link py-1 px-0 text-small">Management: Farming
-                    </a>
-                  </li>
-
-                  <div class="mb-3 mb-md-2">
-
-                    <br>
-                    <li class="nav-item">
-                      <a href="marketing-communications.html" class="nav-link py-1 px-0 text-small">Marketing
-                        Communications
-                      </a>
-                    </li>
-
-                    <div class="mb-3 mb-md-2"></div>
-
-                    <li class="nav-item">
-                      <a href="marketing-management.html" class="nav-link py-1 px-0 text-small">Marketing
-                        Management </a>
-                    </li>
-
-                    <div class="mb-3 mb-md-2">
-
-                      <li class="nav-item">
-                        <a href="marketing-research.html" class="nav-link py-1 px-0 text-small">Marketing Research
-                        </a>
-                      </li>
-
-                      <li class="nav-item">
-                        <a href="medical-practice.html" class="nav-link py-1 px-0 text-small">Medical Practice
-                        </a>
-                      </li>
-
-                      <li class="nav-item">
-                        <a href="mercantile-law.html" class="nav-link py-1 px-0 text-small">Mercantile Law
-                        </a>
-                      </li>
-
-                      <div class="mb-3 mb-md-2">
-
-                        <li class="nav-item">
-                          <a href="municipal-administration.html" class="nav-link py-1 px-0 text-small">Municipal
-                            Administration
-                          </a>
-                        </li>
-
-                        <div class="mb-3 mb-md-2">
-
-
-
-
-                          <li class="nav-item">
-                            <br>
-                            <span class="badge badge-primary badge-pill">N</span>
-                            <br>
-                            <a href="nutrition-and-menu-planning.html" class="nav-link py-1 px-0 text-small">Nutrition
-                              and Menu Planning
-                            </a>
-                          </li>
-
-
-                          <li class="nav-item">
-                            <br>
-                            <span class="badge badge-primary badge-pill">O</span>
-                            <br>
-                            <a href="office-practice.html" class="nav-link py-1 px-0 text-small">Office Practice
-                            </a>
-                          </li>
-
-                          <li class="nav-item">
-                            <br>
-                            <span class="badge badge-primary badge-pill">P</span>
-                            <br>
-                            <a href="personnel-management.html" class="nav-link py-1 px-0 text-small">Personnel
-                              Management
-                            </a>
-                          </li>
-
-                          <div class="mb-3 mb-md-2">
-
-
-                            <li class="nav-item">
-                              <a href="personnel-training.html" class="nav-link py-1 px-0 text-small">Personnel Training
-                              </a>
-                            </li>
-
-                            <div class="mb-3 mb-md-2">
-
-
-                              <li class="nav-item">
-                                <a href="public-administration.html" class="nav-link py-1 px-0 text-small">Public
-                                  Administration
-                                </a>
-                              </li>
-
-                              <div class="mb-3 mb-md-2">
-
-                                <li class="nav-item">
-                                  <a href="public-finance.html" class="nav-link py-1 px-0 text-small">Public
-                                    Finance
-                                  </a>
-                                </li>
-
-                                <div class="mb-3 mb-md-2">
-
-                                  <li class="nav-item">
-                                    <a href="public-law.html" class="nav-link py-1 px-0 text-small">Public
-                                      Law
-                                    </a>
-                                  </li>
-
-                                  <div class="mb-3 mb-md-2">
-
-                                    <div class="mb-3 mb-md-2">
-
-                                      <li class="nav-item">
-                                        <a href="public-relations.html" class="nav-link py-1 px-0 text-small">Public
-                                          Relations
-                                        </a>
-                                      </li>
-
-                                      <div class="mb-3 mb-md-2">
-
-
-
-
-                                        <li class="nav-item">
-                                          <br>
-                                          <span class="badge badge-primary badge-pill">S</span>
-                                          <br>
-                                          <a href="sales-management.html" class="nav-link py-1 px-0 text-small">Sales
-                                            Management
-                                          </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                          <a href="sanitation-and-housekeeping.html"
-                                            class="nav-link py-1 px-0 text-small">Sanitation and Housekeeping
-                                          </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                          <a href="sanitation-and-safety.html"
-                                            class="nav-link py-1 px-0 text-small">Sanitation and Safety
-                                          </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                          <br>
-                                          <span class="badge badge-primary badge-pill">T</span>
-                                          <br>
-                                          <a href="tourism-communication.html"
-                                            class="nav-link py-1 px-0 text-small">Tourism Communication
-                                          </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                          <a href="tourist-destinations.html"
-                                            class="nav-link py-1 px-0 text-small">Tourist Destinations
-                                          </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                          <a href="travel-office-procedures.html"
-                                            class="nav-link py-1 px-0 text-small">Travel Office Procedures
-                                          </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                          <a href="travel-services.html" class="nav-link py-1 px-0 text-small">Travel
-                                            Services
-                                          </a>
-                                        </li>
-
-            </ul>
-          </div>
 
         </div>
-      </div>
-      <div class="col-lg-10">
-        <div class="row justify-content-around">
-          <div class="col-lg-10 col-xl-8 py-4 py-md-5">
-            <div>
-              <h1>Getting Started</h1>
-              <div class="lead mb-0">
-                <p> This is a brief guide to using our website.</p>
+        <div class="col-lg-10">
+          <div class="row justify-content-around">
+            <div class="col-lg-10 col-xl-8 py-4 py-md-5">
+              <div>
+                <h1>Getting Started</h1>
+                <div class="lead mb-0">
+                  <p> This is a brief guide to using our website.</p>
+                </div>
+                <hr class="my-4 my-md-5">
               </div>
-              <hr class="my-4 my-md-5">
-            </div>
 
 
 
@@ -564,7 +129,7 @@
 
 
 
-            <!-- <div>
+              <!-- <div>
               <div class="alert alert-secondary alert-dismissible fade show text-center" role="alert">
                 <strong>Hello!</strong> <br><br> Did you find the paper you were looking for? <br>Please take a
                 moment to answer about 3 questions in our survey.
@@ -575,80 +140,80 @@
                 </button>
               </div>
             </div> -->
-            <article id="components" class="mb-4 mb-md-5">
-              <h3>
-                <p>General Info</p>
-              </h3>
+              <article id="components" class="mb-4 mb-md-5">
+                <h3>
+                  <p>General Info</p>
+                </h3>
 
-              <div>
-                <p>Here are some general things to note;</p>
-                <ul>
+                <div>
+                  <p>Here are some general things to note;</p>
+                  <ul>
 
-                  <li>We currently only keep a library of papers for Engineering and Business courses.</li><br>
+                    <li>We currently only keep a library of papers for Engineering and Business courses.</li><br>
 
-                  <li>Please be advised that all the exam papers that have been uploaded on the site, are the only
-                    papers that we have. Unfortunately, we cannot assist you with what isn’t on our site currently.
-                  </li><br>
+                    <li>Please be advised that all the exam papers that have been uploaded on the site, are the only
+                      papers that we have. Unfortunately, we cannot assist you with what isn’t on our site currently.
+                    </li><br>
 
-                  <li>If after successful payment your paper does not automatically download, please contact us and
-                    we'll
-                    email it to you.</li><br>
+                    <li>If after successful payment your paper does not automatically download, please contact us and
+                      we'll
+                      email it to you.</li><br>
 
-                  <li>We update our site regularly to upload missing papers as we find them.</li><br>
-                  <li>Please note that in 2020, there were no Nov Business exams for most subjects because of COVID.
-                  </li><br>
+                    <li>We update our site regularly to upload missing papers as we find them.</li><br>
+                    <li>Please note that in 2020, there were no Nov Business exams for most subjects because of COVID.
+                    </li><br>
 
-                  <li>You’re welcome to <a href="../contact.html">email</a> us if you'd like to bulk purchase past
-                    papers.
-                  </li><br>
+                    <li>You’re welcome to <a href="../contact.html">email</a> us if you'd like to bulk purchase past
+                      papers.
+                    </li><br>
 
-                </ul>
+                  </ul>
 
-              </div>
-            </article>
+                </div>
+              </article>
 
 
 
-            <article id="feedback" class="mb-4 mb-md-5">
-              <h3>
-                <p>Giving Feedback</p>
-              </h3>
-              <div>
-                <p>We strive to improve our site but we unfortunately cannot guarantee that it will be error free. We
-                  rely on your feedback. So if there is a paper in the wrong place or a certain paper does not
-                  load, please let us know and we'll fix it right away.</p>
-                <p>Please feel free to share any feedback about Mytvet SA by <a href="../contact.html">email</a> or <a
-                    href="https://wa.me/message/CL53M5NTSSRNE1" target="_blank">text</a>.</p>
+              <article id="feedback" class="mb-4 mb-md-5">
+                <h3>
+                  <p>Giving Feedback</p>
+                </h3>
+                <div>
+                  <p>We strive to improve our site but we unfortunately cannot guarantee that it will be error free. We
+                    rely on your feedback. So if there is a paper in the wrong place or a certain paper does not
+                    load, please let us know and we'll fix it right away.</p>
+                  <p>Please feel free to share any feedback about Mytvet SA by <a href="../contact.html">email</a> or <a
+                      href="https://wa.me/message/CL53M5NTSSRNE1" target="_blank">text</a>.</p>
 
-              </div>
-            </article>
+                </div>
+              </article>
 
-            <article id="feedback" class="mb-4 mb-md-5">
-              <h3>
-                <p>Banking Details</p>
-              </h3>
-              <div>
-                <p>MYTVET SA
-                  <br>
-                  Standard Bank
-                  <br>
-                  Reference: "Your Name"
-                  <br>
-                  Account Number: 10155373607
-                  <br>
-                  Account Type: Current/Cheque
-                  <br>
-                  Branch: 051001
-                </p>
-              </div>
-            </article>
-            <hr class="my-4 my-md-5">
+              <article id="feedback" class="mb-4 mb-md-5">
+                <h3>
+                  <p>Banking Details</p>
+                </h3>
+                <div>
+                  <p>MYTVET SA
+                    <br>
+                    Standard Bank
+                    <br>
+                    Reference: "Your Name"
+                    <br>
+                    Account Number: 10155373607
+                    <br>
+                    Account Type: Current/Cheque
+                    <br>
+                    Branch: 051001
+                  </p>
+                </div>
+              </article>
+              <hr class="my-4 my-md-5">
+            </div>
           </div>
-        </div>
-        <!-- <script src="https://form.jotform.com/cardforms/feedbackEmbedButton.min.js"></script>
+          <!-- <script src="https://form.jotform.com/cardforms/feedbackEmbedButton.min.js"></script>
         <script> new JF_FeedbackEmbedButton({ buttonText: "Survey", buttonFontColor: "#FFFFFF", buttonBackgroundColor: "#257bd1", buttonSide: "Bottom", buttonAlign: "Right", buttonIcon: "default", formId: 201776436629060 });</script> -->
+        </div>
       </div>
-    </div>
     </div>
     </div>
   </section>
