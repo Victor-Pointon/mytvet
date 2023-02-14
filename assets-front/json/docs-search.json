@@ -1,0 +1,575 @@
+[
+  {
+    "component": "",
+    "category": "Bricklaying and Plastering",
+    "link": "/engineering/brick-laying-and-plastering.html"
+  },
+  {
+    "component": "",
+    "category": "Building Administration",
+    "link": "/engineering/engineering/building-administration.html"
+  },
+  {
+    "component": "",
+    "category": "Building and Civil Technology",
+    "link": "/engineering/building-and-civil-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Building and Structural Construction",
+    "link": "/engineering/building-and-structural-construction.html"
+  },
+  {
+    "component": "",
+    "category": "Building and Structural Surveying",
+    "link": "/engineering/building-and-structural-surveying.html"
+  },
+  {
+    "component": "",
+    "category": "Building Draughting",
+    "link": "/engineering/building-draughting.html"
+  },
+  {
+    "component": "",
+    "category": "Building Drawing",
+    "link": "/engineering/building-drawing.html"
+  },
+  {
+    "component": "",
+    "category": "Building Science",
+    "link": "/engineering/building-science.html"
+  },
+  {
+    "component": "",
+    "category": "Chemical Plant Operation",
+    "link": "/engineering/chemical-plant-theory.html"
+  },
+  {
+    "component": "",
+    "category": "Chemical Technology",
+    "link": "/engineering/chemical-technology.html"
+  },
+  {
+    "component": " ",
+    "category": "Chemistry",
+    "link": "/engineering/chemistry.html"
+  },
+  {
+    "component": " ",
+    "category": "Communication Electronics",
+    "link": "/engineering/communication-electronics.html"
+  },
+  {
+    "component": "",
+    "category": "Computer-Aided Draughting",
+    "link": "/engineering/computer-aided-draughting.html"
+  },
+  {
+    "component": "",
+    "category": "Control Systems",
+    "link": "/engineering/control-systems.html"
+  },
+  {
+    "component": "",
+    "category": "Diesel Trade Theory",
+    "link": "/engineering/diesel-trade-theory.html"
+  },
+  {
+    "component": "",
+    "category": "Digital Electronics",
+    "link": "/engineering/digital-electronics.html"
+  },
+  {
+    "component": "",
+    "category": "Electrical Draughting",
+    "link": "/engineering/electrical-draughting.html"
+  },
+  {
+    "component": "",
+    "category": "Eletro-Technology",
+    "link": "/engineering/electro-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Electrical Trade Theory",
+    "link": "/engineering/electrical-trade-theory.html"
+  },
+  {
+    "component": "",
+    "category": "Electrotechnics",
+    "link": "/engineering/electrotechnics.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Drawing",
+    "link": "/engineering/engineering-drawing.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Physics",
+    "link": "/engineering/engineering-physics.html"
+  },
+  {
+    "component": " ",
+    "category": "Engineering Science",
+    "link": "/engineering/engineering-science.html"
+  },
+  {
+    "component": "",
+    "category": "Fault Finding and Protective Devices",
+    "link": "/engineering/fault-finding.html"
+  },
+  {
+    "component": "",
+    "category": "Fitting and Machining",
+    "link": "/engineering/fitting-and-machining.html"
+  },
+  {
+    "component": "",
+    "category": "Fluid Mechanics",
+    "link": "/engineering/fluid-mechanics.html"
+  },
+  {
+    "component": " ",
+    "category": "General Draughting",
+    "link": "/engineering/general-draughting.html"
+  },
+  {
+    "component": "",
+    "category": "Industrial Electronics",
+    "link": "/engineering/industrial-electronics.html"
+  },
+  {
+    "component": "",
+    "category": "Installation Rules",
+    "link": "/engineering/installation-rules.html"
+  },
+  {
+    "component": "",
+    "category": "Instrument Trade Theory",
+    "link": "/engineering/instrument-trade-theory.html"
+  },
+  {
+    "component": "",
+    "category": "Logic Systems",
+    "link": "/engineering/logic-systems.html"
+  },
+  {
+    "component": "",
+    "category": "Mathematics",
+    "link": "/engineering/mathematics.html"
+  },
+  {
+    "component": "",
+    "category": "Mechanical Draughting",
+    "link": "/engineering/mechanical-draughting.html"
+  },
+  {
+    "component": "",
+    "category": "Mechanical Drawing and Design",
+    "link": "/engineering/mechanical-drawing-and-design.html"
+  },
+  {
+    "component": "",
+    "category": "Mechanotechnics",
+    "link": "/engineering/mechanotechnics.html"
+  },
+  {
+    "component": "",
+    "category": "Mechanotechnology",
+    "link": "/engineering/mechanotechnology.html"
+  },
+  {
+    "component": "",
+    "category": "Motor Trade Theory",
+    "link": "/engineering/motor-trade-theory.html"
+  },
+  {
+    "component": "",
+    "category": "Pictorial Draughting",
+    "link": "/engineering/pictorial-draughting.html"
+  },
+  {
+    "component": "",
+    "category": "Plant Operation Theory",
+    "link": "/engineering/plant-operation-theory.html"
+  },
+  {
+    "component": "",
+    "category": "Platers' Theory",
+    "link": "/engineering/platers-theory.html"
+  },
+  {
+    "component": "",
+    "category": "Plating and Structural Steel Drawing",
+    "link": "/engineering/plating-and-structural-steel-drawing.html"
+  },
+  {
+    "component": "",
+    "category": "Plumbing Theory",
+    "link": "/engineering/plumbing-theory.html"
+  },
+  {
+    "component": "",
+    "category": "Power Machines",
+    "link": "/engineering/power-machines.html"
+  },
+
+  {
+    "component": " ",
+    "category": "Quantity Surveying",
+    "link": "/engineering/quantity-surveying.html"
+  },
+  {
+    "component": "  ",
+    "category": "Radio and Television Theory",
+    "link": "/engineering/radio-and-television.html"
+  },
+  {
+    "component": "  ",
+    "category": "Radio Theory",
+    "link": "/engineering/radio-theory.html"
+  },
+  {
+    "component": " ",
+    "category": "Rigging Theory",
+    "link": "/engineering/rigging-theory.html"
+  },
+  {
+    "component": "",
+    "category": "Specialised Electrical Installation Codes",
+    "link": "https://www.installationrules.co.za/"
+  },
+  {
+    "component": "",
+    "category": "Strength of Materials and Structures",
+    "link": "/engineering/strength-of-materials-and-structures.html"
+  },
+  {
+    "component": "",
+    "category": "Structural Steel Detailing",
+    "link": "/engineering/structural-steel-detailing.html"
+  },
+  {
+    "component": "",
+    "category": "Supervisory Management",
+    "link": "/engineering/supervisory-management.html"
+  },
+  {
+    "component": " ",
+    "category": "Waste-Water Treatment Practice",
+    "link": "/engineering/waste-water-treatment-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Water and Waste-Water Treatment Practice",
+    "link": "/engineering/water-and-waste-water-treatment-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Water Treatment Practice",
+    "link": "/engineering/water-treatment-practice.html"
+  },
+
+  {
+    "component": "",
+    "category": "Applied Management",
+    "link": "/business/applied-management.html"
+  },
+  {
+    "component": "",
+    "category": "Caterer Client Relations",
+    "link": "/business/catering-client-relations.html"
+  },
+  {
+    "component": "",
+    "category": "Catering Theory and Practical",
+    "link": "/business/catering-theory-and-practical.html"
+  },
+  {
+    "component": "",
+    "category": "Child Health",
+    "link": "/business/child-health.html"
+  },
+  {
+    "component": "",
+    "category": "Clothing Construction",
+    "link": "/business/clothing-construction.html"
+  },
+  {
+    "component": " ",
+    "category": "Communication",
+    "link": "/business/communication.html"
+  },
+  {
+    "component": "",
+    "category": "Communication and Human Relations",
+    "link": "/business/communication-and-human-relations.html"
+  },
+  {
+    "component": " ",
+    "category": "Computer Practice",
+    "link": "/business/computer-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Computerised Financial Systems",
+    "link": "/business/computerised-financial-systems.html"
+  },
+  {
+    "component": " ",
+    "category": "Cost and Management Accounting",
+    "link": "/business/cost-and-management-accounting.html"
+  },
+  {
+    "component": "",
+    "category": "Data Management: Farming",
+    "link": "/business/data-management-farming.html"
+  },
+  {
+    "component": " ",
+    "category": "Day Care Communication",
+    "link": "/business/day-care-communication.html"
+  },
+  {
+    "component": "",
+    "category": "Day Care Management",
+    "link": "/business/day-care-management.html"
+  },
+  {
+    "component": " ",
+    "category": "Day Care Personnel Development",
+    "link": "/business/day-care-personnel-development.html"
+  },
+  {
+    "component": "",
+    "category": "Economics",
+    "link": "/business/economics.html"
+  },
+  {
+    "component": " ",
+    "category": "Educare Didactics Theory and Practical",
+    "link": "/business/educare-didactics-theory-and-practical.html"
+  },
+  {
+    "component": "",
+    "category": "Education",
+    "link": "/business/education.html"
+  },
+  {
+    "component": " ",
+    "category": "Educational Psychology",
+    "link": "/business/educational-psychology.html"
+  },
+
+  {
+    "component": " ",
+    "category": "Entrepreneurship and Business Management",
+    "link": "/business/entrepreneur-and-business-management.html"
+  },
+  {
+    "component": "",
+    "category": "Fashion Drawing",
+    "link": "/business/fashion-drawing.html"
+  },
+  {
+    "component": " ",
+    "category": "Financial Accounting",
+    "link": "/business/financial-accounting.html"
+  },
+  {
+    "component": "",
+    "category": "Financial Management: Farming",
+    "link": "/business/financial-management-farming.html"
+  },
+  {
+    "component": " ",
+    "category": "Food and Beverage Services",
+    "link": "/business/food-and-beverage-services.html"
+  },
+  {
+    "component": "",
+    "category": "Hotel Reception",
+    "link": "/business/hotel-reception.html"
+  },
+  {
+    "component": " ",
+    "category": "Human Resource Management: Farming",
+    "link": "/business/human-resource-management-farming.html"
+  },
+  {
+    "component": "",
+    "category": "Income Tax",
+    "link": "/business/income-tax.html"
+  },
+  {
+    "component": " ",
+    "category": "Information Processing",
+    "link": "/business/information-processing.html"
+  },
+  {
+    "component": "",
+    "category": "Introductory Accounting",
+    "link": "/business/introductory-accounting.html"
+  },
+  {
+    "component": " ",
+    "category": "Introductory Communication",
+    "link": "/business/introductory-communication.html"
+  },
+  {
+    "component": "",
+    "category": "Introductory Computer Practice",
+    "link": "/business/introductory-computer-practice.html"
+  },
+  {
+    "component": " ",
+    "category": "Introductory Entrepreneurship",
+    "link": "/business/introductory-entrepreneurship.html"
+  },
+  {
+    "component": "",
+    "category": "Introductory Information Processing",
+    "link": "/business/introductory-information-processing.html"
+  },
+  {
+    "component": "",
+    "category": "Introductory Marketing",
+    "link": "/business/introductory-marketing.html"
+  },
+  {
+    "component": "",
+    "category": "Labour Relations",
+    "link": "/business/labour-relations.html"
+  },
+  {
+    "component": "",
+    "category": "Legal Practice",
+    "link": "/business/legal-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Maintenance Management: Farming",
+    "link": "/business/maintenance-management-farming.html"
+  },
+  {
+    "component": "",
+    "category": "Management Communication",
+    "link": "/business/management-communications.html"
+  },
+  {
+    "component": "",
+    "category": "Management: Farming",
+    "link": "/business/management-farming.html"
+  },
+  {
+    "component": "",
+    "category": "Marketing Communication",
+    "link": "/business/marketing-communications.html"
+  },
+  {
+    "component": "",
+    "category": "Marketing Management",
+    "link": "//www.mytvet.co.za/business/marketing-management.html"
+  },
+  {
+    "component": "",
+    "category": "Marketing Research",
+    "link": "https:/business/marketing-research.html"
+  },
+  {
+    "component": "",
+    "category": "Medical Practice",
+    "link": "/business/medical-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Mercantile Law",
+    "link": "/business/mercantile-law.html"
+  },
+  {
+    "component": "",
+    "category": "Municipal Administration",
+    "link": "/business/municipal-administration.html"
+  },
+  {
+    "component": "",
+    "category": "Nutrition and Menu Planning",
+    "link": "/business/nutrition-and-menu-planning.html"
+  },
+  {
+    "component": "",
+    "category": "Office Practice",
+    "link": "/business/office-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Pattern Construction",
+    "link": "/business/pattern-construction.html"
+  },
+  {
+    "component": "",
+    "category": "Personnel Management",
+    "link": "/business/personnel-management.html"
+  },
+  {
+    "component": "",
+    "category": "Personnel Training",
+    "link": "/business/personnel-training.html"
+  },
+  {
+    "component": "",
+    "category": "Public Administration",
+    "link": "/business/public-administration.html"
+  },
+  {
+    "component": "",
+    "category": "Public Finance",
+    "link": "/business/public-finance.html"
+  },
+  {
+    "component": "",
+    "category": "Public Law",
+    "link": "/business/public-law.html"
+  },
+  {
+    "component": "",
+    "category": "Public Relations",
+    "link": "/business/public-relations.html"
+  },
+  {
+    "component": "",
+    "category": "Sales Management",
+    "link": "/business/sales-management.html"
+  },
+  {
+    "component": "",
+    "category": "Sanitation and Housekeeping",
+    "link": "/business/sanitation-and-housekeeping.html"
+  },
+  {
+    "component": "",
+    "category": "Sanitation and Safety",
+    "link": "/business/sanitation-and-safety.html"
+  },
+  {
+    "component": "",
+    "category": "Tourism Communication",
+    "link": "/business/tourism-communication.html"
+  },
+  {
+    "component": "",
+    "category": "Tourist Destinations",
+    "link": "/business/tourist-destinations.html"
+  },
+  {
+    "component": "",
+    "category": "Travel Office Procedures",
+    "link": "/business/travel-office-procedures.html"
+  },
+  {
+    "component": "",
+    "category": "Travel Services",
+    "link": "/business/travel-services.html"
+  }
+]
