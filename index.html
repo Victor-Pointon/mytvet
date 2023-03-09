@@ -530,7 +530,7 @@
 
       <!-- Mockups -->
       <br /><br />
-      <div id="scrollToContent" class="container content-space">
+      <div id="scrollToContent" class="container content-space ">
         <!-- Heading -->
         <div class="w-lg-65 text-center mx-lg-auto mb-7">
           <h3>Browse subjects by faculty</h3>
@@ -1488,6 +1488,9 @@
     <script src="./assets-front/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="./assets-front/vendor/fslightbox/index.js"></script>
 
+    <!-- scrollspy -->
+    <script src="../assets/vendor/hs-scrollspy/dist/hs-scrollspy.min.js"></script>
+
     <!-- JS Space -->
     <script src="./assets-front/js/theme.min.js"></script>
 
@@ -1552,6 +1555,21 @@
 
     <!-- JS Space -->
     <script src="../assets-front/js/theme.min.js"></script>
+
+    <script>
+      (function() {
+        // INITIALIZATION OF SCROLLSPY
+        // =======================================================
+        new bootstrap.ScrollSpy(document.body, {
+          target: '#navbarVerticalNavMenuSettingsEg',
+          offset: 10
+        })
+
+        new HSScrollspy('#navbarVerticalNavMenuEg', {
+          breakpoint: 'lg'
+        })
+      })()
+    </script>
 
     <!-- JS Plugins Init. -->
     <script>
