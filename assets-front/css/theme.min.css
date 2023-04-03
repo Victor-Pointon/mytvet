@@ -3465,7 +3465,7 @@ fieldset:disabled .btn {
 .btn-lg {
   --bs-btn-padding-y: 0.75rem;
   --bs-btn-padding-x: 1rem;
-  --bs-btn-font-size: 1.125rem;
+  --bs-btn-font-size: 1rem;
   --bs-btn-border-radius: 0.3125rem;
 }
 .btn-group-sm > .btn,
