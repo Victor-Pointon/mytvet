@@ -1,22 +1,17 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Engineering Subjects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="">
+  <head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description"
     content="TVET Electrical, Civil and Build, Mechanical, Boiler Making, Installation Rules, Engineering past exam papers and memos from N1 to N6 including Mathematics, Engineering Science, Industrial Electronics, Electrotechnics Radio & Television Theory and more!">
-  <!-- Begin loading animation -->
-  <link href="assets/css/loaders/loader-pulse.css" rel="stylesheet" type="text/css" media="all" />
-  <!-- End loading animation -->
-  <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/png" href="../assets/img/logos/fav.png">
-
-  <!-- Google Search Console -->
+    <!-- Google Search Console -->
   <meta name="google-site-verification" content="--Anb8AjTqVrb2saTxgBjKJ217scTFOIhzg4JcckNAI" />
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -38,83 +33,308 @@
     gtag('config', 'UA-163493189-1');
   </script>
 
+    <!-- Title -->
+    <title>Engineering Subjects</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="./favicon.png">
 
-  <!-- Memberstack -->
-  <script src="https://api.memberstack.io/static/memberstack.js?custom"
-    data-memberstack-id="9535e13383e1ec448869e5178e275bd0"> </script>
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
 
-<body>
-  <div class="loader">
-    <div class="loading-animation"></div>
-  </div>
+    <!-- CSS Implementing Plugins -->
+    <link
+      rel="stylesheet"
+      href="./assets-front/vendor/bootstrap-icons/font/bootstrap-icons.css" />
+    <link
+      rel="stylesheet"
+      href="./assets-front/vendor/hs-mega-menu/dist/hs-mega-menu.min.css" />
 
-  <div class="navbar-container">
+    <!-- CSS Space Template -->
+    <link
+      rel="stylesheet"
+      href="./assets-front/css/theme.min.css" />
+  </head>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
+  <body>
+    <!-- ========== HEADER ========== -->
+    <header
+      id="header"
+      class="navbar navbar-expand-lg navbar-light navbar-end bg-white">
       <div class="container">
-        <a class="navbar-brand navbar-brand-dynamic-color fade-page" href="index.html">
-          <img alt="Mytvet SA" data-inject-svg src="assets/img/logos/logodark.svg">
-        </a>
+        <nav class="js-mega-menu navbar-nav-wrap">
+          <!-- Default Logo -->
+          <a
+            class="navbar-brand"
+            href="./index.html"
+            aria-label="Space">
+            <img
+              class="navbar-brand-logo"
+              src="./assets-front/svg/logos/logo.svg"
+              alt="Image Description" />
+          </a>
+          <!-- End Default Logo -->
 
-
-      </div>
-    </nav>
-  </div>
-  <!-- <script src="https://form.jotform.com/cardforms/feedbackEmbedButton.min.js"></script>
-  <script>
-    new JF_FeedbackEmbedButton({
-
-      buttonText: "Survey",
-      buttonFontColor: "#FFFFFF",
-      buttonBackgroundColor: "#007FEF",
-      buttonSide: "Bottom",
-      buttonAlign: "Right",
-      buttonIcon: "default",
-      base: "https://form.jotform.com/",
-      formId: 201776436629060
-    });
-  </script> -->
-  <section class="pb-0 ">
-    <div class="container">
-      <div class="row section-title justify-content-center text-center">
-        <div class="col-md-9 col-lg-8 col-xl-7">
-          <h3 class="display-4">Engineering Subject List</h3>
-          <div class="lead">Past exam papers and memos from 2015 to this current year.</div>
-          <!-- </p><a href="/other-subjects.html">Other Subjects</a>
-          </p> -->
-        </div>
-      </div>
-      <!-- <div>
-        <div class="alert alert-secondary alert-dismissible fade show text-center" role="alert">
-          <strong>Dear students,</strong> <br><br> Leave us a positive review
-          <a href="https://g.page/r/CUjjF0Kxk2EHEAg/review" class="lead" target="_blank">Here</a>, then <a
-            href="https://wa.me/message/CL53M5NTSSRNE1" class="lead" target="_blank">text</a> us to
-          request any 4 papers for free. For a limited time only.
-
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">
-              <img src="../assets/img/icons/interface/icon-x.svg" alt="Close" class="icon icon-sm">
+          <!-- Toggler -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-default">
+              <i class="bi-list"></i>
+            </span>
+            <span class="navbar-toggler-toggled">
+              <i class="bi-x"></i>
             </span>
           </button>
-        </div>
-      </div> -->
+          <!-- End Toggler -->
+
+          <!-- Collapse -->
+          <div
+            class="collapse navbar-collapse"
+            id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <!-- Landings -->
+              <li
+                class="hs-has-mega-menu nav-item"
+                data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "maxWidth": "30rem"
+                    }
+                  }'
+              >
+                <a
+                  id="landingsMegaMenu"
+                  class="hs-mega-menu-invoker nav-link"
+                  aria-current="page"
+                  href="index.html"
+                  role="button"
+                  aria-expanded="false"
+                  >Home</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-mega-menu hs-position-right-fix"
 
 
-      <!-- <div>
-        <div class="alert alert-secondary alert-dismissible fade show text-center" role="alert">
-          <strong>We're currently having technical issues with Payfast :(</strong> <br><br> Please
-          <a href="https://wa.me/message/CL53M5NTSSRNE1" target="_blank">text us</a> for manual purchases.
-          <br><br> 25/04/2022
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">
-              <img src="../assets/img/icons/interface/icon-x.svg" alt="Close" class="icon icon-sm">
-            </span>
-          </button>
-        </div>
-      </div> -->
+                >
 
-      <!-- Search bar script starts -->
+              </li>
+              <!-- End Landings -->
+
+              <!-- Pages -->
+              <li class="hs-has-mega-menu nav-item">
+                <a
+                  id="pagesMegaMenu"
+                  class="hs-mega-menu-invoker nav-link"
+                  href="information.html"
+                  role="button"
+                  aria-expanded="false"
+                  >Guidance</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-mega-menu hs-position-right w-100"
+
+                >
+
+              </li>
+              <!-- End Pages -->
+
+              <!-- Blog -->
+              <li class="hs-has-sub-menu nav-item">
+                <a href="contact.html"
+                  id="blogMegaMenu"
+                  class="hs-mega-menu-invoker nav-link"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Contact Us</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-sub-menu"
+                  aria-labelledby="blogMegaMenu"
+
+                >
+
+
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+
+              <li class="hs-has-sub-menu nav-item">
+                <a href="exam-timetable.html"
+                  id="blogMegaMenu"
+                  class="hs-mega-menu-invoker nav-link"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Exam Timetable</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-sub-menu"
+                  aria-labelledby="blogMegaMenu"
+
+                >
+
+
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+              <!-- End Blog -->
+
+              <!-- Docs -->
+              <li
+                class="hs-has-mega-menu nav-item"
+                data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "maxWidth": "20rem"
+                    }
+                  }'
+              >
+                <a
+                  id="docsMegaMenu"
+                  class="hs-mega-menu-invoker nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  >Papers</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-mega-menu hs-position-right dropdown-menu"
+                  aria-labelledby="docsMegaMenu"
+                  style="min-width: 20rem"
+                >
+                  <!-- Link -->
+                  <a
+                    class="navbar-dropdown-menu-media-link"
+                    href="business-subject-list.html"
+                  >
+                    <div class="d-flex">
+                      <div class="flex-shrink-0">
+                        <span class="svg-icon svg-icon-sm text-primary">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              opacity="0.3"
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M4.85714 1H11.7364C12.0911 1 12.4343 1.12568 12.7051 1.35474L17.4687 5.38394C17.8057 5.66895 18 6.08788 18 6.5292V19.0833C18 20.8739 17.9796 21 16.1429 21H4.85714C3.02045 21 3 20.8739 3 19.0833V2.91667C3 1.12612 3.02045 1 4.85714 1ZM7 13C7 12.4477 7.44772 12 8 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H11C11.5523 18 12 17.5523 12 17C12 16.4477 11.5523 16 11 16H8Z"
+                              fill="#035A4B"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M6.85714 3H14.7364C15.0911 3 15.4343 3.12568 15.7051 3.35474L20.4687 7.38394C20.8057 7.66895 21 8.08788 21 8.5292V21.0833C21 22.8739 20.9796 23 19.1429 23H6.85714C5.02045 23 5 22.8739 5 21.0833V4.91667C5 3.12612 5.02045 3 6.85714 3ZM7 13C7 12.4477 7.44772 12 8 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H11C11.5523 18 12 17.5523 12 17C12 16.4477 11.5523 16 11 16H8Z"
+                              fill="#035A4B"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+
+                      <div class="flex-grow-1 ms-3">
+                        <span class="navbar-dropdown-menu-media-title"
+                          >Business</span
+                        >
+                        <p class="navbar-dropdown-menu-media-desc">
+                          View all Engineering subjects
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- End Link -->
+
+                  <div class="dropdown-divider"></div>
+
+                  <!-- Link -->
+                  <a
+                    class="navbar-dropdown-menu-media-link"
+                    href="engineering-subject-list.html"
+                  >
+                    <div class="d-flex">
+                      <div class="flex-shrink-0">
+                        <span class="svg-icon svg-icon-sm text-primary">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              opacity="0.3"
+                              d="M21 2H13C12.4 2 12 2.4 12 3V13C12 13.6 12.4 14 13 14H21C21.6 14 22 13.6 22 13V3C22 2.4 21.6 2 21 2ZM15.7 8L14 10.1V5.80005L15.7 8ZM15.1 4H18.9L17 6.40002L15.1 4ZM17 9.59998L18.9 12H15.1L17 9.59998ZM18.3 8L20 5.90002V10.2L18.3 8ZM9 2H3C2.4 2 2 2.4 2 3V21C2 21.6 2.4 22 3 22H9C9.6 22 10 21.6 10 21V3C10 2.4 9.6 2 9 2ZM4.89999 12L4 14.8V9.09998L4.89999 12ZM4.39999 4H7.60001L6 8.80005L4.39999 4ZM6 15.2L7.60001 20H4.39999L6 15.2ZM7.10001 12L8 9.19995V14.9L7.10001 12Z"
+                              fill="#035A4B"
+                            />
+                            <path
+                              d="M21 18H13C12.4 18 12 17.6 12 17C12 16.4 12.4 16 13 16H21C21.6 16 22 16.4 22 17C22 17.6 21.6 18 21 18ZM19 21C19 20.4 18.6 20 18 20H13C12.4 20 12 20.4 12 21C12 21.6 12.4 22 13 22H18C18.6 22 19 21.6 19 21Z"
+                              fill="#035A4B"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+
+                      <div class="flex-grow-1 ms-3">
+                        <span class="navbar-dropdown-menu-media-title"
+                          >Engineering</span
+                        >
+                        <p class="navbar-dropdown-menu-media-desc">
+                          View all Engineering subjects
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- End Link -->
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+              <!-- End Docs -->
+
+
+
+              <!-- Log in -->
+
+              <!-- End Log in -->
+
+              <!-- Sign up -->
+
+              <!-- End Sign up -->
+            </ul>
+          </div>
+          <!-- End Collapse -->
+        </nav>
+      </div>
+    </header>
+
+    <!-- ========== END HEADER ========== -->
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main
+      id="content"
+      role="main">
+      <!-- Hero -->
+
+      <!-- End Hero -->
+
       <script>
         function myFunction() {
           // Declare variables
@@ -140,713 +360,1257 @@
 
 
 
-      <div class="row justify-content-center">
-        <div class="col-xl-8 col-lg-9 col-md-10">
-          <h6></h6>
-          <div class="row justify-content-center">
-            <div class="col-xl-8 col-lg-9 col-md-10">
-              <div class="form-group">
-                <input class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Search for subject name"
-                  type="text">
+
+
+<br><br>
+
+
+
+
+      <div class="container content-space-1">
+        <!-- Heading -->
+        <div class="w-lg-65 text-center mx-lg-auto mb-7">
+          <h3>Engineering Subject List</h3>
+          <p class="fs-6">Past exam papers and memos from 2015 to this current year.</p>
+
+
+        </div>
+        <!-- End Heading -->
+
+
+
+
+
+
+        <div class="w-md-75 w-lg-65 mx-md-auto mb-7">
+          <div class="w-lg-85">
+
+            <div class="mb-3">
+              <div class="input-group input-group-merge">
+                <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="Enter subject name" aria-label="Enter subject name" aria-describedby="inputGroupMergeEmailOptionalAddOn">
+                <div class="input-group-append input-group-text" id="inputGroupMergeEmailOptionalAddOn">
+                  <i class="bi-search"></i>
+                </div>
               </div>
-            </div>
+
+
+
+
+
+
+            <!-- End Icon -->
           </div>
 
+          <br>  <br>
+    <ul class="row justify-content-center" id="myUL" style="list-style-type:none; padding-left:0">
+
+
+      <li><span class="badge bg-primary">A</span>
+        <br><br>
+        <a href="engineering/aircraft-maintenance-theory.html">
+        <div class="d-grid mb-2 ">
+          <button class="btn btn-white btn-lg text-start fw-medium">Aircraft Maintenance Theory</button>
+        </div>
+      </a></li>
+
+
+      <li><br><span class="badge bg-primary">B</span>
+        <br><br>
+
+                <a href="engineering/brick-laying-and-plastering.html">
+                <div class="d-grid mb-2 ">
+                  <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Bricklaying and Plastering</button>
+                </div>
+              </a></li>
+
+
+      <li><a href="engineering/building-administration.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Building Administration</button>
+        </div>
+      </a></li>
+
+
+      <li><a href="engineering/building-and-civil-technology.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Building and Civil Technology</button>
+        </div>
+      </a></li>
+
+
+      <li><a href="engineering/building-and-structural-construction.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Building and Structural Construction</button>
+        </div>
+      </a></li>
+
+
+      <li><a href="engineering/building-and-structural-surveying.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Building and Structural Surveying</button>
+        </div>
+      </a></li>
+
+
+      <li><a href="engineering/building-draughting.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Building Draughting</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/building-drawing.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Building Drawing</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/building-science.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Building Science
+          </button>
+        </div>
+      </a></li>
+
+
+      <li><br><span class="badge bg-primary">C</span>
+        <br> <br>
+        <a href="engineering/chemical-plant-theory.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Chemical Plant Operation</button>
+        </div>
+      </a></li>
+
+
+      <li><a href="engineering/chemical-technology.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Chemical Technology</button>
+        </div>
+      </a></li>
+
+
+      <li><a href="engineering/chemistry.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Chemistry</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/communication-electronics.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Communication Electronics</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/computer-aided-draughting.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Computer-Aided Draughting</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/control-systems.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Control Systems</button>
+        </div>
+      </a></li>
+
+
+
+      <li><br><span class="badge bg-primary">D</span>
+        <br><br>
+        <a href="engineering/diesel-trade-theory.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Diesel Trade Theory</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/digital-electronics.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Digital Electronics</button>
+        </div>
+      </a></li>
+
+
+
+
+      <li><br><span class="badge bg-primary">E</span>
+        <br> <br>
+        <a href="engineering/electrical-draughting.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Electrical Draughting</button>
+        </div>
+      </a></li>
+
+
+
+
+      <li><a href="engineering/electro-technology.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Eletro-Technology</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/electrical-trade-theory.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Electrical Trade Theory</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/electrotechnics.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Electrotechnics</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/engineering-drawing.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Engineering Drawing</button>
+        </div>
+      </a></li>
+
+      <br><br><br>
+
+
+      <li><a href="engineering/engineering-physics.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Engineering Physics</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/engineering-science.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Engineering Science</button>
+        </div>
+      </a></li>
+
+
+
+
+      <li><br><span class="badge bg-primary">F</span>
+        <br> <br>
+        <a href="engineering/fault-finding.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Fault Finding and Protective Devices</button>
+        </div>
+      </a></li>
+
+
+
+
+      <li><a href="engineering/fitting-and-machining.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Fitting and Machining</button>
+        </div>
+      </a></li>
+
+
+
+      <li><a href="engineering/fluid-mechanics.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Fluid Mechanics</button>
+        </div>
+      </a></li>
+
+
+      <li><br><span class="badge bg-primary">G</span>
+        <br><br>
+       <a href="engineering/general-draughting.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">General Draughting</button>
+        </div>
+      </a></li>
+
+
+      <li><br><span class="badge bg-primary">I</span>
+        <br><br>
+       <a href="engineering/industrial-electronics.html">
+        <div class="d-grid mb-2 ">
+          <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Industrial Electronics</button>
+        </div>
+      </a></li>
+
+
+
+
+     <li><a href="engineering/industrial-instruments.html">
+      <div class="d-grid mb-2 ">
+        <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Industrial Instruments</button>
+      </div>
+    </a></li>
+
+
+
+
+   <li><a href="engineering/installation-rules.html">
+    <div class="d-grid mb-2 ">
+      <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Installation Rules</button>
+    </div>
+  </a></li>
+
+
+
+
+ <li><a href="engineering/instrument-trade-theory.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Instrument Trade Theory</button>
+  </div>
+</a></li>
+
+
+
+<li><br><span class="badge bg-primary">L</span>
+  <br> <br>
+  <a href="engineering/logic-systems.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Logic Systems</button>
+  </div>
+</a></li>
+
+
+<li><br><span class="badge bg-primary">M</span>
+  <br> <br>
+  <a href="engineering/mathematics.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Mathematics</button>
+  </div>
+</a></li>
+
+
+<li><a href="engineering/mechanical-draughting.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Mechanical Draughting</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/mechanical-drawing-and-design.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Mechanical Drawing and Design</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/mechanotechnics.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Mechanotechnics</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/mechanotechnology.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Mechanotechnology</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/motor-trade-theory.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Motor Trade Theory</button>
+  </div>
+</a></li>
+
+
+
+<li><br><span class="badge bg-primary">P</span>
+  <br> <br>
+  <a href="engineering/pictorial-draughting.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Pictorial Draughting</button>
+  </div>
+</a></li>
+
+
+<li><a href="engineering/plant-operation-theory.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Plant Operation Theory</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/platers-theory.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Platers' Theory</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/plating-and-structural-steel-drawing.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Plating and Structural Steel Drawing</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/plumbing-theory.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Plumbing Theory</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/power-machines.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Power Machines</button>
+  </div>
+</a></li>
+
+
+<li><a href="engineering/production-and-quality-control.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Production and Quality Control</button>
+  </div>
+</a></li>
+
+
+<li><br><span class="badge bg-primary">Q</span>
+  <br><br>
+ <a href="engineering/quantity-surveying.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Quantity Surveying</button>
+  </div>
+</a></li>
+
+
+<li><br><span class="badge bg-primary">R</span>
+  <br><br>
+ <a href="engineering/radio-and-television.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Radio and Television Theory</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/radio-theory.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Radio Theory</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/rigging-theory.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Rigging Theory</button>
+  </div>
+</a></li>
+
+
+<li><br><span class="badge bg-primary">S</span>
+  <br><br>
+<a href="https://www.installationrules.co.za/" target="_blank">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Specialised Electrical Installation Codes</button>
+  </div>
+</a></li>
+
+
+<li><a href="engineering/strength-of-materials-and-structures.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Strength of Materials and Structures</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/structural-steel-detailing.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Structural Steel Detailing</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/supervisory-management.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Supervisory Management</button>
+  </div>
+</a></li>
+
+
+
+<li><br><span class="badge bg-primary">T</span>
+  <br><br>
+<a href="engineering/technical-illustration.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Technical Illustration</button>
+  </div>
+</a></li>
+
+
+<li><br><span class="badge bg-primary">W</span>
+  <br><br>
+<a href="engineering/waste-water-treatment-practice.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Waste-Water Treatment Practice</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/water-and-waste-water-treatment-practice.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Water and Waste-Water Treatment Practice</button>
+  </div>
+</a></li>
+
+
+
+<li><a href="engineering/water-treatment-practice.html">
+  <div class="d-grid mb-2 ">
+    <button class="mb-0 btn btn-white btn-lg text-start fw-medium">Water Treatment Practice</button>
+  </div>
+</a></li>
+
+
+
+
+
+</ul>
+
+
+         </div>
+          <!-- Table -->
+
+          <!-- End Table -->
+        </div>
+
+
+      </div>
+
+      <!-- Card -->
+
+      <!-- End Card -->
+
+      <!-- List -->
+
+      <!-- End List -->
+
+      <!-- CTA -->
+      <div class="container content-space-1 content-space-md-2">
+        <div class="w-lg-75 mx-lg-auto">
+          <div class="row align-items-sm-center">
+            <div class="col-sm-6 mb-5 mb-sm-0">
+              <div class="w-75 mx-auto">
+                <img
+                  class="img-fluid"
+                  src="./assets-front/svg/illustrations/oc-sending.svg"
+                  alt="Image Description" />
+              </div>
+            </div>
+            <!-- End Col -->
+
+            <div class="col-sm-6">
+              <div class="ps-sm-5">
+                <div class="mb-sm-5">
+                  <h3>Can't find what you are looking for?</h3>
+                </div>
+
+                <a
+                  class="link"
+                  href="other-subjects.html" target="_blank"
+                  >See other subjects <i class="bi-chevron-right small ms-1"></i
+                ></a>
+                <br><br>
+                <p>*Please note that we don't keep NCV subjects at the moment.</p>
+              </div>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
         </div>
       </div>
-      <br><br>
-      <!-- <form class="mt-5 d-flex flex-column flex-md-row form-group">
-        <input class="form-control form-control-lg h-100 mb-2 mb-md-0 mr-md-3" id="myInput" onkeyup="myFunction()"
-          name="help-search" placeholder="Search for subjects" type="search">
-      </form> -->
-
-
-      <!-- NEW SUBJECT TAG BELOW FOR FUTURE USE -->
-      <!-- <div class="badge badge-pill badge-warning">New</div> -->
-      <ul class="row justify-content-center" id="myUL" style="list-style-type:none; padding-left:0">
-        <div class="col-xl-8 col-lg-9 col-md-10">
-
-          <!-- <li> <span class="badge badge-primary badge-pill">A</span>
-            <br><br><a href="engineering/z-aircraft-maintenance-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Aircraft Maintenance Theory*
-                </h6>
-              </div>
-            </a>
-          </li> -->
-
-          <li>
-            <span class="badge badge-primary badge-pill">A</span>
-            <br><br><a href="engineering/aircraft-maintenance-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Aircraft Maintenance Theory
-                </h6>
-              </div>
-            </a>
-          </li>
-
-
-          <li>
-            <span class="badge badge-primary badge-pill">B</span>
-            <br><br><a href="engineering/brick-laying-and-plastering.html"
-              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Bricklaying and Plastering</h6>
-              </div>
-            </a>
-          </li>
-
-
-          <li><a href="engineering/building-administration.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Building Administration</h6>
-              </div>
-            </a></li>
-
-
-          <li> <a href="engineering/building-and-civil-technology.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Building and Civil Technology</h6>
-              </div>
-            </a></li>
-
-
-          <li><a href="engineering/building-and-structural-construction.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Building and Structural Construction</h6>
-              </div>
-            </a></li>
-
-
-          <li><a href="engineering/building-and-structural-surveying.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Building and Structural Surveying</h6>
-              </div>
-            </a></li>
-
-            <li><a href="engineering/building-draughting.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Building Draughting</h6>
-              </div>
-            </a></li>
-
-          <li> <a href="engineering/building-drawing.html"
-              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Building Drawing</h6>
-              </div>
-            </a></li>
-
-
-          <li><a href="engineering/building-science.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Building Science</h6>
-              </div>
-            </a></li>
-          <br>
-
-
-          <li>
-            <span class="badge badge-primary badge-pill">C</span>
-            <br><br>
-            <a href="engineering/chemical-plant-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Chemical Plant Operation
-                </h6>
-              </div>
-            </a>
-          </li>
-
-          <li><a href="engineering/chemical-technology.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Chemical Technology
-                </h6>
-              </div>
-            </a></li>
-
-
-          <li><a href="engineering/chemistry.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Chemistry
-                </h6>
-              </div>
-            </a></li>
-
-
-          <li><a href="engineering/communication-electronics.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Communication Electronics</h6>
-              </div>
-            </a></li>
-
-
-            <li><a href="engineering/computer-aided-draughting.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Computer-Aided Draughting</h6>
-              </div>
-            </a></li>
-
-
-          <li><a href="engineering/control-systems.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Control Systems</h6>
-              </div>
-            </a></li>
-
-
-
-          <li>
-            <br>
-            <span class="badge badge-primary badge-pill">D</span>
-            <br><br><a href="engineering/diesel-trade-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Diesel Trade Theory</h6>
-              </div>
-            </a>
-          </li>
-
-          <li><a href="engineering/digital-electronics.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Digital Electronics</h6>
-              </div>
-            </a></li>
-
-
-
-
-          <li>
-            <br>
-            <span class="badge badge-primary badge-pill">E</span>
-            <br><br>
-            <a href="engineering/electrical-draughting.html"
-              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Electrical Draughting</h6>
-              </div>
-            </a>
-          </li>
-
-          <li><a href="engineering/electro-technology.html"
-              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Eletro-Technology</h6>
-              </div>
-            </a></li>
-
-
-            <li><a href="engineering/electrical-trade-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Electrical Trade Theory</h6>
-              </div>
-            </a></li>
-
-
-          <li><a href="engineering/electrotechnics.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Electrotechnics</h6>
-              </div>
-            </a></li>
-
-
-
-
-          <li><a href="engineering/engineering-drawing.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Engineering Drawing</h6>
-              </div>
-            </a></li>
-
-
-
-
-          <li><a href="engineering/engineering-physics.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Engineering Physics</h6>
-              </div>
-            </a></li>
-
-
-
-
-          <li><a href="engineering/engineering-science.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Engineering Science</h6>
-              </div>
-            </a></li>
-
-
-
-
-          <li>
-            <br>
-            <span class="badge badge-primary badge-pill">F</span>
-            <br><br>
-            <a href="engineering/fault-finding.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Fault Finding and Protective Devices</h6>
-              </div>
-            </a>
-          </li>
-
-
-
-
-          <li><a href="engineering/fitting-and-machining.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Fitting and Machining</h6>
-              </div>
-            </a></li>
-
-
-
-
-          <li><a href="engineering/fluid-mechanics.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Fluid Mechanics</h6>
-              </div>
-            </a></li>
-
-
-            <li>
-              <br>
-              <span class="badge badge-primary badge-pill">G</span>
-              <br><br>
-              <a href="engineering/general-draughting.html"
-                class="card card-body px-3 py-4 flex-sm-row justify-content-between  mb-2 mb-sm-3">
-                <div class="col-auto col-md">
-                  <h6 class="mb-0">General Draughting</h6>
-                </div>
+      <!-- End CTA -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary-dark border-top border-white-10">
+      <div class="container">
+        <div class="row content-space-1">
+          <div class="col-lg-3 mb-7 mb-lg-0">
+            <!-- Logo -->
+            <div class="mb-5">
+              <a class="navbar-brand" href="./index.html" aria-label="Space">
+                <img
+                  class="navbar-brand-logo"
+                  src="./assets-front/svg/logos/logo-white.svg"
+                  alt="Image Description"
+                />
               </a>
+            </div>
+            <!-- End Logo -->
+
+            <!-- Button Group -->
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-soft-light btn-sm"
+                id="selectLanguage"
+                aria-expanded="false"
+              >
+                <span class="d-flex align-items-center">
+                  <img
+                    class="avatar avatar-xss avatar-circle me-2"
+                    src="./assets-front/vendor/flag-icon-css/flags/1x1/za.svg"
+                    alt="Image description"
+                    width="16"
+                  />
+                  <span>South Africa (ZA)</span>
+                </span>
+              </button>
+            </div>
+            <!-- End Button Group -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-sm mb-7 mb-sm-0">
+            <span class="text-cap text-primary-light">Resources</span>
+
+            <!-- List -->
+            <ul class="list-unstyled list-py-1 mb-0">
+              <li><a class="link-sm link-light" href="information.html">Guidance</a></li>
+              <li><a class="link-sm link-light" >Tutors<span class="badge bg-warning text-dark rounded-pill ms-2">Coming soon</span></a></a></li>
+
+
+            </ul>
+            <!-- End List -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-sm mb-7 mb-sm-0">
+            <span class="text-cap text-primary-light">Company</span>
+
+            <!-- List -->
+            <ul class="list-unstyled list-py-1 mb-0">
             </li>
+            <li><a class="link-sm link-light" href="contact.html">Contact Us</a></li>
+              <li>
+                <a class="link-sm link-light" href="https://g.page/r/CUjjF0Kxk2EHEAg/review"
+                target="_blank"
+                  >Leave us a review <i class="bi-box-arrow-up-right ms-1"></i
+                ></a>
 
 
-          <li>
-            <br>
-            <span class="badge badge-primary badge-pill">I</span>
-            <br><br><a href="engineering/industrial-electronics.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Industrial Electronics</h6>
-              </div>
-            </a>
-          </li>
+            </ul>
+            <!-- End List -->
+          </div>
+          <!-- End Col -->
 
+          <div class="col-sm">
+            <span class="text-cap text-primary-light">Subjects</span>
 
+            <!-- List -->
+            <ul class="list-unstyled list-py-1 mb-0">
+              <li><a class="link-sm link-light" href="business-subject-list.html">Business Studies</a></li>
+              <li><a class="link-sm link-light" href="engineering-subject-list.html">Engineering Studies</a></li>
 
-          <li><a href="engineering/industrial-instruments.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Industrial Instruments</h6>
-            </div>
-          </a></li>
+              </li>
+            </ul>
+            <!-- End List -->
+          </div>
+          <!-- End Col -->
 
+          <div class="col-sm">
+            <span class="text-cap text-primary-light">Legal</span>
 
+            <!-- List -->
+            <ul class="list-unstyled list-py-1 mb-5">
+              <li><a class="link-sm link-light" href="legal-terms.html">Terms and Conditions</a></li>
 
-          <li><a href="engineering/installation-rules.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Installation Rules</h6>
-              </div>
-            </a></li>
+            </ul>
+            <!-- End List -->
 
 
-
-          <li><a href="engineering/instrument-trade-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Instrument Trade Theory</h6>
-              </div>
-            </a></li>
-
-
-
-          <li><br>
-            <span class="badge badge-primary badge-pill">L</span>
-            <br><br>
-            <a href="engineering/logic-systems.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Logic Systems</h6>
-              </div>
-            </a>
-          </li>
-
-
-
-
-          <li><br>
-            <span class="badge badge-primary badge-pill">M</span>
-            <br><br>
-            <a href="engineering/mathematics.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Mathematics</h6>
-              </div>
-            </a>
-          </li>
-
-
-
-
-          <li><a href="engineering/mechanical-draughting.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Mechanical Draughting</h6>
-              </div>
-            </a></li>
-
-
-
-
-
-          <li><a href="engineering/mechanical-drawing-and-design.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Mechanical Drawing and Design</h6>
-              </div>
-            </a></li>
-
-
-
-
-
-          <li><a href="engineering/mechanotechnics.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Mechanotechnics</h6>
-              </div>
-            </a></li>
-
-
-
-
-          <li><a href="engineering/mechanotechnology.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Mechanotechnology</h6>
-              </div>
-            </a></li>
-
-
-          <li><a href="engineering/motor-trade-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Motor Trade Theory
-                </h6>
-              </div>
-            </a></li>
-
-
-
-          <li>
-            <br>
-            <span class="badge badge-primary badge-pill">P</span>
-            <br><br>
-            <a href="engineering/pictorial-draughting.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Pictorial Draughting
-                </h6>
-              </div>
-            </a>
-          </li>
-
-
-          <li> <a href="engineering/plant-operation-theory.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Plant Operation Theory
-              </h6>
-            </div>
-          </a>
-        </li>
-
-
-          <li> <a href="engineering/platers-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Platers' Theory
-                </h6>
-              </div>
-            </a>
-          </li>
-
-
-
-          <li> <a href="engineering/plating-and-structural-steel-drawing.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Plating and Structural Steel Drawing
-                </h6>
-              </div>
-            </a>
-          </li>
-
-
-          <li> <a href="engineering/plumbing-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Plumbing Theory</h6>
-              </div>
-            </a>
-          </li>
-
-
-
-
-          <li><a href="engineering/power-machines.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Power Machines</h6>
-              </div>
-            </a></li>
-
-            <li><a href="engineering/production-and-quality-control.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Production and Quality Control</h6>
-              </div>
-            </a></li>
-
-
-
-
-          <li>
-            <br>
-            <span class="badge badge-primary badge-pill">Q</span>
-            <br><br>
-            <a href="engineering/quantity-surveying.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Quantity Surveying</h6>
-              </div>
-            </a>
-          </li>
-
-
-
-
-          <li>
-            <br>
-            <span class="badge badge-primary badge-pill">R</span>
-            <br><br>
-            <a href="engineering/radio-and-television.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Radio and Television Theory</h6>
-              </div>
-            </a>
-          </li>
-
-
-          <li>
-
-            <a href="engineering/radio-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Radio Theory
-                </h6>
-              </div>
-            </a>
-          </li>
-
-
-
-          <li>
-
-            <a href="engineering/rigging-theory.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Rigging Theory
-                </h6>
-              </div>
-            </a>
-          </li>
-
-
-
-
-          <li>
-            <br>
-            <span class="badge badge-primary badge-pill">S</span>
-            <br><br>
-            <a href="https://www.installationrules.co.za/" target="_blank"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Specialised Electrical Installation Codes</h6>
-              </div>
-            </a>
-          </li>
-
-          <li><a href="engineering/strength-of-materials-and-structures.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Strength of Materials and Structures</h6>
-            </div>
-          </a></li>
-
-
-          <li><a href="engineering/structural-steel-detailing.html"
-            class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-            <div class="col-auto col-md">
-              <h6 class="mb-0">Structural Steel Detailing</h6>
-            </div>
-          </a></li>
-
-
-
-          <li><a href="engineering/supervisory-management.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Supervisory Management</h6>
-              </div>
-            </a></li>
-
-
-
-            <li>
-              <br>
-              <span class="badge badge-primary badge-pill">T</span>
-              <br><br>
-              <a href="engineering/technical-illustration.html"
-                class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-                <div class="col-auto col-md">
-                  <h6 class="mb-0">Technical Illustration
-                  </h6>
-                </div>
-              </a>
-            </li>
-
-
-          <li>
-            <br>
-            <span class="badge badge-primary badge-pill">W</span>
-            <br><br>
-            <a href="engineering/waste-water-treatment-practice.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Waste-Water Treatment Practice
-                </h6>
-              </div>
-            </a>
-          </li>
-
-          <li> <a href="engineering/water-and-waste-water-treatment-practice.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Water and Waste-Water Treatment Practice
-                </h6>
-              </div>
-            </a>
-          </li>
-
-
-          <li> <a href="engineering/water-treatment-practice.html"
-              class="card card-body px-3 py-4 flex-sm-row  justify-content-between  mb-2 mb-sm-3">
-              <div class="col-auto col-md">
-                <h6 class="mb-0">Water Treatment Practice
-                </h6>
-              </div>
-            </a>
-          </li>
-
-
+          </div>
+          <!-- End Col -->
         </div>
-      </ul>
-      <br><br>
-      <div class="row justify-content-center mt-3 mt-md-4">
-        <div class="col-auto">
-          <div class="alert bg-secondary">Can't find the subject you're looking for? <a href="/other-subjects.html"
-              target="_blank">Check here
-            </a>
+        <!-- End Row -->
+
+        <div class="border-top border-white-10"></div>
+
+        <div class="row align-items-md-end py-5">
+          <div class="col-md mb-3 mb-md-0">
+            <p class="text-white mb-0">© Mytvet SA. 2023 | All rights reserved.</p>
+          </div>
+
+          <div class="col-md d-md-flex justify-content-md-end">
+            <!-- Socials -->
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a
+                  class="btn btn-icon btn-sm btn-soft-light rounded-circle"
+                  href="https://www.facebook.com/mytvetsa/" target="_blank"
+                >
+                  <i class="bi-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a
+                  class="btn btn-icon btn-sm btn-soft-light rounded-circle"
+                  href="https://twitter.com/MytvetSA" target="_blank"
+                >
+                  <i class="bi-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a
+                  class="btn btn-icon btn-sm btn-soft-light rounded-circle"
+                  href="https://www.instagram.com/mytvetsa/" target="_blank"
+                >
+                  <i class="bi-instagram"></i>
+                </a>
+              </li>
+
+            </ul>
+            <!-- End Socials -->
           </div>
         </div>
       </div>
-      <br><br>
+    </footer>
+    <!-- ========== END FOOTER ========== -->
+
+    <!-- ========== SECONDARY CONTENTS ========== -->
+    <!-- Sign Up -->
+    <div
+      class="modal fade"
+      id="signupModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true">
+      <div
+        class="modal-dialog modal-dialog-centered"
+        role="document">
+        <div class="modal-content">
+          <!-- Header -->
+          <div class="modal-close">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <!-- End Header -->
+
+          <!-- Body -->
+          <div class="modal-body p-sm-5">
+            <!-- Log in -->
+            <div
+              id="signupModalFormLogin"
+              style="display: none; opacity: 0">
+              <!-- Heading -->
+              <div class="text-center mb-7">
+                <h4>Log in</h4>
+                <p
+                  >Don't have an account yet?
+                  <a
+                    class="js-animation-link"
+                    href="javascript:;"
+                    role="button"
+                    data-hs-show-animation-options='{
+                           "targetSelector": "#signupModalFormSignup",
+                           "groupName": "idForm"
+                         }'
+                    >Sign up here</a
+                  >
+                </p>
+              </div>
+              <!-- End Heading -->
+
+              <div class="d-grid gap-2">
+                <a
+                  class="btn btn-white btn-lg"
+                  href="#">
+                  <span
+                    class="d-flex justify-content-center align-items-center">
+                    <img
+                      class="avatar avatar-xss me-2"
+                      src="./assets-front/svg/brands/google-icon.svg"
+                      alt="Image Description" />
+                    Log in with Google
+                  </span>
+                </a>
+
+                <a
+                  class="js-animation-link btn btn-primary btn-lg"
+                  href="#"
+                  data-hs-show-animation-options='{
+                         "targetSelector": "#signupModalFormLoginWithEmail",
+                         "groupName": "idForm"
+                       }'
+                  >Log in with Email</a
+                >
+              </div>
+            </div>
+            <!-- End Log in -->
+
+            <!-- Log in with Modal -->
+            <div
+              id="signupModalFormLoginWithEmail"
+              style="display: none; opacity: 0">
+              <!-- Heading -->
+              <div class="text-center mb-7">
+                <h4>Log in</h4>
+                <p
+                  >Don't have an account yet?
+                  <a
+                    class="js-animation-link"
+                    href="javascript:;"
+                    role="button"
+                    data-hs-show-animation-options='{
+                           "targetSelector": "#signupModalFormSignup",
+                           "groupName": "idForm"
+                         }'
+                    >Sign up here</a
+                  >
+                </p>
+              </div>
+              <!-- End Heading -->
+
+              <form
+                class="js-validate needs-validation"
+                novalidate>
+                <!-- Form -->
+                <div class="mb-3">
+                  <label
+                    class="form-label"
+                    for="signupModalFormLoginEmail"
+                    >Your email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control form-control-lg"
+                    name="email"
+                    id="signupModalFormLoginEmail"
+                    placeholder="email@site.com"
+                    aria-label="email@site.com"
+                    required />
+                  <span class="invalid-feedback"
+                    >Please enter a valid email address.</span
+                  >
+                </div>
+                <!-- End Form -->
+
+                <!-- Form -->
+                <div class="mb-3">
+                  <div
+                    class="d-flex justify-content-between align-items-center">
+                    <label
+                      class="form-label"
+                      for="signupModalFormLoginPassword"
+                      >Password</label
+                    >
+
+                    <a
+                      class="js-animation-link form-label-link"
+                      href="javascript:;"
+                      data-hs-show-animation-options='{
+                         "targetSelector": "#signupModalFormResetPassword",
+                         "groupName": "idForm"
+                       }'
+                      >Forgot Password?</a
+                    >
+                  </div>
+
+                  <input
+                    type="password"
+                    class="form-control form-control-lg"
+                    name="password"
+                    id="signupModalFormLoginPassword"
+                    placeholder="8+ characters required"
+                    aria-label="8+ characters required"
+                    required
+                    minlength="8" />
+                  <span class="invalid-feedback"
+                    >Please enter a valid password.</span
+                  >
+                </div>
+                <!-- End Form -->
+
+                <div class="d-grid mb-3">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg"
+                    >Log in</button
+                  >
+                </div>
+              </form>
+            </div>
+            <!-- End Log in with Modal -->
+
+            <!-- Sign up -->
+            <div id="signupModalFormSignup">
+              <!-- Heading -->
+              <div class="text-center mb-7">
+                <h4>Sign up</h4>
+                <p
+                  >Already have an account?
+                  <a
+                    class="js-animation-link"
+                    href="javascript:;"
+                    role="button"
+                    data-hs-show-animation-options='{
+                           "targetSelector": "#signupModalFormLogin",
+                           "groupName": "idForm"
+                         }'
+                    >Log in here</a
+                  >
+                </p>
+              </div>
+              <!-- End Heading -->
+
+              <div class="d-grid gap-3">
+                <a
+                  class="btn btn-white btn-lg"
+                  href="#">
+                  <span
+                    class="d-flex justify-content-center align-items-center">
+                    <img
+                      class="avatar avatar-xss me-2"
+                      src="./assets-front/svg/brands/google-icon.svg"
+                      alt="Image Description" />
+                    Sign up with Google
+                  </span>
+                </a>
+
+                <a
+                  class="js-animation-link btn btn-primary btn-lg"
+                  href="#"
+                  data-hs-show-animation-options='{
+                         "targetSelector": "#signupModalFormSignupWithEmail",
+                         "groupName": "idForm"
+                       }'
+                  >Sign up with Email</a
+                >
+
+                <div class="text-center">
+                  <p class="small mb-0"
+                    >By continuing you agree to our
+                    <a href="./page-terms.html">Terms and Conditions</a></p
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- End Sign up -->
+
+            <!-- Sign up with Modal -->
+            <div
+              id="signupModalFormSignupWithEmail"
+              style="display: none; opacity: 0">
+              <!-- Heading -->
+              <div class="text-center mb-7">
+                <h4>Sign up</h4>
+                <p
+                  >Already have an account?
+                  <a
+                    class="js-animation-link"
+                    href="javascript:;"
+                    role="button"
+                    data-hs-show-animation-options='{
+                           "targetSelector": "#signupModalFormLogin",
+                           "groupName": "idForm"
+                         }'
+                    >Log in here</a
+                  >
+                </p>
+              </div>
+              <!-- End Heading -->
+
+              <form
+                class="js-validate need-validate"
+                novalidate>
+                <!-- Form -->
+                <div class="mb-3">
+                  <label
+                    class="form-label"
+                    for="signupModalFormSignupEmail"
+                    >Your email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control form-control-lg"
+                    name="email"
+                    id="signupModalFormSignupEmail"
+                    placeholder="email@site.com"
+                    aria-label="email@site.com"
+                    required />
+                  <span class="invalid-feedback"
+                    >Please enter a valid email address.</span
+                  >
+                </div>
+                <!-- End Form -->
+
+                <!-- Form -->
+                <div class="mb-3">
+                  <label
+                    class="form-label"
+                    for="signupModalFormSignupPassword"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control form-control-lg"
+                    name="password"
+                    id="signupModalFormSignupPassword"
+                    placeholder="8+ characters required"
+                    aria-label="8+ characters required"
+                    required />
+                  <span class="invalid-feedback"
+                    >Your password is invalid. Please try again.</span
+                  >
+                </div>
+                <!-- End Form -->
+
+                <!-- Form -->
+                <div
+                  class="mb-3"
+                  data-hs-validation-validate-class>
+                  <label
+                    class="form-label"
+                    for="signupModalFormSignupConfirmPassword"
+                    >Confirm password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control form-control-lg"
+                    name="confirmPassword"
+                    id="signupModalFormSignupConfirmPassword"
+                    placeholder="8+ characters required"
+                    aria-label="8+ characters required"
+                    required
+                    data-hs-validation-equal-field="#signupModalFormSignupPassword" />
+                  <span class="invalid-feedback"
+                    >Password does not match the confirm password.</span
+                  >
+                </div>
+                <!-- End Form -->
+
+                <div class="d-grid mb-3">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg"
+                    >Sign up</button
+                  >
+                </div>
+
+                <div class="text-center">
+                  <p class="small mb-0"
+                    >By continuing you agree to our
+                    <a href="#">Terms and Conditions</a></p
+                  >
+                </div>
+              </form>
+            </div>
+            <!-- End Sign up with Modal -->
+
+            <!-- Reset Password -->
+            <div
+              id="signupModalFormResetPassword"
+              style="display: none; opacity: 0">
+              <!-- Heading -->
+              <div class="text-center mb-7">
+                <h4>Forgot password?</h4>
+                <p
+                  >Enter the email address you used when you joined and we'll
+                  send you instructions to reset your password.</p
+                >
+              </div>
+              <!-- En dHeading -->
+
+              <form
+                class="js-validate need-validate"
+                novalidate>
+                <div class="mb-3">
+                  <!-- Form -->
+                  <div
+                    class="d-flex justify-content-between align-items-center">
+                    <label
+                      class="form-label"
+                      for="signupModalFormResetPasswordEmail"
+                      tabindex="0"
+                      >Your email</label
+                    >
+
+                    <a
+                      class="js-animation-link form-label-link"
+                      href="javascript:;"
+                      data-hs-show-animation-options='{
+                           "targetSelector": "#signupModalFormLogin",
+                           "groupName": "idForm"
+                         }'>
+                      <i class="bi-chevron-left small me-1"></i> Back to Log in
+                    </a>
+                  </div>
+                  <!-- End Form -->
+
+                  <!-- Form -->
+                  <div class="mb-3">
+                    <input
+                      type="email"
+                      class="form-control form-control-lg"
+                      name="email"
+                      id="signupModalFormResetPasswordEmail"
+                      tabindex="1"
+                      placeholder="Enter your email address"
+                      aria-label="Enter your email address"
+                      required />
+                    <span class="invalid-feedback"
+                      >Please enter a valid email address.</span
+                    >
+                  </div>
+                  <!-- End Form -->
+
+                  <div class="d-grid">
+                    <button
+                      type="submit"
+                      class="btn btn-primary btn-lg"
+                      >Submit</button
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End Reset Password -->
+          </div>
+          <!-- End Body -->
+
+          <!-- Footer -->
+          <div class="modal-footer d-block text-center py-sm-5">
+            <small class="text-cap mb-4"
+              >Trusted by the world's best teams</small
+            >
+
+            <div class="w-85 mx-auto">
+              <div class="row justify-content-between">
+                <div class="col">
+                  <img
+                    class="img-fluid"
+                    src="./assets-front/svg/brands/gitlab-gray.svg"
+                    alt="Logo" />
+                </div>
+                <!-- End Col -->
+
+                <div class="col">
+                  <img
+                    class="img-fluid"
+                    src="./assets-front/svg/brands/fitbit-gray.svg"
+                    alt="Logo" />
+                </div>
+                <!-- End Col -->
+
+                <div class="col">
+                  <img
+                    class="img-fluid"
+                    src="./assets-front/svg/brands/flow-xo-gray.svg"
+                    alt="Logo" />
+                </div>
+                <!-- End Col -->
+
+                <div class="col">
+                  <img
+                    class="img-fluid"
+                    src="./assets-front/svg/brands/layar-gray.svg"
+                    alt="Logo" />
+                </div>
+                <!-- End Col -->
+              </div>
+            </div>
+            <!-- End Row -->
+          </div>
+          <!-- End Footer -->
+        </div>
+      </div>
     </div>
 
-  </section>
+    <!-- Go To -->
+    <a
+      class="js-go-to go-to position-fixed"
+      href="javascript:;"
+      style="visibility: hidden"
+      data-hs-go-to-options='{
+         "offsetTop": 700,
+         "position": {
+           "init": {
+             "right": "2rem"
+           },
+           "show": {
+             "bottom": "2rem"
+           },
+           "hide": {
+             "bottom": "-2rem"
+           }
+         }
+       }'>
+      <i class="bi-chevron-up"></i>
+    </a>
+    <!-- ========== END SECONDARY CONTENTS ========== -->
 
+    <!-- JS Global Compulsory  -->
+    <script src="./assets-front/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- JS Implementing Plugins -->
+    <script src="./assets-front/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+    <script src="./assets-front/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script>
+    <script src="./assets-front/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
 
+    <!-- JS Space -->
+    <script src="./assets-front/js/theme.min.js"></script>
 
+    <!-- JS Plugins Init. -->
+    <script>
+      (function () {
+        // INITIALIZATION OF MEGA MENU
+        // =======================================================
+        const megaMenu = new HSMegaMenu(".js-mega-menu", {
+          desktop: {
+            position: "left",
+          },
+        });
 
+        // INITIALIZATION OF SHOW ANIMATIONS
+        // =======================================================
+        new HSShowAnimation(".js-animation-link");
 
+        // INITIALIZATION OF BOOTSTRAP VALIDATION
+        // =======================================================
+        HSBsValidation.init(".js-validate", {
+          onSubmit: (data) => {
+            data.event.preventDefault();
+            alert("Submited");
+          },
+        });
 
-  <!-- Required vendor scripts (Do not remove) -->
-  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/js/popper.min.js"></script>
-  <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-
-  <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
-
-  <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
-  <script type="text/javascript" src="assets/js/aos.js"></script>
-  <!-- Clipboard (copies content from browser into OS clipboard) -->
-  <script type="text/javascript" src="assets/js/clipboard.min.js"></script>
-  <!-- Fancybox (handles image and video lightbox and galleries) -->
-  <script type="text/javascript" src="assets/js/jquery.fancybox.min.js"></script>
-  <!-- Flatpickr (calendar/date/time picker UI) -->
-  <script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
-  <!-- Flickity (handles touch enabled carousels and sliders) -->
-  <script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
-  <!-- Ion rangeSlider (flexible and pretty range slider elements) -->
-  <script type="text/javascript" src="assets/js/ion.rangeSlider.min.js"></script>
-  <!-- Isotope (masonry layouts and filtering) -->
-  <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
-  <!-- jarallax (parallax effect and video backgrounds) -->
-  <script type="text/javascript" src="assets/js/jarallax.min.js"></script>
-  <script type="text/javascript" src="assets/js/jarallax-video.min.js"></script>
-  <script type="text/javascript" src="assets/js/jarallax-element.min.js"></script>
-  <!-- jQuery Countdown (displays countdown text to a specified date) -->
-  <script type="text/javascript" src="assets/js/jquery.countdown.min.js"></script>
-  <!-- jQuery smartWizard facilitates steppable wizard content -->
-  <script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
-  <!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
-  <script type="text/javascript" src="assets/js/plyr.polyfilled.min.js"></script>
-  <!-- Prism (displays formatted code boxes) -->
-  <script type="text/javascript" src="assets/js/prism.js"></script>
-  <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
-  <script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
-  <!-- Smooth scroll (animation to links in-page)-->
-  <script type="text/javascript" src="assets/js/smooth-scroll.polyfills.min.js"></script>
-  <!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
-  <script type="text/javascript" src="assets/js/svg-injector.umd.production.js"></script>
-  <!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
-  <script type="text/javascript" src="assets/js/twitterFetcher_min.js"></script>
-  <!-- Typed text (animated typing effect)-->
-  <script type="text/javascript" src="assets/js/typed.min.js"></script>
-  <!-- Required theme scripts (Do not remove) -->
-  <script type="text/javascript" src="assets/js/theme.js"></script>
-  <!-- Removes page load animation when window is finished loading -->
-  <script type="text/javascript">
-    window.addEventListener("load", function () { document.querySelector('body').classList.add('loaded'); });
-  </script>
-
-</body>
-
+        // INITIALIZATION OF GO TO
+        // =======================================================
+        new HSGoTo(".js-go-to");
+      })();
+    </script>
+  </body>
 </html>
