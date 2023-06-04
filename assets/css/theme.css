@@ -5046,7 +5046,7 @@ a.badge-info.focus {
 
 .badge-warning {
   color: #2c3038;
-  background-color: #afeeee;
+  background-color: #fdfd96;
 }
 a.badge-warning:hover,
 a.badge-warning:focus {
@@ -5121,7 +5121,7 @@ a.badge-primary-2.focus {
 
 .badge-primary-3 {
   color: #fff;
-  background-color: #192d35;
+  background-color: #fdfd96;
 }
 a.badge-primary-3:hover,
 a.badge-primary-3:focus {
