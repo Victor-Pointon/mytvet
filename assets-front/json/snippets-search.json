@@ -205,7 +205,7 @@
     "link": "./form-layouts-subscribe.html"
   },
   {
-    "component": "Contact",
+    "component": "contact.html",
     "category": "Contact Sections / Footer",
     "link": "./contact-sections.html"
   },
