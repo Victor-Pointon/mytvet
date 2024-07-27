@@ -6,3 +6,28 @@
 /*  in your page by adding a reference to assets/css/custom.css in the head of each page.
 /*
 */
+
+address h2 {
+    margin-bottom: 0;
+  }
+
+  .docs-dl h2 {
+    margin-bottom: 0;
+  }
+
+  .alert h2 {
+    margin-bottom: 0;
+  }
+  
+  .fancybox-error h2 {
+    color: #444;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fancybox-share h2 {
+    margin: 0;
+    padding: 0;
+  }
