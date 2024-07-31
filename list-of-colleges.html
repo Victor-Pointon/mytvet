@@ -5,14 +5,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta
-      name="description"
-      content="A collection of past exam papers and memos for TVET, FET Colleges in South Africa for courses like Electrical Engineering, Civil and Build Engineering, Mechanical Engineering, Boiler Making, Installation Rules. We have subjects such as Mathematics, Engineering Science, Industrial Electronics, Electrotechnics Radio & Television Theory, Mechanical Drawing and more!"
-    />
+    name="description"
+    content="A collection of past exam papers and memos for TVET, FET Colleges in South Africa for courses like Electrical Engineering, Civil and Build Engineering, Mechanical Engineering, Boiler Making, Installation Rules. We have subjects such as Mathematics, Engineering Science, Industrial Electronics, Electrotechnics Radio & Television Theory, Mechanical Drawing and more!"
+  />
 
     <!-- Title -->
-    <title>Mytvet SA </title>
+    <title>List of Colleges</title>
+    <link rel="canonical" href="https://www.mytvet.co.za/list-of-colleges">
 
-    <!-- TAGs FROM OLD WEBSITE -->
+     <!-- TAGS FROM OLD WEBSITE -->
+
+
 
     <!-- Facebook OG image -->
   <meta property="fb:app_id" content="1126877911022976" />
@@ -45,22 +48,20 @@
     gtag('config', 'UA-163493189-1');
   </script>
 
-  <!-- Mailchimp -->
-  <script
-    id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/aac5d945afb7b0d56ca019fd6/7548fc6baefc695c0654f03ad.js");</script>
+ <!-- Microsoft Clarity tag-->
+  <script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "n8ep1vmvsw");
+  </script>
 
-
-
-<!-- Final Test -->
 
 <!-- TAGS FROM OLD WEBSITE END-->
 
-
-
-
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="./favicon.png">
-
     <!-- Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
@@ -76,10 +77,6 @@
       rel="stylesheet"
       href="./assets-front/vendor/hs-mega-menu/dist/hs-mega-menu.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="./assets-front/vendor/swiper/swiper-bundle.min.css"
-    />
 
     <!-- CSS Space Template -->
     <link rel="stylesheet" href="./assets-front/css/theme.min.css" />
@@ -89,146 +86,484 @@
     <!-- ========== HEADER ========== -->
     <header
       id="header"
-      class="navbar navbar-expand-lg navbar-end navbar-absolute-top navbar-show-hide navbar-dark"
-      data-hs-header-options='{
-              "fixMoment": 500,
-              "fixEffect": "slide"
-            }'
+      class="navbar navbar-expand-lg navbar-light navbar-end bg-white"
     >
-      
+      <div class="container">
+        <nav class="js-mega-menu navbar-nav-wrap">
+          <!-- Default Logo -->
+          <a class="navbar-brand" href="./index.html" aria-label="Space">
+            <img
+              class="navbar-brand-logo"
+              src="./assets-front/svg/logos/logo.svg"
+              alt="Image Description"
+            />
+          </a>
+          <!-- End Default Logo -->
+
+          <!-- Toggler -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-default">
+              <i class="bi-list"></i>
+            </span>
+            <span class="navbar-toggler-toggled">
+              <i class="bi-x"></i>
+            </span>
+          </button>
+          <!-- End Toggler -->
+
+          <!-- Collapse -->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <!-- Landings -->
+              <li
+                class="hs-has-mega-menu nav-item"
+                data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "maxWidth": "30rem"
+                    }
+                  }'
+              >
+                <a
+                  id="landingsMegaMenu"
+                  class="hs-mega-menu-invoker nav-link"
+                  aria-current="page"
+                  href="index.html"
+                  role="button"
+                  aria-expanded="false"
+                  >Home</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-mega-menu hs-position-right-fix"
+
+
+                >
+
+              </li>
+              <!-- End Landings -->
+
+              <!-- Pages -->
+              <li class="hs-has-mega-menu nav-item">
+                <a
+                  id="pagesMegaMenu"
+                  class="hs-mega-menu-invoker nav-link"
+                  href="information.html"
+                  role="button"
+                  aria-expanded="false"
+                  >Guidance</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-mega-menu hs-position-right w-100"
+
+                >
+
+              </li>
+              <!-- End Pages -->
+
+              <!-- Blog -->
+              <li class="hs-has-sub-menu nav-item">
+                <a href="contact.html"
+                  id="blogMegaMenu"
+                  class="hs-mega-menu-invoker nav-link"
+                 
+                  role="button"
+                  aria-expanded="false"
+                  >Contact Us</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-sub-menu"
+                  aria-labelledby="blogMegaMenu"
+
+                >
+
+
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+
+              <li class="hs-has-sub-menu nav-item">
+                <a href="exam-timetable.html"
+                  id="blogMegaMenu"
+                  class="hs-mega-menu-invoker nav-link active"
+                   
+                  role="button"
+                  aria-expanded="false"
+                  >Exam Timetable</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-sub-menu"
+                  aria-labelledby="blogMegaMenu"
+
+                >
+
+
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+              <!-- End Blog -->
+
+              <!-- Docs -->
+              <li
+                class="hs-has-mega-menu nav-item"
+                data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "maxWidth": "20rem"
+                    }
+                  }'
+              >
+                <a
+                  id="docsMegaMenu"
+                  class="hs-mega-menu-invoker nav-link dropdown-toggle"
+                   
+                  role="button"
+                  aria-expanded="false"
+                  >Papers</a
+                >
+
+                <!-- Mega Menu -->
+                <div
+                  class="hs-mega-menu hs-position-right dropdown-menu"
+                  aria-labelledby="docsMegaMenu"
+                  style="min-width: 20rem"
+                >
+                  <!-- Link -->
+                  <a
+                    class="navbar-dropdown-menu-media-link"
+                    href="business-subject-list.html"
+                  >
+                    <div class="d-flex">
+                      <div class="flex-shrink-0">
+                        <span class="svg-icon svg-icon-sm text-primary">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              opacity="0.3"
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M4.85714 1H11.7364C12.0911 1 12.4343 1.12568 12.7051 1.35474L17.4687 5.38394C17.8057 5.66895 18 6.08788 18 6.5292V19.0833C18 20.8739 17.9796 21 16.1429 21H4.85714C3.02045 21 3 20.8739 3 19.0833V2.91667C3 1.12612 3.02045 1 4.85714 1ZM7 13C7 12.4477 7.44772 12 8 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H11C11.5523 18 12 17.5523 12 17C12 16.4477 11.5523 16 11 16H8Z"
+                              fill="#035A4B"
+                            />
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M6.85714 3H14.7364C15.0911 3 15.4343 3.12568 15.7051 3.35474L20.4687 7.38394C20.8057 7.66895 21 8.08788 21 8.5292V21.0833C21 22.8739 20.9796 23 19.1429 23H6.85714C5.02045 23 5 22.8739 5 21.0833V4.91667C5 3.12612 5.02045 3 6.85714 3ZM7 13C7 12.4477 7.44772 12 8 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H11C11.5523 18 12 17.5523 12 17C12 16.4477 11.5523 16 11 16H8Z"
+                              fill="#035A4B"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+
+                      <div class="flex-grow-1 ms-3">
+                        <span class="navbar-dropdown-menu-media-title"
+                          >Business</span
+                        >
+                        <p class="navbar-dropdown-menu-media-desc">
+                          View all Engineering subjects
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- End Link -->
+
+                  <div class="dropdown-divider"></div>
+
+                  <!-- Link -->
+                  <a
+                    class="navbar-dropdown-menu-media-link"
+                    href="engineering-subject-list.html"
+                  >
+                    <div class="d-flex">
+                      <div class="flex-shrink-0">
+                        <span class="svg-icon svg-icon-sm text-primary">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              opacity="0.3"
+                              d="M21 2H13C12.4 2 12 2.4 12 3V13C12 13.6 12.4 14 13 14H21C21.6 14 22 13.6 22 13V3C22 2.4 21.6 2 21 2ZM15.7 8L14 10.1V5.80005L15.7 8ZM15.1 4H18.9L17 6.40002L15.1 4ZM17 9.59998L18.9 12H15.1L17 9.59998ZM18.3 8L20 5.90002V10.2L18.3 8ZM9 2H3C2.4 2 2 2.4 2 3V21C2 21.6 2.4 22 3 22H9C9.6 22 10 21.6 10 21V3C10 2.4 9.6 2 9 2ZM4.89999 12L4 14.8V9.09998L4.89999 12ZM4.39999 4H7.60001L6 8.80005L4.39999 4ZM6 15.2L7.60001 20H4.39999L6 15.2ZM7.10001 12L8 9.19995V14.9L7.10001 12Z"
+                              fill="#035A4B"
+                            />
+                            <path
+                              d="M21 18H13C12.4 18 12 17.6 12 17C12 16.4 12.4 16 13 16H21C21.6 16 22 16.4 22 17C22 17.6 21.6 18 21 18ZM19 21C19 20.4 18.6 20 18 20H13C12.4 20 12 20.4 12 21C12 21.6 12.4 22 13 22H18C18.6 22 19 21.6 19 21Z"
+                              fill="#035A4B"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+
+                      <div class="flex-grow-1 ms-3">
+                        <span class="navbar-dropdown-menu-media-title"
+                          >Engineering</span
+                        >
+                        <p class="navbar-dropdown-menu-media-desc">
+                          View all Engineering subjects
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- End Link -->
+                </div>
+                <!-- End Mega Menu -->
+              </li>
+              <!-- End Docs -->
+
+
+
+               <!-- Log in -->
+
+
+               <!-- <li class="nav-item">
+                <a class="js-animation-link btn btn-ghost-secondary btn-no-focus me-2 me-lg-0" href="javascript:;" role="button" data-bs-toggle="modal" data-bs-target="#signupModal"
+                   data-hs-show-animation-options='{
+                           "targetSelector": "#signupModalFormLogin",
+                           "groupName": "idForm"
+                         }'>Log in</a>
+
+                <a class="js-animation-link d-lg-none btn btn-primary" href="javascript:;" role="button" data-bs-toggle="modal" data-bs-target="#signupModal"
+                   data-hs-show-animation-options='{
+                           "targetSelector": "#signupModalFormSignup",
+                           "groupName": "idForm"
+                         }'>
+                  <i class="bi-person-circle me-1"></i> Sign up
+                </a>
+              </li> -->
+
+
+              <!-- End Log in -->
+
+              <!-- Sign up -->
+
+<!--
+              <li class="nav-item">
+                <a class="js-animation-link d-none d-lg-inline-block btn btn-primary" href="javascript:;" role="button" data-bs-toggle="modal" data-bs-target="#signupModal"
+                   data-hs-show-animation-options='{
+                           "targetSelector": "#signupModalFormSignup",
+                           "groupName": "idForm"
+                         }'>
+                  <i class="bi-person-circle me-1"></i> Sign up
+                </a>
+              </li> -->
+
+
+              <!-- End Sign up -->
+            </ul>
+          </div>
+          <!-- End Collapse -->
+        </nav>
+      </div>
     </header>
+
     <!-- ========== END HEADER ========== -->
 
     <!-- ========== MAIN CONTENT ========== -->
     <main id="content" role="main">
-      
+      <!-- Hero -->
+      <div class="shape-container bg-soft-warning">
+        <div class="position-relative zi-2">
+          <div class="container content-space-1 content-space-md-3">
+            <!-- Heading -->
+            <div class="w-lg-50 mb-5 mb-sm-10">
+              <h1 class="display-3 text-primary">
+              TVET Colleges <br><span class="text-warning">List</span>
+              </h1>
+<br>
+              <h5><a href="https://www.dhet.gov.za/RegionalOffices/educational-institutions/technical-vocational-education-and-training-colleges-tvet-colleges.html" target="_blank">Public Colleges<i class="bi-box-arrow-up-right ms-1"></i
+                ></a> </h5>
+<br>
+              <h5><a href="https://drive.google.com/file/d/1YdBFn0oqrhFBwv1tUaRwcGSFVyhGrHsF/view?usp=sharing" target="_blank">Private Colleges<i class="bi-box-arrow-up-right ms-1"></i
+                ></a> </h5>
+<br>
 
-      <div class="border-top mx-auto" style="max-width: 25rem"></div>
 
-      <!-- Stats -->
-      
-      <!-- End Stats -->
+              <p>
+              *Last updated 30 July 2024
+              </p>
 
-      <!-- Mockups -->
-      <br /><br />
-      <div id="scrollToContent" class="container content-space ">
-        <!-- Heading -->
-        <div class="w-lg-65 text-center mx-lg-auto mb-7">
-          <h3>Mytvet SA</h3>
-         
-        </div>
-        <!-- End Heading -->
 
-        <div class="row">
-          <div class="col-sm-6 col-md-4 mb-3 mb-sm-5 mb-md-7">
-            <!-- Card -->
-            <a
-              class="card card-lg card-transition bg-soft-primary-light shadow-none h-100"
-              href="business-subject-list.html"
-            >
-              <div class="card-header">
-                <h5 class="card-title text-inherit">Business</h5>
-                <p class="card-text text-body">See all Business subjects.</p>
-              </div>
-              <div class="card-body">
-                <img
-                  class="card-img"
-                  src="./assets-front/svg/illustrations/oc-collaboration.svg"
-                  alt="Image Description"
-                />
-              </div>
-            </a>
-            <!-- End Card -->
+            </div>
+
+
+            <!-- End Heading -->
+
+
+            <!-- End Row -->
           </div>
-          <!-- End Cole -->
+        </div>
 
-          <div class="col-sm-6 col-md-4 mb-3 mb-sm-5 mb-md-7">
-            <!-- Card -->
-            <a
-              class="card card-lg card-transition bg-soft-warning shadow-none h-100"
-              href="engineering-subject-list.html"
-            >
-              <div class="card-header">
-                <h5 class="card-title text-inherit">Engineering</h5>
-                <p class="card-text text-body">See all Engineering subjects.</p>
-              </div>
-              <div class="card-body">
-                <br />
+
+      </div>
+      <!-- End Hero -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-primary-dark border-top border-white-10">
+      <div class="container">
+        <div class="row content-space-1">
+          <div class="col-lg-3 mb-7 mb-lg-0">
+            <!-- Logo -->
+            <div class="mb-5">
+              <a class="navbar-brand" href="./index.html" aria-label="Space">
                 <img
-                  class="card-img"
-                  src="./assets-front/svg/illustrations/oc-maintenance.svg"
+                  class="navbar-brand-logo"
+                  src="./assets-front/svg/logos/logo-white.svg"
                   alt="Image Description"
                 />
-              </div>
-            </a>
-            <!-- End Card -->
+              </a>
+            </div>
+            <!-- End Logo -->
+
+            <!-- Button Group -->
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-soft-light btn-sm"
+                id="selectLanguage"
+                aria-expanded="false"
+              >
+                <span class="d-flex align-items-center">
+                  <img
+                    class="avatar avatar-xss avatar-circle me-2"
+                    src="./assets-front/vendor/flag-icon-css/flags/1x1/za.svg"
+                    alt="Image description"
+                    width="16"
+                  />
+                  <span>South Africa (ZA)</span>
+                </span>
+              </button>
+            </div>
+            <!-- End Button Group -->
           </div>
           <!-- End Col -->
 
-          <div class="col-sm-6 col-md-4 mb-3 mb-sm-5 mb-md-7">
-            <!-- Card -->
-            <a
-            class="card card-lg card-transition bg-soft-primary-light shadow-none h-100"
-            href="exam-timetable.html"
-          >
-              <div class="card-header">
-                <div class="d-flex align-items-center">
-                  <h5 class="card-title text-inherit mb-0">Exam Timetable</h5>
+          <div class="col-sm mb-7 mb-sm-0">
+            <span class="text-cap text-primary-light">Resources</span>
 
-                </div>
-                <p class="card-text text-body">Exam dates for this year.</p>
-              </div>
-              <div class="card-body">
-                <img
-                  class="card-img"
-                  src="./assets-front/svg/illustrations/oc-yelling.svg"
-                  alt="Image Description"
-                />
-              </div>
-            </a>
-            <!-- End Card -->
+            <!-- List -->
+            <ul class="list-unstyled list-py-1 mb-0">
+              <li><a class="link-sm link-light" href="information.html">Guidance</a></li>
+              <li><a class="link-sm link-light" >Tutors<span class="badge bg-warning text-dark rounded-pill ms-2">Coming soon</span></a></a></li>
+
+
+            </ul>
+            <!-- End List -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-sm mb-7 mb-sm-0">
+            <span class="text-cap text-primary-light">Company</span>
+
+            <!-- List -->
+            <ul class="list-unstyled list-py-1 mb-0">
+            </li>
+            <li><a class="link-sm link-light" href="contact.html">Contact Us</a></li>
+              <li>
+                <a class="link-sm link-light" href="https://g.page/r/CUjjF0Kxk2EHEAg/review"
+                target="_blank"
+                  >Leave us a review <i class="bi-box-arrow-up-right ms-1"></i
+                ></a>
+
+
+            </ul>
+            <!-- End List -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-sm">
+            <span class="text-cap text-primary-light">Subjects</span>
+
+            <!-- List -->
+            <ul class="list-unstyled list-py-1 mb-0">
+              <li><a class="link-sm link-light" href="business-subject-list.html">Business Studies</a></li>
+              <li><a class="link-sm link-light" href="engineering-subject-list.html">Engineering Studies</a></li>
+
+              </li>
+            </ul>
+            <!-- End List -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-sm">
+            <span class="text-cap text-primary-light">Legal</span>
+
+            <!-- List -->
+            <ul class="list-unstyled list-py-1 mb-5">
+              <li><a class="link-sm link-light" href="legal-terms.html">Terms and Conditions</a></li>
+
+            </ul>
+            <!-- End List -->
+
+
           </div>
           <!-- End Col -->
         </div>
         <!-- End Row -->
 
-        <!-- Info -->
-       
-        <div class="text-center">
-          <p class="mb-0"></p>
-          <a class="link" href="https://g.page/r/CUjjF0Kxk2EHEAg/review"
-            >Google Reviews <i class="bi-chevron-right small ms-1"></i
-          ></a>
+        <div class="border-top border-white-10"></div>
+
+        <div class="row align-items-md-end py-5">
+          <div class="col-md mb-3 mb-md-0">
+            <p class="text-white mb-0">© Mytvet SA. 2023 | All rights reserved.</p>
+          </div>
+
+          <div class="col-md d-md-flex justify-content-md-end">
+            <!-- Socials -->
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a
+                  class="btn btn-icon btn-sm btn-soft-light rounded-circle"
+                  href="https://www.facebook.com/mytvetsa/" target="_blank"
+                >
+                  <i class="bi-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a
+                  class="btn btn-icon btn-sm btn-soft-light rounded-circle"
+                  href="https://twitter.com/MytvetSA" target="_blank"
+                >
+                  <i class="bi-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a
+                  class="btn btn-icon btn-sm btn-soft-light rounded-circle"
+                  href="https://www.instagram.com/mytvetsa/" target="_blank"
+                >
+                  <i class="bi-instagram"></i>
+                </a>
+              </li>
+
+            </ul>
+            <!-- End Socials -->
+          </div>
         </div>
-        <!-- End Info -->
       </div>
-      <!-- End Mockups -->
-      
-      <!-- Features -->
-      
-      <!-- End Features -->
-
-      <!-- Testimonials -->
-      <!-- Cards -->
-
-      <!-- End Cards -->
-      <!-- End Testimonials -->
-
-      <!-- Mockup -->
-      
-      <!-- End Mockup -->
-
-
-      <!-- Stats -->
-      
-      <!-- End Stats -->
-
-      <div class="border-top mx-auto my-10" style="max-width: 25rem"></div>
-    </main>
-    <!-- ========== END MAIN CONTENT ========== -->
-
-    <!-- ========== FOOTER ========== -->
-    
+    </footer>
     <!-- ========== END FOOTER ========== -->
 
     <!-- ========== SECONDARY CONTENTS ========== -->
@@ -258,7 +593,6 @@
             <!-- Log in -->
             <div id="signupModalFormLogin" style="display: none; opacity: 0">
               <!-- Heading -->
-
               <div class="text-center mb-7">
                 <h4>Log in</h4>
                 <p>
@@ -278,7 +612,7 @@
               <!-- End Heading -->
 
               <div class="d-grid gap-2">
-                <a class="btn btn-white btn-lg" href="#">
+                <a class="btn btn-white btn-lg"  >
                   <span
                     class="d-flex justify-content-center align-items-center"
                   >
@@ -293,7 +627,7 @@
 
                 <a
                   class="js-animation-link btn btn-primary btn-lg"
-                  href="#"
+                   
                   data-hs-show-animation-options='{
                          "targetSelector": "#signupModalFormLoginWithEmail",
                          "groupName": "idForm"
@@ -416,7 +750,7 @@
               <!-- End Heading -->
 
               <div class="d-grid gap-3">
-                <a class="btn btn-white btn-lg" href="#">
+                <a class="btn btn-white btn-lg"  >
                   <span
                     class="d-flex justify-content-center align-items-center"
                   >
@@ -431,7 +765,7 @@
 
                 <a
                   class="js-animation-link btn btn-primary btn-lg"
-                  href="#"
+                   
                   data-hs-show-animation-options='{
                          "targetSelector": "#signupModalFormSignupWithEmail",
                          "groupName": "idForm"
@@ -546,7 +880,7 @@
                 <div class="text-center">
                   <p class="small mb-0">
                     By continuing you agree to our
-                    <a href="#">Terms and Conditions</a>
+                    <a  >Terms and Conditions</a>
                   </p>
                 </div>
               </form>
@@ -666,9 +1000,6 @@
     <script src="./assets-front/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="./assets-front/vendor/fslightbox/index.js"></script>
 
-    <!-- scrollspy -->
-    <script src="../assets/vendor/hs-scrollspy/dist/hs-scrollspy.min.js"></script>
-
     <!-- JS Space -->
     <script src="./assets-front/js/theme.min.js"></script>
 
@@ -733,21 +1064,6 @@
 
     <!-- JS Space -->
     <script src="../assets-front/js/theme.min.js"></script>
-
-    <script>
-      (function() {
-        // INITIALIZATION OF SCROLLSPY
-        // =======================================================
-        new bootstrap.ScrollSpy(document.body, {
-          target: '#navbarVerticalNavMenuSettingsEg',
-          offset: 10
-        })
-
-        new HSScrollspy('#navbarVerticalNavMenuEg', {
-          breakpoint: 'lg'
-        })
-      })()
-    </script>
 
     <!-- JS Plugins Init. -->
     <script>
