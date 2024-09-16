@@ -3946,6 +3946,12 @@
     var e = new ClipboardJS(".btn-clipboard", { target: function (e) { return e.nextElementSibling } }); e.on("success", function (e) { jQuery(e.trigger).attr("title", "Copied!").tooltip("_fixTitle").tooltip("show").attr("title", "Copy to clipboard").tooltip("_fixTitle"); e.clearSelection() }); e.on("error", function (e) { var t = /Mac/i.test(navigator.userAgent) ? "⌘" : "Ctrl-"; var n = "Press " + t + "C to copy"; jQuery(e.trigger).attr("title", n).tooltip("_fixTitle").tooltip("show").attr("title", "Copy to clipboard").tooltip("_fixTitle") });
   </script>
 
+<!--Fix Security: Unsafe Cross-Origin Links-->
+    <script>
+      document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.setAttribute('rel', 'noopener');
+      });
+    </script>
 </body>
 
 </html>
