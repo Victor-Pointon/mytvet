@@ -910,7 +910,7 @@
 
                   <a
                     href="https://g.page/r/CUjjF0Kxk2EHEAg/review"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                     >Google reviews <i class="bi-box-arrow-up-right ms-1"></i></a
                   >
                 </p>
@@ -995,7 +995,7 @@
               <li><a class="link-sm link-light" href="information.html">Guidance</a></li>
               <li><a class="link-sm link-light" >Tutors<span class="badge bg-warning text-dark rounded-pill ms-2">Coming soon</span></a></a></li>
                 <li><a class="link-sm link-light" href="list-of-colleges.html">List of Colleges</a></li>
-              <li><a class="link-sm link-light" href="https://drive.google.com/file/d/1yo_DZzYZ2c4zRwliKcyEaXK8aztsyD5M/view?usp=drive_link" target="_blank">Phasing out of N1 - N3</a></li>
+              <li><a class="link-sm link-light" href="https://drive.google.com/file/d/1yo_DZzYZ2c4zRwliKcyEaXK8aztsyD5M/view?usp=drive_link"  rel="noopener">Phasing out of N1 - N3</a></li>
 
 
             </ul>
@@ -1012,7 +1012,7 @@
             <li><a class="link-sm link-light" href="contact.html">Contact Us</a></li>
               <li>
                 <a class="link-sm link-light" href="https://g.page/r/CUjjF0Kxk2EHEAg/review"
-                target="_blank"
+                target="_blank" rel="noreferrer"
                   >Leave us a review <i class="bi-box-arrow-up-right ms-1"></i
                 ></a>
 
@@ -1647,6 +1647,13 @@
         // =======================================================
         new HSGoTo(".js-go-to");
       })();
+    </script>
+
+    <!--Fix Security: Unsafe Cross-Origin Links-->
+    <script>
+      document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.setAttribute('rel', 'noopener');
+      });
     </script>
   </body>
 </html>

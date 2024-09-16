@@ -303,6 +303,12 @@
     window.addEventListener("load", function () { document.querySelector('body').classList.add('loaded'); });
   </script>
 
+  <!--Fix Security: Unsafe Cross-Origin Links-->
+  <script>
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      link.setAttribute('rel', 'noopener');
+    });
+  </script>
 </body>
 
 </html>
