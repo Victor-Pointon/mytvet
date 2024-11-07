@@ -91,7 +91,7 @@
   },
   {
     "component": "",
-    "category": "Eletro-Technology",
+    "category": "Electro-Technology",
     "link": "/engineering/electro-technology.html"
   },
   {
@@ -591,5 +591,10 @@
     "component": "",
     "category": "Travel Services",
     "link": "/business/travel-services.html"
+  },
+  {
+    "component": "",
+    "category": "Advanced Plant Production",
+    "link": "/ncv-engineering/advanced-plant-production.html"
   }
 ]
