@@ -415,7 +415,7 @@
   {
     "component": "",
     "category": "History of Art",
-    "link": "/business/history-of-art"
+    "link": "/business/history-of-art.html"
   },
   {
     "component": "",
@@ -438,6 +438,11 @@
     "link": "/business/information-processing.html"
   },
   {
+    "component": " ",
+    "category": "Introductory Clothing Construction",
+    "link": "/business/introductory-clothing-construction"
+  },
+  {
     "component": "",
     "category": "Introductory Accounting",
     "link": "/business/introductory-accounting.html"
@@ -458,6 +463,11 @@
     "link": "/business/introductory-entrepreneurship.html"
   },
   {
+    "component": " ",
+    "category": "Introductory Factory Organisation ",
+    "link": "/business/introductory-factory-organisation.html"
+  },
+  {
     "component": "",
     "category": "Introductory Information Processing",
     "link": "/business/introductory-information-processing.html"
@@ -466,6 +476,21 @@
     "component": "",
     "category": "Introductory Marketing",
     "link": "/business/introductory-marketing.html"
+  },
+  {
+    "component": " ",
+    "category": "Introductory Pattern Construction",
+    "link": "/business/introductory-pattern-construction.html"
+  },
+  {
+    "component": " ",
+    "category": "Introductory Personnel Management",
+    "link": "/business/introductory-personnel-management.html"
+  },
+  {
+    "component": " ",
+    "category": "Introductory Public Administration",
+    "link": "/business/introductory-public-administration.html"
   },
   {
     "component": "",
@@ -546,6 +571,11 @@
     "component": "",
     "category": "Personnel Training",
     "link": "/business/personnel-training.html"
+  },
+  {
+    "component": " ",
+    "category": "Plant and Animal Production",
+    "link": "/business/plant-and-animal-production.html"
   },
   {
     "component": "",
