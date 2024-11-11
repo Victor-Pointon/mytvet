@@ -389,6 +389,11 @@
   },
   {
     "component": "",
+    "category": "Farm Technology and Mechanisation",
+    "link": "business/farming-technology-and-mechanisation.html"
+  },
+  {
+    "component": "",
     "category": "Fashion Drawing",
     "link": "/business/fashion-drawing.html"
   },
@@ -406,6 +411,11 @@
     "component": " ",
     "category": "Food and Beverage Services",
     "link": "/business/food-and-beverage-services.html"
+  },
+  {
+    "component": "",
+    "category": "History of Art",
+    "link": "/business/history-of-art"
   },
   {
     "component": "",
@@ -490,12 +500,12 @@
   {
     "component": "",
     "category": "Marketing Management",
-    "link": "//www.mytvet.co.za/business/marketing-management.html"
+    "link": "/business/marketing-management.html"
   },
   {
     "component": "",
     "category": "Marketing Research",
-    "link": "https:/business/marketing-research.html"
+    "link": "/business/marketing-research.html"
   },
   {
     "component": "",
@@ -592,9 +602,640 @@
     "category": "Travel Services",
     "link": "/business/travel-services.html"
   },
+
   {
     "component": "",
-    "category": "Advanced Plant Production",
+    "category": "Advanced Plant Production: NCV",
     "link": "/ncv-engineering/advanced-plant-production.html"
+  },
+  {
+    "component": "",
+    "category": "Advertising and Promotions: NCV",
+    "link": "/ncv-engineering/advertising-and-promotions.html"
+  },
+  {
+    "component": "",
+    "category": "Applied Engineering Technology: NCV",
+    "link": "/ncv-engineering/applied-engineering-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Architectural Graphics and Technology: NCV",
+    "link": "/ncv-engineering/architectural-graphics-and-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Automotive Repair and Maintenance: NCV",
+    "link": "/ncv-engineering/automotive-repair-and-maintenance.html"
+  },
+  {
+    "component": "",
+    "category": "Basic Principles of Computer Programming: NCV",
+    "link": "/ncv-engineering/basic-principles-of-computer-programming.html"
+  },
+  {
+    "component": "",
+    "category": "Carpentry and Roof Work: NCV",
+    "link": "/ncv-engineering/carpentry-and-roof-work.html"
+  },
+  {
+    "component": "",
+    "category": "Civil and Structural Steel Work Detailing: NCV",
+    "link": "/ncv-engineering/civil-and-structural-steel-work-detailing.html"
+  },
+  {
+    "component": "",
+    "category": "Computer Hardware and Software: NCV",
+    "link": "/ncv-engineering/computer-hardware-and-software.html"
+  },
+  {
+    "component": "",
+    "category": "Computer Integrated Manufacturing: NCV",
+    "link": "/ncv-engineering/computer-integrated-manufacturing.html"
+  },
+  {
+    "component": "",
+    "category": "Computer Programming",
+    "link": "/ncv-engineering/computer-programming.html"
+  },
+  {
+    "component": "",
+    "category": "Concrete Structures: NCV",
+    "link": "/ncv-engineering/concrete-structures.html"
+  },
+  {
+    "component": "",
+    "category": "Construction Planning: NCV",
+    "link": "/ncv-engineering/construction-planning.html"
+  },
+  {
+    "component": "",
+    "category": "Construction Supervision: NCV",
+    "link": "/ncv-engineering/construction-supervision.html"
+  },
+  {
+    "component": "",
+    "category": "Data Communication and Networking: NCV",
+    "link": "/ncv-engineering/data-communication-and-networking.html"
+  },
+  {
+    "component": "",
+    "category": "Drawing Office Procedures and Techniques: NCV",
+    "link": "/ncv-engineering/drawing-office-procedures-and-technologies.html"
+  },
+  {
+    "component": "",
+    "category": "Electrical Principles and Practice: NCV",
+    "link": "/ncv-engineering/electrical-principles-and-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Electrical Systems and Construction: NCV",
+    "link": "/ncv-engineering/electrical-systems-and-construction.html"
+  },
+  {
+    "component": "",
+    "category": "Electrical Workmanship: NCV",
+    "link": "/ncv-engineering/electrical-workmanship.html"
+  },
+  {
+    "component": "",
+    "category": "Electronic Control and Digital Electronics: NCV",
+    "link": "/ncv-engineering/electronic-control-and-digital-electronics.html"
+  },
+  {
+    "component": "",
+    "category": "Electronics: NCV",
+    "link": "/ncv-engineering/electronics.html"
+  },
+  {
+    "component": "",
+    "category": "Electronics and Digital Concepts for Robotics: NCV",
+    "link": "/ncv-engineering/electronics-and-digital-concepts-for-robotics.html"
+  },
+  {
+    "component": "",
+    "category": "Electrotechnology: NCV",
+    "link": "/ncv-engineering/electrotechnology.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Fabrication: NCV",
+    "link": "/ncv-engineering/engineering-fabrication.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Fabrication - Boiler Making: NCV",
+    "link": "/ncv-engineering/engineering-fabrication-boiler-making.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Fabrication - Sheet Metal Work: NCV",
+    "link": "/ncv-engineering/engineering-fabrication-sheet-metal.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Fundamentals: NCV",
+    "link": "/ncv-engineering/engineering-fundamentals.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Graphics and Design: NCV",
+    "link": "/ncv-engineering/engineering-graphics-and-design.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Graphics and Technology: NCV",
+    "link": "/ncv-engineering/engineering-graphics-and-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Practice and Maintenance: NCV",
+    "link": "/ncv-engineering/engineering-practice-and-maintenance.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Processes: NCV",
+    "link": "/ncv-engineering/engineering-processes.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Systems: NCV",
+    "link": "/ncv-engineering/engineering-systems.html"
+  },
+  {
+    "component": "",
+    "category": "Engineering Technology: NCV",
+    "link": "/ncv-engineering/engineering-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Fitting and Turning: NCV",
+    "link": "/ncv-engineering/fitting-and-turning.html"
+  },
+  {
+    "component": "",
+    "category": "Graphic Design: NCV",
+    "link": "/ncv-engineering/graphic-design.html"
+  },
+  {
+    "component": "",
+    "category": "Instrumentation Technology",
+    "link": "/ncv-engineering/instrumentation-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Introduction to Computers: NCV",
+    "link": "/ncv-engineering/introduction-to-computers.html"
+  },
+  {
+    "component": "",
+    "category": "Introduction to Information Systems: NCV",
+    "link": "/ncv-engineering/introduction-to-information-systems.html"
+  },
+  {
+    "component": "",
+    "category": "Introduction to Systems Development: NCV",
+    "link": "/ncv-engineering/introduction-to-systems-development.html"
+  },
+  {
+    "component": "",
+    "category": "Machine Manufacturing: NCV",
+    "link": "/ncv-engineering/machine-manufacturing.html"
+  },
+  {
+    "component": "",
+    "category": "Manual Manufacturing: NCV",
+    "link": "/ncv-engineering/manual-manufacturing.html"
+  },
+  {
+    "component": "",
+    "category": "Material Technology: NCV",
+    "link": "/ncv-engineering/material-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Materials: NCV",
+    "link": "/ncv-engineering/materials.html"
+  },
+  {
+    "component": "",
+    "category": "Mathematical Literacy: NCV",
+    "link": "/ncv-engineering/mathematical-literacy.html"
+  },
+  {
+    "component": "",
+    "category": "Mathematics: NCV",
+    "link": "/ncv-engineering/mathematics.html"
+  },
+  {
+    "component": "",
+    "category": "Mechanical Draughting and Technology: NCV",
+    "link": "/ncv-engineering/mechanical-draughting-and-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Mechatronic System: NCV",
+    "link": "/ncv-engineering/mechatronic-system.html"
+  },
+  {
+    "component": "",
+    "category": "Physical Science: NCV",
+    "link": "/ncv-engineering/physical-science.html"
+  },
+  {
+    "component": "",
+    "category": "Plant and Equipment: NCV",
+    "link": "/ncv-engineering/plant-and-equipment.html"
+  },
+  {
+    "component": "",
+    "category": "Plant Production: NCV",
+    "link": "/ncv-engineering/plant-production.html"
+  },
+  {
+    "component": "",
+    "category": "Plumbing NCV",
+    "link": "/ncv-engineering/plumbing.html"
+  },
+  {
+    "component": "",
+    "category": "Principles of Computer Programming: NCV",
+    "link": "/ncv-engineering/principles-of-computer-programming.html"
+  },
+  {
+    "component": "",
+    "category": "Process Chemistry: NCV",
+    "link": "/ncv-engineering/process-chemistry.html"
+  },
+  {
+    "component": "",
+    "category": "Process Control: NCV",
+    "link": "/ncv-engineering/process-control.html"
+  },
+  {
+    "component": "",
+    "category": "Process Technology: NCV",
+    "link": "/ncv-engineering/process-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Professional Engineering Practice: NCV",
+    "link": "/ncv-engineering/professional-engineering-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Pulp and Papermaking Technology: NCV",
+    "link": "/ncv-engineering/pulp-and-papermaking-technology.html"
+  },
+  {
+    "component": "",
+    "category": "Refrigeration and Air Conditioning Processes: NCV",
+    "link": "/ncv-engineering/refrigeration-and-air-conditioning-processes.html"
+  },
+  {
+    "component": "",
+    "category": "Refrigeration Practice: NCV",
+    "link": "/ncv-engineering/refrigeration-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Refrigeration Principles: NCV",
+    "link": "/ncv-engineering/refrigeration-principles.html"
+  },
+  {
+    "component": "",
+    "category": "Renewable Energy Technologies: NCV",
+    "link": "/ncv-engineering/renewable-energy-technologies.html"
+  },
+  {
+    "component": "",
+    "category": "Roads: NCV",
+    "link": "/ncv-engineering/roads.html"
+  },
+  {
+    "component": "",
+    "category": "Robotics Fundamentals: NCV",
+    "link": "/ncv-engineering/robotics-fundamentals.html"
+  },
+  {
+    "component": "",
+    "category": "Stored Programme Systems: NCV",
+    "link": "/ncv-engineering/stored-programme-systems.html"
+  },
+  {
+    "component": "",
+    "category": "System Analysis and Design: NCV",
+    "link": "/ncv-engineering/system-analysis-and-design.html"
+  },
+  {
+    "component": "",
+    "category": "Welding: NCV",
+    "link": "/ncv-engineering/welding.html"
+  },
+  {
+    "component": "",
+    "category": "Workshop Practice: NCV",
+    "link": "/ncv-engineering/workshop-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Agribusiness: NCV",
+    "link": "/ncv-business/agribusiness.html"
+  },
+  {
+    "component": "",
+    "category": "Animal Production: NCV",
+    "link": "/ncv-business/animal-production.html"
+  },
+  {
+    "component": "",
+    "category": "Applied Accounting: NCV",
+    "link": "/ncv-business/applied-accounting.html"
+  },
+  {
+    "component": "",
+    "category": "Applied Policing: NCV",
+    "link": "/ncv-business/applied-policing.html"
+  },
+  {
+    "component": "",
+    "category": "Art and Science of Teaching: NCV",
+    "link": "/ncv-business/art-and-science-of-teaching.html"
+  },
+  {
+    "component": "",
+    "category": "Business Practice: NCV",
+    "link": "/ncv-business/business-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Client Service and Human Relations: NCV",
+    "link": "/ncv-business/client-service-and-human-relations.html"
+  },
+  {
+    "component": "",
+    "category": "Community Oriented Primary Care: NCV",
+    "link": "/ncv-business/community-oriented-primary-care.html"
+  },
+  {
+    "component": "",
+    "category": "Consumer Behaviour: NCV",
+    "link": "/ncv-business/consumer-behaviour.html"
+  },
+  {
+    "component": "",
+    "category": "Contact Centre Operations: NCV",
+    "link": "/ncv-business/contact-centre-operations.html"
+  },
+  {
+    "component": "",
+    "category": "Criminal Justice Process: NCV",
+    "link": "/ncv-business/criminal-justice-process.html"
+  },
+  {
+    "component": "",
+    "category": "Criminal Justice Structures and Mandates: NCV",
+    "link": "/ncv-business/criminal-justice-structures-and-mandates.html"
+  },
+  {
+    "component": "",
+    "category": "Criminal Law: NCV",
+    "link": "/ncv-business/criminal-law.html"
+  },
+  {
+    "component": "",
+    "category": "Criminology: NCV",
+    "link": "/ncv-business/criminology.html"
+  },
+  {
+    "component": "",
+    "category": "Early Childhood Development: NCV",
+    "link": "/ncv-business/early-childhood-development.html"
+  },
+  {
+    "component": "",
+    "category": "Economic Environment: NCV",
+    "link": "/ncv-business/economic-environment.html"
+  },
+  {
+    "component": "",
+    "category": "English First Additional Language: NCV",
+    "link": "/ncv-business/english-first-additional-language.html"
+  },
+  {
+    "component": "",
+    "category": "Entrepreneurship: NCV",
+    "link": "/ncv-business/entrepreneurship.html"
+  },
+  {
+    "component": "",
+    "category": "Farm Planning and Mechanisation: NCV",
+    "link": "/ncv-business/farm-planning-and-mechanisation.html"
+  },
+  {
+    "component": "",
+    "category": "Financial Management: NCV",
+    "link": "/ncv-business/financial-management.html"
+  },
+  {
+    "component": "",
+    "category": "Food Preparation: NCV",
+    "link": "/ncv-business/food-preparation.html"
+  },
+  {
+    "component": "",
+    "category": "Freight Logistics: NCV",
+    "link": "/ncv-business/freight-logistics.html"
+  },
+  {
+    "component": "",
+    "category": "Governance: NCV",
+    "link": "/ncv-business/governance.html"
+  },
+  {
+    "component": "",
+    "category": "Hospitality Generics: NCV",
+    "link": "/ncv-business/hospitality-generics.html"
+  },
+  {
+    "component": "",
+    "category": "Hospitality Services: NCV",
+    "link": "/ncv-business/hospitality-services.html"
+  },
+  {
+    "component": "",
+    "category": "Human and Social Development: NCV",
+    "link": "/ncv-business/human-and-social-development.html"
+  },
+  {
+    "component": "",
+    "category": "Introduction to Governance: NCV",
+    "link": "/ncv-business/introduction-to-governance.html"
+  },
+  {
+    "component": "",
+    "category": "Introduction to Law: NCV",
+    "link": "/ncv-business/introduction-to-law.html"
+  },
+  {
+    "component": "",
+    "category": "Introduction to Policing Practices: NCV",
+    "link": "/ncv-business/introduction-to-policing-practices.html"
+  },
+  {
+    "component": "",
+    "category": "Law Procedures and Evidence: NCV",
+    "link": "/ncv-business/law-procedures-and-evidence.html"
+  },
+  {
+    "component": "",
+    "category": "Learning Psychology: NCV",
+    "link": "/ncv-business/learning-psychology.html"
+  },
+  {
+    "component": "",
+    "category": "Life Orientation: NCV",
+    "link": "/ncv-business/life-orientation.html"
+  },
+  {
+    "component": "",
+    "category": "Life Skills and Computer Literacy: NCV",
+    "link": "/ncv-business/life-skills-and-computer-literacy.html"
+  },
+  {
+    "component": "",
+    "category": "Management Practice: NCV",
+    "link": "/ncv-business/management-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Marketing: NCV",
+    "link": "/ncv-business/marketing.html"
+  },
+  {
+    "component": "",
+    "category": "Marketing Communication: NCV",
+    "link": "/ncv-business/marketing-communication.html"
+  },
+  {
+    "component": "",
+    "category": "Masonry: NCV",
+    "link": "/ncv-business/masonry.html"
+  },
+  {
+    "component": "",
+    "category": "Multimedia Basics: NCV",
+    "link": "/ncv-business/multimedia-basics.html"
+  },
+  {
+    "component": "",
+    "category": "Multimedia Content: NCV",
+    "link": "/ncv-business/multimedia-content.html"
+  },
+  {
+    "component": "",
+    "category": "Multimedia Services: NCV",
+    "link": "/ncv-business/multimedia-services.html"
+  },
+  {
+    "component": "",
+    "category": "New Venture Creation: NCV",
+    "link": "/ncv-business/new-venture-creation.html"
+  },
+  {
+    "component": "",
+    "category": "Office Data Processing: NCV",
+    "link": "/ncv-business/office-data-processing.html"
+  },
+  {
+    "component": "",
+    "category": "Office Practice: NCV",
+    "link": "/ncv-business/office-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Operations Management: NCV",
+    "link": "/ncv-business/operations-management.html"
+  },
+  {
+    "component": "",
+    "category": "Personal Assistance: NCV",
+    "link": "/ncv-business/personal-assistance.html"
+  },
+  {
+    "component": "",
+    "category": "Principles of Criminal Justice: NCV",
+    "link": "/ncv-business/principles-of-criminal-justice.html"
+  },
+  {
+    "component": "",
+    "category": "Project Management: NCV",
+    "link": "/ncv-business/project-management.html"
+  },
+  {
+    "component": "",
+    "category": "Public Health: NCV",
+    "link": "/ncv-business/public-health.html"
+  },
+  {
+    "component": "",
+    "category": "Science of Tourism: NCV",
+    "link": "/ncv-business/science-of-tourism.html"
+  },
+  {
+    "component": "",
+    "category": "Soil Science: NCV",
+    "link": "/ncv-business/soil-science.html"
+  },
+  {
+    "component": "",
+    "category": "Sustainable Tourism in SA: NCV",
+    "link": "/ncv-business/sustainable-tourism-in-sa.html"
+  },
+  {
+    "component": "",
+    "category": "Sustainable Tourism in SA and International Travel: NCV",
+    "link": "/ncv-business/sustainable-tourism-in-sa-and-international-travel.html"
+  },
+  {
+    "component": "",
+    "category": "Sustainable Tourism in SA and Regional Travel: NCV",
+    "link": "/ncv-business/sustainable-tourism-in-sa-and-regional-travel.html"
+  },
+  {
+    "component": "",
+    "category": "The Human Body and Mind: NCV",
+    "link": "/ncv-business/the-human-body-and-mind.html"
+  },
+  {
+    "component": "",
+    "category": "The South African Healthcare System: NCV",
+    "link": "/ncv-business/the-south-african-healthcare-system.html"
+  },
+  {
+    "component": "",
+    "category": "Theory of Policing Practice: NCV",
+    "link": "/ncv-business/theory-of-policing-practice.html"
+  },
+  {
+    "component": "",
+    "category": "Tourism Operations: NCV",
+    "link": "/ncv-business/tourism-operations.html"
+  },
+  {
+    "component": "",
+    "category": "Transport Economics: NCV",
+    "link": "/ncv-business/transport-economics.html"
+  },
+  {
+    "component": "",
+    "category": "Transport Operations: NCV",
+    "link": "/ncv-business/transport-operations.html"
+  },
+  {
+    "component": "",
+    "category": "Wholesale and Retail: NCV",
+    "link": "/ncv-business/wholesale-and-retail.html"
   }
 ]
