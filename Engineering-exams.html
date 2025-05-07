@@ -278,18 +278,17 @@
         "
       >
         <div>
-          <button id="downloadPDF" class="btn btn-primary btn-sm" type="button">
-            <i class="bi-file-pdf me-1"></i> View PDF Timetable
-          </button>
+          <a href="https://docsend.com/view/vc8h62ytrcieascz" target="_blank">
+            <button
+              id="downloadPDF"
+              class="btn btn-primary btn-sm"
+              type="button"
+            >
+              <i class="bi-file-pdf me-1"></i> View PDF Timetable
+            </button>
+          </a>
         </div>
         <div style="display: flex; gap: 12px">
-          <button
-            id="sortSubject"
-            class="btn btn-outline-primary btn-sm"
-            type="button"
-          >
-            Sort by Subject Name <span id="subjectSortIcon">A-Z</span>
-          </button>
           <button
             id="sortDate"
             class="btn btn-outline-primary btn-sm"
@@ -1104,9 +1103,7 @@
       const searchBar = document.getElementById("searchBar");
       const timetableList = document.getElementById("timetableList");
       const noResults = document.getElementById("noResults");
-      const sortSubjectBtn = document.getElementById("sortSubject");
       const sortDateBtn = document.getElementById("sortDate");
-      const subjectSortIcon = document.getElementById("subjectSortIcon");
       const dateSortIcon = document.getElementById("dateSortIcon");
 
       // Capitalize the first letter of every word in the subject name
@@ -1125,7 +1122,6 @@
       let timetableData = Array.from(timetableList.children).map(
         (card) => card.outerHTML
       );
-      let subjectAsc = true;
       let dateAsc = true;
 
       function renderList(htmlArr) {
@@ -1163,33 +1159,6 @@
       }
 
       searchBar.addEventListener("keyup", filterList);
-
-      sortSubjectBtn.addEventListener("click", function () {
-        let cards = Array.from(timetableList.children);
-        cards.sort((a, b) => {
-          let sa = a
-            .querySelector(".timetable-subject")
-            .textContent.trim()
-            .toLowerCase();
-          let sb = b
-            .querySelector(".timetable-subject")
-            .textContent.trim()
-            .toLowerCase();
-          if (sa < sb) return subjectAsc ? -1 : 1;
-          if (sa > sb) return subjectAsc ? 1 : -1;
-          return 0;
-        });
-        timetableList.innerHTML = "";
-        cards.forEach((card) => timetableList.appendChild(card));
-        updateSubjectNamesCase();
-        subjectAsc = !subjectAsc;
-        subjectSortIcon.textContent = subjectAsc ? "A-Z" : "Z-A";
-        dateSortIcon.textContent = "↑";
-        dateAsc = true;
-        sortSubjectBtn.classList.add("active");
-        sortDateBtn.classList.remove("active");
-        filterList();
-      });
 
       function formatDate(dateStr) {
         const date = new Date(dateStr);
@@ -1243,15 +1212,10 @@
         updateSubjectNamesCase();
         dateAsc = !dateAsc;
         dateSortIcon.textContent = dateAsc ? "↑" : "↓";
-        subjectSortIcon.textContent = "A-Z";
-        subjectAsc = true;
-        sortDateBtn.classList.add("active");
-        sortSubjectBtn.classList.remove("active");
         filterList();
       });
 
       sortDateBtn.classList.add("active");
-      sortSubjectBtn.classList.remove("active");
       (function initialSortByDate() {
         let allCards = Array.from(document.querySelectorAll(".timetable-card"));
         let dateGroups = {};
