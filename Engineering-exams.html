@@ -198,10 +198,7 @@
           margin-right: 8px;
         }
         .timetable-paper::before {
-          content: "Paper: ";
-          font-weight: 600;
-          color: #257bd1;
-          margin-right: 8px;
+          display: var(--show-paper-label, inline);
         }
         .timetable-date::before {
           content: "Exam Date: ";
@@ -1296,6 +1293,26 @@
         });
         updateSubjectNamesCase();
       })();
+
+      function updatePaperLabelsMobile() {
+        if (window.innerWidth <= 700) {
+          document.querySelectorAll(".timetable-card").forEach((card) => {
+            const paper = card.querySelector(".timetable-paper");
+            if (paper && !paper.textContent.trim()) {
+              paper.style.setProperty("--show-paper-label", "none");
+            } else if (paper) {
+              paper.style.setProperty("--show-paper-label", "inline");
+            }
+          });
+        } else {
+          document.querySelectorAll(".timetable-paper").forEach((paper) => {
+            paper.style.setProperty("--show-paper-label", "inline");
+          });
+        }
+      }
+      // Call on load and on resize
+      updatePaperLabelsMobile();
+      window.addEventListener("resize", updatePaperLabelsMobile);
     </script>
   </body>
 </html>
