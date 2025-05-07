@@ -239,10 +239,29 @@
         border: 1px solid #e0e0e0;
         /* box-shadow: 0 2px 8px rgba(37, 123, 209, 0.10); */
       }
+      .btn-outline-secondary#prevPageBtn:hover,
+      .btn-outline-secondary#prevPageBtn:focus {
+        background: none !important;
+        border-color: #6c757d !important;
+        color: #6c757d !important;
+        box-shadow: none !important;
+      }
     </style>
   </head>
   <body>
     <div class="container">
+      <button
+        onclick="history.back()"
+        id="prevPageBtn"
+        class="btn btn-outline-secondary btn-xs mb-2"
+        style="
+          font-size: 0.85rem;
+          padding: 3px 10px 3px 8px;
+          margin-bottom: 12px;
+        "
+      >
+        <i class="bi-arrow-left" style="font-size: 1em"></i> Prev Page
+      </button>
       <h1>
         Engineering Exam Timetable <br />
         August 2025
