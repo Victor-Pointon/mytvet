@@ -250,21 +250,47 @@
   </head>
   <body>
     <div class="container">
-      <button
-        onclick="history.back()"
-        id="prevPageBtn"
-        class="btn btn-outline-secondary btn-xs mb-2"
+      <div
         style="
-          font-size: 0.85rem;
-          padding: 3px 10px 3px 8px;
-          margin-bottom: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 8px;
         "
       >
-        <i class="bi-arrow-left" style="font-size: 1em"></i> Prev Page
-      </button>
+        <button
+          onclick="history.back()"
+          id="prevPageBtn"
+          class="btn btn-outline-secondary btn-xs mb-2"
+          style="
+            font-size: 0.85rem;
+            padding: 3px 10px 3px 8px;
+            margin-bottom: 0;
+          "
+        >
+          <i class="bi-arrow-left" style="font-size: 1em"></i> Prev
+        </button>
+        <div style="flex: 1; display: flex; justify-content: center">
+          <a
+            class="navbar-brand"
+            href="./index.html"
+            aria-label="Space"
+            style="display: inline-block"
+          >
+            <img
+              class="navbar-brand-logo"
+              src="./assets-front/svg/logos/logo.svg"
+              alt="Mytvet dark logo"
+              width="136"
+              height="36"
+            />
+          </a>
+        </div>
+        <div style="width: 90px"></div>
+      </div>
       <h1>
-        Engineering Exam Timetable <br />
-        August 2025
+        Engineering Exam Timetable
+        <br />
       </h1>
       <h4
         style="
