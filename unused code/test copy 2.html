@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NC(V) Timetable Search</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="./assets-front/vendor/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <!-- Bootstrap CSS (from your template) -->
+    <link rel="stylesheet" href="./assets-front/css/theme.min.css" />
+    <style>
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 32px 24px;
+      }
+      h1 {
+        color: #257bd1;
+        text-align: center;
+        margin-bottom: 32px;
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+      .input-group {
+        margin-bottom: 32px;
+      }
+      #searchBar {
+        font-size: 1.1rem;
+        border-radius: 0.5rem 0 0 0.5rem;
+        border: 1px solid #d1d5db;
+        padding: 14px 18px;
+        box-shadow: none;
+      }
+      .input-group-text {
+        background: #fff;
+        border-radius: 0 0.5rem 0.5rem 0;
+        border: 1px solid #d1d5db;
+        border-left: 0;
+        font-size: 1.3rem;
+        color: #257bd1;
+      }
+      .timetable-header {
+        display: flex;
+        align-items: center;
+        background: #f1f8fe;
+        border-radius: 0.75rem;
+        padding: 14px 24px;
+        font-weight: 600;
+        color: #257bd1;
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+        border: 1px solid #e0e0e0;
+      }
+      .th-subject {
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .th-code,
+      .th-paper,
+      .th-date {
+        flex: 0 0 120px;
+        min-width: 120px;
+        max-width: 120px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0 4px;
+      }
+      .timetable-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .timetable-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 0.75rem;
+        margin-bottom: 18px;
+        box-shadow: 0 1px 4px rgba(37, 123, 209, 0.06);
+        padding: 20px 24px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        transition: box-shadow 0.2s;
+      }
+      .timetable-card:hover {
+        box-shadow: 0 4px 16px rgba(37, 123, 209, 0.13);
+        border-color: #257bd1;
+      }
+      .timetable-subject {
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 100%;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #222;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding-left: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .timetable-code,
+      .timetable-paper,
+      .timetable-date {
+        flex: 0 0 120px;
+        min-width: 120px;
+        max-width: 120px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0 4px;
+      }
+      .timetable-paper {
+        margin-right: 0;
+      }
+      .timetable-date {
+        margin-left: 0;
+      }
+      #noResults {
+        display: none;
+        text-align: center;
+        color: #b00;
+        font-weight: bold;
+        margin-top: 32px;
+      }
+      @media (max-width: 700px) {
+        .container {
+          padding: 16px;
+          margin: 20px auto;
+        }
+        .timetable-header {
+          display: none; /* Hide the header on mobile */
+        }
+        .timetable-card {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 16px;
+          gap: 8px;
+          position: relative;
+        }
+        .timetable-subject {
+          min-width: 0;
+          flex-basis: auto;
+          width: 100%;
+          font-size: 1.05rem;
+          padding-bottom: 8px;
+          border-bottom: 1px solid #e0e0e0;
+          margin-bottom: 4px;
+        }
+        .timetable-code,
+        .timetable-paper,
+        .timetable-date {
+          min-width: 0;
+          max-width: 100%;
+          flex-basis: auto;
+          width: 100%;
+          justify-content: flex-start;
+          padding: 4px 0;
+          font-size: 0.95rem;
+        }
+        /* Add labels for mobile view */
+        .timetable-code::before {
+          content: "Code: ";
+          font-weight: 600;
+          color: #257bd1;
+          margin-right: 8px;
+        }
+        .timetable-paper::before {
+          content: "Paper: ";
+          font-weight: 600;
+          color: #257bd1;
+          margin-right: 8px;
+        }
+        .timetable-date::before {
+          content: "Exam Date: ";
+          font-weight: 600;
+          color: #257bd1;
+          margin-right: 8px;
+        }
+        /* Adjust search and sort buttons for mobile */
+        .input-group {
+          margin-bottom: 20px;
+        }
+        #searchBar {
+          font-size: 1rem;
+          padding: 12px 16px;
+        }
+        .btn {
+          font-size: 0.9rem;
+          padding: 8px 12px;
+        }
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>NC(V) Timetable Search</h1>
+      <div class="input-group input-group-merge">
+        <input
+          type="text"
+          class="form-control"
+          id="searchBar"
+          placeholder="Enter subject name"
+          aria-label="Enter subject name"
+        />
+        <span class="input-group-text"><i class="bi-search"></i></span>
+      </div>
+      <div
+        style="
+          display: flex;
+          gap: 12px;
+          margin-bottom: 18px;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        "
+      >
+        <button
+          id="sortSubject"
+          class="btn btn-outline-primary btn-sm"
+          type="button"
+        >
+          Sort by Subject Name <span id="subjectSortIcon">A-Z</span>
+        </button>
+        <button
+          id="sortDate"
+          class="btn btn-outline-primary btn-sm"
+          type="button"
+        >
+          Sort by Exam Date <span id="dateSortIcon">↑</span>
+        </button>
+      </div>
+      <div class="timetable-header">
+        <span class="th-subject">Subject Name</span>
+        <span class="th-code">Code</span>
+        <span class="th-paper">Paper</span>
+        <span class="th-date">Exam Date</span>
+      </div>
+      <ul class="timetable-list" id="timetableList">
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Life Skills and Computer Literacy L2</span
+          ><span class="timetable-code">7601042</span
+          ><span class="timetable-paper">2nd paper</span
+          ><span class="timetable-date">2025-02-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Life Skills and Computer Literacy L3</span
+          ><span class="timetable-code">7601053</span
+          ><span class="timetable-paper">2nd paper</span
+          ><span class="timetable-date">2025-02-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Life Skills and Computer Literacy L4</span
+          ><span class="timetable-code">7601064</span
+          ><span class="timetable-paper">2nd paper</span
+          ><span class="timetable-date">2025-02-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematical Literacy L2</span
+          ><span class="timetable-code">10401012</span
+          ><span class="timetable-paper">1st paper</span
+          ><span class="timetable-date">2025-02-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L2</span
+          ><span class="timetable-code">10501042</span
+          ><span class="timetable-paper">1st paper</span
+          ><span class="timetable-date">2025-02-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L3</span
+          ><span class="timetable-code">10501053</span
+          ><span class="timetable-paper">1st paper</span
+          ><span class="timetable-date">2025-02-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L4</span
+          ><span class="timetable-code">10501064</span
+          ><span class="timetable-paper">1st paper</span
+          ><span class="timetable-date">2025-02-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematical Literacy L2</span
+          ><span class="timetable-code">10401012</span
+          ><span class="timetable-paper">2nd paper</span
+          ><span class="timetable-date">2025-02-17</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L2</span
+          ><span class="timetable-code">10501042</span
+          ><span class="timetable-paper">2nd paper</span
+          ><span class="timetable-date">2025-02-17</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L3</span
+          ><span class="timetable-code">10501053</span
+          ><span class="timetable-paper">2nd paper</span
+          ><span class="timetable-date">2025-02-17</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L4</span
+          ><span class="timetable-code">10501064</span
+          ><span class="timetable-paper">2nd paper</span
+          ><span class="timetable-date">2025-02-17</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Advertising and Promotions L3</span
+          ><span class="timetable-code">3041013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-02-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Animal Production L3</span
+          ><span class="timetable-code">1011023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-02-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Applied Accounting L3</span
+          ><span class="timetable-code">3011003</span
+          ><span class="timetable-paper">1st paper</span
+          ><span class="timetable-date">2025-02-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Applied Accounting L4</span
+          ><span class="timetable-code">3011004</span
+          ><span class="timetable-paper">1st paper</span
+          ><span class="timetable-date">2025-02-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Art and Science of Teaching L3</span
+          ><span class="timetable-code">5050053</span
+          ><span class="timetable-paper">1st paper</span
+          ><span class="timetable-date">2025-02-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Client Service and Human Relations L3</span
+          ><span class="timetable-code">11011023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-02-18</span>
+        </li>
+        <!-- Add more rows as needed from your data -->
+      </ul>
+      <div id="noResults">No results found.</div>
+    </div>
+    <script>
+      const searchBar = document.getElementById("searchBar");
+      const timetableList = document.getElementById("timetableList");
+      const noResults = document.getElementById("noResults");
+      const sortSubjectBtn = document.getElementById("sortSubject");
+      const sortDateBtn = document.getElementById("sortDate");
+      const subjectSortIcon = document.getElementById("subjectSortIcon");
+      const dateSortIcon = document.getElementById("dateSortIcon");
+
+      // Store original data for sorting
+      let timetableData = Array.from(timetableList.children).map(
+        (card) => card.outerHTML
+      );
+      let subjectAsc = true;
+      let dateAsc = true;
+
+      function renderList(htmlArr) {
+        timetableList.innerHTML = htmlArr.join("");
+      }
+
+      function filterList() {
+        const filter = searchBar.value.toLowerCase();
+        let visibleRows = 0;
+        for (const card of timetableList.children) {
+          const subject = card
+            .querySelector(".timetable-subject")
+            .textContent.toLowerCase();
+          if (subject.includes(filter)) {
+            card.style.display = "";
+            visibleRows++;
+          } else {
+            card.style.display = "none";
+          }
+        }
+        noResults.style.display = visibleRows === 0 ? "" : "none";
+      }
+
+      searchBar.addEventListener("keyup", filterList);
+
+      sortSubjectBtn.addEventListener("click", function () {
+        let cards = Array.from(timetableList.children);
+        cards.sort((a, b) => {
+          let sa = a
+            .querySelector(".timetable-subject")
+            .textContent.trim()
+            .toLowerCase();
+          let sb = b
+            .querySelector(".timetable-subject")
+            .textContent.trim()
+            .toLowerCase();
+          if (sa < sb) return subjectAsc ? -1 : 1;
+          if (sa > sb) return subjectAsc ? 1 : -1;
+          return 0;
+        });
+        timetableList.innerHTML = "";
+        cards.forEach((card) => timetableList.appendChild(card));
+        subjectAsc = !subjectAsc;
+        subjectSortIcon.textContent = subjectAsc ? "A-Z" : "Z-A";
+        // Reset date sort icon
+        dateSortIcon.textContent = "↑";
+        dateAsc = true;
+        // Set active class
+        sortSubjectBtn.classList.add("active");
+        sortDateBtn.classList.remove("active");
+        filterList();
+      });
+
+      sortDateBtn.addEventListener("click", function () {
+        let cards = Array.from(timetableList.children);
+        cards.sort((a, b) => {
+          let da = a.querySelector(".timetable-date").textContent.trim();
+          let db = b.querySelector(".timetable-date").textContent.trim();
+          if (da < db) return dateAsc ? -1 : 1;
+          if (da > db) return dateAsc ? 1 : -1;
+          return 0;
+        });
+        timetableList.innerHTML = "";
+        cards.forEach((card) => timetableList.appendChild(card));
+        dateAsc = !dateAsc;
+        dateSortIcon.textContent = dateAsc ? "↑" : "↓";
+        // Reset subject sort icon
+        subjectSortIcon.textContent = "A-Z";
+        subjectAsc = true;
+        // Set active class
+        sortDateBtn.classList.add("active");
+        sortSubjectBtn.classList.remove("active");
+        filterList();
+      });
+
+      // Set default active button and sort by date on load
+      sortDateBtn.classList.add("active");
+      sortSubjectBtn.classList.remove("active");
+      (function initialSortByDate() {
+        let cards = Array.from(timetableList.children);
+        cards.sort((a, b) => {
+          let da = a.querySelector(".timetable-date").textContent.trim();
+          let db = b.querySelector(".timetable-date").textContent.trim();
+          if (da < db) return -1;
+          if (da > db) return 1;
+          return 0;
+        });
+        timetableList.innerHTML = "";
+        cards.forEach((card) => timetableList.appendChild(card));
+      })();
+    </script>
+  </body>
+</html>

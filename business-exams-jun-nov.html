@@ -64,45 +64,31 @@
         margin-bottom: 10px;
         font-size: 1.05rem;
         border: 1px solid #e0e0e0;
-        width: 100%;
-        box-sizing: border-box;
       }
       .th-subject {
-        flex: 0 0 40%;
-        min-width: 40%;
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 100%;
         text-align: left;
         display: flex;
         align-items: center;
         padding-left: 0;
         box-sizing: border-box;
       }
-      .th-code {
-        flex: 0 0 15%;
-        min-width: 15%;
+      .th-code,
+      .th-paper,
+      .th-date {
+        flex: 0 0 120px;
+        min-width: 120px;
+        max-width: 120px;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
-      }
-      .th-paper {
-        flex: 0 0 15%;
-        min-width: 15%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-      }
-      .th-date,
-      .th-nov-date {
-        flex: 0 0 15%;
-        min-width: 15%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0 4px;
       }
       .timetable-list {
         list-style: none;
@@ -111,23 +97,24 @@
       }
       .timetable-card {
         background: #fff;
+        /* border: 1px solid #e0e0e0; */
         border-radius: 0.75rem;
         margin-bottom: 3px;
+        /* box-shadow: 0 1px 4px rgba(37, 123, 209, 0.06); */
         padding: 20px 24px;
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
         transition: box-shadow 0.2s;
-        width: 100%;
-        box-sizing: border-box;
       }
       .timetable-card:hover {
         box-shadow: 0 4px 16px rgba(37, 123, 209, 0.13);
         border-color: #257bd1;
       }
       .timetable-subject {
-        flex: 0 0 40%;
-        min-width: 40%;
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 100%;
         font-weight: 600;
         font-size: 1.05rem;
         color: #222;
@@ -140,9 +127,12 @@
         white-space: nowrap;
         text-overflow: ellipsis;
       }
-      .timetable-code {
-        flex: 0 0 15%;
-        min-width: 15%;
+      .timetable-code,
+      .timetable-paper,
+      .timetable-date {
+        flex: 0 0 120px;
+        min-width: 120px;
+        max-width: 120px;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -150,29 +140,13 @@
         box-sizing: border-box;
         overflow: hidden;
         white-space: nowrap;
+        padding: 0 4px;
       }
       .timetable-paper {
-        flex: 0 0 15%;
-        min-width: 15%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        overflow: hidden;
-        white-space: nowrap;
+        margin-right: 0;
       }
-      .timetable-date,
-      .timetable-nov-date {
-        flex: 0 0 15%;
-        min-width: 15%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        overflow: hidden;
-        white-space: nowrap;
+      .timetable-date {
+        margin-left: 0;
       }
       #noResults {
         display: none;
@@ -359,656 +333,559 @@
         <span class="th-subject">Subject Name</span>
         <span class="th-code">Code</span>
         <span class="th-paper">Paper</span>
-        <span class="th-date">Jun Dates</span>
-        <span class="th-nov-date">Nov Dates</span>
+        <span class="th-date">Exam Date</span>
       </div>
       <ul class="timetable-list" id="timetableList">
         <li class="timetable-card">
           <span class="timetable-subject">ACCESSORIES N5</span
           ><span class="timetable-code">10050465</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-06</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-06</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">APPLIED MANAGEMENT N4</span
           ><span class="timetable-code">4090594</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-18</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-18</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">APPLIED MANAGEMENT N5</span
           ><span class="timetable-code">4090605</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">APPLIED MANAGEMENT N6</span
           ><span class="timetable-code">4090576</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">CATERER CLIENT RELATIONS N5</span
           ><span class="timetable-code">10070295</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">CATERING THEORY AND PRACTICAL N4</span
           ><span class="timetable-code">10070254</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-10</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-10</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">CATERING THEORY AND PRACTICAL N5</span
           ><span class="timetable-code">10070265</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-03</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-03</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">CATERING THEORY AND PRACTICAL N6</span
           ><span class="timetable-code">10070346</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-11</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-11</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">CHILD HEALTH N4</span
           ><span class="timetable-code">9070244</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-27</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-27</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">CLOTHING CONSTRUCTION N4</span
           ><span class="timetable-code">10010474</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">CLOTHING CONSTRUCTION N5</span
           ><span class="timetable-code">10010505</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-05</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-05</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">CLOTHING CONSTRUCTION N6</span
           ><span class="timetable-code">10010505</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-06</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-06</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >COMMUNICATION AND HUMAN RELATIONS N6</span
           ><span class="timetable-code">5140306</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-06</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-06</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMMUNICATION N4</span
           ><span class="timetable-code">5140344</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-05-30</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-30</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMMUNICATION N4</span
           ><span class="timetable-code">5140344</span
           ><span class="timetable-paper">(2nd paper)</span
-          ><span class="timetable-date">2025-06-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMMUNICATION N5</span
           ><span class="timetable-code">5140395</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-06-10</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-10</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMMUNICATION N5</span
           ><span class="timetable-code">5140395</span
           ><span class="timetable-paper">(2nd paper)</span
-          ><span class="timetable-date">2025-06-12</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-12</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMMUNICATION N6</span
           ><span class="timetable-code">5140406</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMMUNICATION N6</span
           ><span class="timetable-code">5140406</span
           ><span class="timetable-paper">(2nd paper)</span
-          ><span class="timetable-date">2025-06-05</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-05</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMPUTER PRACTICE N4</span
           ><span class="timetable-code">6030204</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-21</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-21</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMPUTER PRACTICE N5</span
           ><span class="timetable-code">6030165</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-22</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-22</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMPUTER PRACTICE N6</span
           ><span class="timetable-code">6030196</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-23</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-23</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMPUTER PRACTICE: FARMING N4</span
           ><span class="timetable-code">40903544</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-27</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-27</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMPUTER PRACTICE: FARMING N5</span
           ><span class="timetable-code">40903545</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-27</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-27</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">COMPUTER PRACTICE: FARMING N6</span
           ><span class="timetable-code">40903546</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-04</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-04</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >COMPUTERISED FINANCIAL SYSTEMS N4</span
           ><span class="timetable-code">6030154</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >COMPUTERISED FINANCIAL SYSTEMS N5</span
           ><span class="timetable-code">6030175</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-27</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-27</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >COMPUTERISED FINANCIAL SYSTEMS N6</span
           ><span class="timetable-code">6030186</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >COST AND MANAGEMENT ACCOUNTING N5</span
           ><span class="timetable-code">4010185</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-17</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-17</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >COST AND MANAGEMENT ACCOUNTING N6</span
           ><span class="timetable-code">4010196</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-04</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-04</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">DATA MANAGEMENT: FARMING N5</span
           ><span class="timetable-code">4090465</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-28</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-28</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">DATA MANAGEMENT: FARMING N6</span
           ><span class="timetable-code">4090476</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-26</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-26</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">DAY CARE COMMUNICATION N5</span
           ><span class="timetable-code">5140225</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-28</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-28</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">DAY CARE COMMUNICATION N6</span
           ><span class="timetable-code">5140236</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-06</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-06</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">DAY CARE MANAGEMENT N6</span
           ><span class="timetable-code">4110396</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-10</span
-          ><span class="timetable-nov-date">2025-12-10</span>
-        </li>
-        <li class="timetable-card">
-          <span class="timetable-subject"
-            >DAY CARE PERSONNEL DEVELOPMENT N4</span
-          ><span class="timetable-code">4110384</span
-          ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date">2025-11-29</span>
+          ><span class="timetable-date">2025-06-10</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">ECONOMICS N4</span
           ><span class="timetable-code">2202034</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">ECONOMICS N5</span
           ><span class="timetable-code">2202095</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-10</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-10</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">EDUCATIONAL PSYCHOLOGY N5</span
           ><span class="timetable-code">20060105</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-27</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-27</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">EDUCATIONAL PSYCHOLOGY N6</span
           ><span class="timetable-code">20060116</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >ENTREPRENEURSHIP AND BUSINESS MANAGEMENT N4</span
           ><span class="timetable-code">4090304</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >ENTREPRENEURSHIP AND BUSINESS MANAGEMENT N4</span
           ><span class="timetable-code">4090304</span
           ><span class="timetable-paper">(2nd paper)</span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >ENTREPRENEURSHIP AND BUSINESS MANAGEMENT N5</span
           ><span class="timetable-code">4090315</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-05-28</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-28</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >ENTREPRENEURSHIP AND BUSINESS MANAGEMENT N5</span
           ><span class="timetable-code">4090315</span
           ><span class="timetable-paper">(2nd paper)</span
-          ><span class="timetable-date">2025-05-28</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-28</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >ENTREPRENEURSHIP AND BUSINESS MANAGEMENT N6</span
           ><span class="timetable-code">4090336</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-06-06</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-06</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >ENTREPRENEURSHIP AND BUSINESS MANAGEMENT N6</span
           ><span class="timetable-code">4090336</span
           ><span class="timetable-paper">(2nd paper)</span
-          ><span class="timetable-date">2025-06-06</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-06</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FASHION DRAWING N4</span
           ><span class="timetable-code">10010494</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-06-02</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-02</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FASHION DRAWING N5</span
           ><span class="timetable-code">10010525</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-05-30</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-30</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FASHION DRAWING N5</span
           ><span class="timetable-code">10010525</span
           ><span class="timetable-paper">(2nd paper)</span
-          ><span class="timetable-date">2025-06-13</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-13</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FASHION DRAWING N6</span
           ><span class="timetable-code">10010556</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-06-09</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-09</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FASHION DRAWING N6</span
           ><span class="timetable-code">10010556</span
           ><span class="timetable-paper">(2nd paper)</span
-          ><span class="timetable-date">2025-06-17</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-17</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FINANCIAL ACCOUNTING N4</span
           ><span class="timetable-code">4010164</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-06</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-06</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FINANCIAL ACCOUNTING N5</span
           ><span class="timetable-code">4010175</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-03</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-03</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FINANCIAL ACCOUNTING N6</span
           ><span class="timetable-code">4010216</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-09</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-09</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FINANCIAL MANAGEMENT: FARMING N4</span
           ><span class="timetable-code">40903654</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FINANCIAL MANAGEMENT: FARMING N5</span
           ><span class="timetable-code">4090495</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-17</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-17</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FINANCIAL MANAGEMENT: FARMING N6</span
           ><span class="timetable-code">4090506</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-09</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-09</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">FOOD AND BEVERAGE SERVICE N5</span
           ><span class="timetable-code">10070355</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-11</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-11</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">HISTORY OF ART N5</span
           ><span class="timetable-code">3050555</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-28</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-28</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">HISTORY OF ART N6</span
           ><span class="timetable-code">3050566</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-27</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-27</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">HOTEL RECEPTION N6</span
           ><span class="timetable-code">4061066</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-06</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-06</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >HUMAN RESOURCE MANAGEMENT: FARMING N6</span
           ><span class="timetable-code">4090516</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-11</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-11</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">INCOME TAX N6</span
           ><span class="timetable-code">4010206</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">INFORMATION PROCESSING N4</span
           ><span class="timetable-code">6020254</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">INFORMATION PROCESSING N5</span
           ><span class="timetable-code">6020275</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-20</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-20</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">INFORMATION PROCESSING N6</span
           ><span class="timetable-code">6020286</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-26</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-26</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >INTERIOR PRINCIPLES: THEORY AND PRACTICAL N4</span
           ><span class="timetable-code">10050324</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-27</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-27</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">INTRODUCTORY ACCOUNTING N4</span
           ><span class="timetable-code">4010154</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-10</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-10</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >INTRODUCTORY COMPUTER PRACTICE N4</span
           ><span class="timetable-code">6030134</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-28</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-28</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">INTRODUCTORY ENTREPRENEURSHIP N4</span
           ><span class="timetable-code">4090294</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >INTRODUCTORY FACTORY ORGANISATION N4</span
           ><span class="timetable-code">4090584</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-29</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-29</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">INTRODUCTORY FASHION DRAWING N4</span
           ><span class="timetable-code">10010464</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-02</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-02</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >INTRODUCTORY HYGIENE AND SAFETY N4</span
           ><span class="timetable-code">19050104</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-09</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-09</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >INTRODUCTORY INFORMATION PROCESSING N4</span
           ><span class="timetable-code">6050014</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-02</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-02</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">INTRODUCTORY MARKETING N4</span
           ><span class="timetable-code">4030044</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-13</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-13</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >INTRODUCTORY PATTERN CONSTRUCTION N4</span
           ><span class="timetable-code">10010454</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >INTRODUCTORY PERSONNEL MANAGEMENT N4</span
           ><span class="timetable-code">4110364</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >INTRODUCTORY PUBLIC ADMINISTRATION N4</span
           ><span class="timetable-code">21010014</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-04</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-04</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >INTRODUCTORY SERVICING TECHNIQUES PRACTICAL N4</span
           ><span class="timetable-code">10070334</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-05</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-05</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">LABOUR RELATIONS N5</span
           ><span class="timetable-code">4110455</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-11</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-11</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">LABOUR RELATIONS N6</span
           ><span class="timetable-code">4110486</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-19</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-19</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">LEGAL PRACTICE N5</span
           ><span class="timetable-code">13030115</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-30</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-30</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">LEGAL PRACTICE N6</span
           ><span class="timetable-code">13030126</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-11</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-11</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject"
             >MAINTENANCE MANAGEMENT: FARMING N5</span
           ><span class="timetable-code">4090535</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-05</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-05</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">MANAGEMENT COMMUNICATION N4</span
           ><span class="timetable-code">5140364</span
           ><span class="timetable-paper">(1st paper)</span
-          ><span class="timetable-date">2025-05-27</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-27</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">MANAGEMENT COMMUNICATION N4</span
           ><span class="timetable-code">5140364</span
           ><span class="timetable-paper">(2nd paper)</span
-          ><span class="timetable-date">2025-06-02</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-02</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">MANAGEMENT COMMUNICATION N5</span
           ><span class="timetable-code">5140364</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-27</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-27</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">MANAGEMENT: FARMING N4</span
           ><span class="timetable-code">40903874</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-06-03</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-06-03</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">MANAGEMENT: FARMING N5</span
           ><span class="timetable-code">4090555</span
           ><span class="timetable-paper"></span
-          ><span class="timetable-date">2025-05-30</span
-          ><span class="timetable-nov-date"></span>
+          ><span class="timetable-date">2025-05-30</span>
         </li>
         <li class="timetable-card">
           <span class="timetable-subject">MANAGEMENT: FARMING N5</span
