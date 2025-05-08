@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aug 2025 Engineering Exam Timetable</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets-front/vendor/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./assets-front/css/theme.min.css" />
+    <link rel="shortcut icon" type="image/png" href="./favicon.png" />
+
+    <style>
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 32px 24px;
+      }
+      h1 {
+        color: #257bd1;
+        text-align: center;
+        margin-bottom: 32px;
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+      .input-group {
+        margin-bottom: 32px;
+      }
+      #searchBar {
+        font-size: 1.1rem;
+        border-radius: 0.5rem 0 0 0.5rem;
+        border: 1px solid #d1d5db;
+        padding: 14px 18px;
+        box-shadow: none;
+      }
+      .input-group-text {
+        background: #fff;
+        border-radius: 0 0.5rem 0.5rem 0;
+        border: 1px solid #d1d5db;
+        border-left: 0;
+        font-size: 1.3rem;
+        color: #257bd1;
+      }
+      .timetable-header {
+        display: flex;
+        align-items: center;
+        background: #f1f8fe;
+        border-radius: 0.75rem;
+        padding: 14px 24px;
+        font-weight: 600;
+        color: #257bd1;
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+        border: 1px solid #e0e0e0;
+      }
+      .th-subject {
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .th-code,
+      .th-paper,
+      .th-date {
+        flex: 0 0 120px;
+        min-width: 120px;
+        max-width: 120px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0 4px;
+      }
+      .timetable-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .timetable-card {
+        background: #fff;
+        /* border: 1px solid #e0e0e0; */
+        border-radius: 0.75rem;
+        margin-bottom: 3px;
+        /* box-shadow: 0 1px 4px rgba(37, 123, 209, 0.06); */
+        padding: 20px 24px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        transition: box-shadow 0.2s;
+      }
+      .timetable-card:hover {
+        box-shadow: 0 4px 16px rgba(37, 123, 209, 0.13);
+        border-color: #257bd1;
+      }
+      .timetable-subject {
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 100%;
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: #222;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding-left: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .timetable-code,
+      .timetable-paper,
+      .timetable-date {
+        flex: 0 0 120px;
+        min-width: 120px;
+        max-width: 120px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0 4px;
+      }
+      .timetable-paper {
+        margin-right: 0;
+      }
+      .timetable-date {
+        margin-left: 0;
+      }
+      #noResults {
+        display: none;
+        text-align: center;
+        color: #b00;
+        font-weight: bold;
+        margin-top: 32px;
+      }
+      @media (max-width: 700px) {
+        .container {
+          padding: 16px;
+          margin: 20px auto;
+        }
+        .timetable-header {
+          display: none; /* Hide the header on mobile */
+        }
+        .timetable-card {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 16px;
+          gap: 8px;
+          position: relative;
+        }
+        .timetable-subject {
+          min-width: 0;
+          flex-basis: auto;
+          width: 100%;
+          font-size: 1.05rem;
+          padding-bottom: 8px;
+          border-bottom: 1px solid #e0e0e0;
+          margin-bottom: 4px;
+        }
+        .timetable-code,
+        .timetable-paper,
+        .timetable-date {
+          min-width: 0;
+          max-width: 100%;
+          flex-basis: auto;
+          width: 100%;
+          justify-content: flex-start;
+          padding: 4px 0;
+          font-size: 0.95rem;
+        }
+        /* Add labels for mobile view */
+        .timetable-code::before {
+          content: "Code: ";
+          font-weight: 600;
+          color: #257bd1;
+          margin-right: 8px;
+        }
+        .timetable-paper::before {
+          display: var(--show-paper-label, inline);
+        }
+        .timetable-date::before {
+          content: "Exam Date: ";
+          font-weight: 600;
+          color: #257bd1;
+          margin-right: 8px;
+        }
+        /* Adjust search and sort buttons for mobile */
+        .input-group {
+          margin-bottom: 20px;
+        }
+        #searchBar {
+          font-size: 1rem;
+          padding: 12px 16px;
+        }
+        .btn {
+          font-size: 0.9rem;
+          padding: 8px 12px;
+        }
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 24px;
+        }
+      }
+      .date-group {
+        margin-bottom: 24px;
+      }
+      .date-group:last-child {
+        margin-bottom: 0;
+      }
+      .date-header {
+        background: #f1f8fe;
+        padding: 12px 24px;
+        border-radius: 0.75rem;
+        margin-bottom: 12px;
+        font-weight: 600;
+        color: #257bd1;
+        border: 1px solid #e0e0e0;
+        /* box-shadow: 0 2px 8px rgba(37, 123, 209, 0.10); */
+      }
+      .btn-outline-secondary#prevPageBtn:hover,
+      .btn-outline-secondary#prevPageBtn:focus {
+        background: none !important;
+        border-color: #6c757d !important;
+        color: #6c757d !important;
+        box-shadow: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button
+        onclick="history.back()"
+        id="prevPageBtn"
+        class="btn btn-outline-secondary btn-xs mb-2"
+        style="
+          font-size: 0.85rem;
+          padding: 3px 10px 3px 8px;
+          margin-bottom: 12px;
+        "
+      >
+        <i class="bi-arrow-left" style="font-size: 1em"></i> Prev
+      </button>
+      <div style="text-align: center; margin-bottom: 8px">
+        <a
+          class="navbar-brand"
+          href="./index.html"
+          aria-label="Space"
+          style="display: inline-block"
+        >
+          <img
+            class="navbar-brand-logo"
+            src="./assets-front/svg/logos/logo.svg"
+            alt="Mytvet dark logo"
+            width="136"
+            height="36"
+          />
+        </a>
+      </div>
+      <br />
+      <h1>
+        Engineering Exam Timetable
+        <br />
+      </h1>
+      <h4
+        style="
+          text-align: center;
+          color: #666;
+          margin-top: -18px;
+          margin-bottom: 28px;
+          font-weight: 500;
+        "
+      >
+        28 Jul - 19 Aug 2025
+      </h4>
+      <div class="input-group input-group-merge">
+        <input
+          type="text"
+          class="form-control"
+          id="searchBar"
+          placeholder="Search by subject name or code"
+          aria-label="Search by subject name or code"
+        />
+        <span class="input-group-text"><i class="bi-search"></i></span>
+      </div>
+      <div
+        style="
+          display: flex;
+          gap: 12px;
+          margin-bottom: 18px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        "
+      >
+        <div>
+          <a
+            id="downloadPDF"
+            class="btn btn-primary btn-sm"
+            href="https://docsend.com/view/vc8h62ytrcieascz"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="bi-file-pdf me-1"></i> View PDF Timetable
+          </a>
+        </div>
+        <div style="display: flex; gap: 12px">
+          <button
+            id="sortDate"
+            class="btn btn-outline-primary btn-sm"
+            type="button"
+          >
+            Sort by Exam Date <span id="dateSortIcon">↑</span>
+          </button>
+        </div>
+      </div>
+      <br />
+      <div class="timetable-header">
+        <span class="th-subject">Subject Name</span>
+        <span class="th-code">Code</span>
+        <span class="th-paper">Paper</span>
+        <span class="th-date">Exam Date</span>
+      </div>
+      <ul class="timetable-list" id="timetableList">
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >INDUSTRIAL ELECTRONICS N2 (Skills)</span
+          ><span class="timetable-code">8080602</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MECHANICAL DRAWING AND DESIGN N5</span
+          ><span class="timetable-code">8090075</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MECHANICAL DRAUGHTING N4</span
+          ><span class="timetable-code">8090024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MECHANICAL DRAUGHTING</span
+          ><span class="timetable-code">8090244</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >PRODUCTION AND QUALITY CONTROL N6</span
+          ><span class="timetable-code">8140066</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INDUSTRIAL ORIENTATION N3</span
+          ><span class="timetable-code">4110033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >AIRCRAFT METALWORK THEORY N2 (Skills)</span
+          ><span class="timetable-code">11021012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MATHEMATICS N1 (Skills)</span
+          ><span class="timetable-code">16030121</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">SUPERVISORY MANAGEMENT N6</span
+          ><span class="timetable-code">4110526</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >BUILDING AND STRUCTURAL SURVEYING N5</span
+          ><span class="timetable-code">8060045</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ELECTROTECHNICS N4</span
+          ><span class="timetable-code">8080074</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INDUSTRIAL INSTRUMENTS N6</span
+          ><span class="timetable-code">8080216</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">COMMUNICATION-ELECTRONICS N4</span
+          ><span class="timetable-code">8080224</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">COMMUNICATION-ELECTRONICS N5</span
+          ><span class="timetable-code">8080235</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">TECHNICAL ILLUSTRATION</span
+          ><span class="timetable-code">8090235</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ENGINEERING DRAWING N1 (Skills)</span
+          ><span class="timetable-code">8090261</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">CHEMISTRY N4</span
+          ><span class="timetable-code">15040004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MATHEMATICS N2 (Skills)</span
+          ><span class="timetable-code">16030192</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-29</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >INDUSTRIAL ORIENTATION N2 (Skills)</span
+          ><span class="timetable-code">4110022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-30</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">SUPERVISORY MANAGEMENT N5</span
+          ><span class="timetable-code">4110515</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-30</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INDUSTRIAL ELECTRONICS N3</span
+          ><span class="timetable-code">8080613</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-30</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">BUILDING DRAWING N2 (Skills)</span
+          ><span class="timetable-code">8090012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-30</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >PLATING AND STRUCTURAL STEEL DRAWING N3</span
+          ><span class="timetable-code">8090113</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-30</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MATHEMATICS N4</span
+          ><span class="timetable-code">16030146</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-30</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MATHEMATICS N6</span
+          ><span class="timetable-code">16030166</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-30</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INSTALLATION RULES PAPER 1</span
+          ><span class="timetable-code">11040112</span
+          ><span class="timetable-paper">Paper 1</span
+          ><span class="timetable-date">2025-07-30</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >SPEC. ELECTRICAL INSTALL. CODES PAPER 1</span
+          ><span class="timetable-code">8080654</span
+          ><span class="timetable-paper">Paper 1</span
+          ><span class="timetable-date">2025-07-30</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">BUILDING ADMINISTRATION N4</span
+          ><span class="timetable-code">4090034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-31</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">STRUCTURAL STEEL DETAILING</span
+          ><span class="timetable-code">8090025</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-31</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MECHANOTECHNICS N4</span
+          ><span class="timetable-code">8190194</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-31</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">BUILDING SCIENCE N3</span
+          ><span class="timetable-code">15070023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-31</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ENGINEERING PHYSICS N6</span
+          ><span class="timetable-code">15070126</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-31</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ENGINEERING SCIENCE N3</span
+          ><span class="timetable-code">15070143</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-31</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MATHEMATICS N5</span
+          ><span class="timetable-code">16030175</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-07-31</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">BUILDING DRAUGHTING</span
+          ><span class="timetable-code">2050033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">SUPERVISORY MANAGEMENT N4</span
+          ><span class="timetable-code">4110504</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">CHEMICAL PLANT OPERATION N6</span
+          ><span class="timetable-code">8050026</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >BUILDING AND STRUCTURAL CONSTRUCTION N6</span
+          ><span class="timetable-code">8060026</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >FAULT FINDING AND PROTECTIVE DEVICES N5</span
+          ><span class="timetable-code">8080115</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">LOGIC SYSTEMS N6</span
+          ><span class="timetable-code">8080306</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">DIGITAL ELECTRONICS N6</span
+          ><span class="timetable-code">8080376</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">BUILDING SCIENCE N2 (Skills)</span
+          ><span class="timetable-code">15070012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ENGINEERING SCIENCE N2 (Skills)</span
+          ><span class="timetable-code">15070042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MATHEMATICS N3</span
+          ><span class="timetable-code">16030143</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >BUILDING AND STRUCTURAL SURVEYING N6</span
+          ><span class="timetable-code">8060056</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >FAULT FINDING AND PROTECTIVE DEVICES N6</span
+          ><span class="timetable-code">8080126</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >FITTING AND MACHINING THEORY N2 (SKILLS)</span
+          ><span class="timetable-code">8080115</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">DIESEL TRADE THEORY N2 (SKILLS)</span
+          ><span class="timetable-code">11022032</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INDUSTRIAL ELECTRONICS N5</span
+          ><span class="timetable-code">8080175</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">LOGIC SYSTEMS N2 (Skills)</span
+          ><span class="timetable-code">8080262</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >SPEC. ELECTRICAL INSTALL. CODES PAPER 2</span
+          ><span class="timetable-code">8080644</span
+          ><span class="timetable-paper">Paper 2</span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">WATER TREATMENT PRACTICE N3</span
+          ><span class="timetable-code">8120033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MECHANOTECHNICS N6</span
+          ><span class="timetable-code">8190236</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INSTALLATION RULES PAPER 2</span
+          ><span class="timetable-code">11040142</span
+          ><span class="timetable-paper">Paper 2</span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">RIGGING THEORY N2 (Skills)</span
+          ><span class="timetable-code">11040232</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ENGINEERING SCIENCE N4</span
+          ><span class="timetable-code">15070134</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ELECTROTECHNICS N5</span
+          ><span class="timetable-code">8080085</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INDUSTRIAL ELECTRONICS N4</span
+          ><span class="timetable-code">8080164</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INDUSTRIAL ELECTRONICS N6</span
+          ><span class="timetable-code">8080186</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MECHANOTECHNOLOGY N3</span
+          ><span class="timetable-code">8190373</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INSTRUMENT TRADE THEORY N3</span
+          ><span class="timetable-code">11040463</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ELECTRICAL TRADE THEORY N3</span
+          ><span class="timetable-code">11041263</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >BRICKLAYING AND PLASTERING THEORY N2 (Skills)</span
+          ><span class="timetable-code">1101102</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-06</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >ARMATURE WINDING THEORY N2 (Skills)</span
+          ><span class="timetable-code">11020042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-06</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">PICTORIAL DRAUGHTING</span
+          ><span class="timetable-code">8090214</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-06</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >PRODUCTION AND QUALITY CONTROL N5</span
+          ><span class="timetable-code">8140055</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-06</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">PLANT OPERATION THEORY N3</span
+          ><span class="timetable-code">11040023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-06</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MOTOR TRADE THEORY N3</span
+          ><span class="timetable-code">11040673</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-06</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">COMMUNICATION N4</span
+          ><span class="timetable-code">5140004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">CHEMICAL PLANT OPERATION N5</span
+          ><span class="timetable-code">8050015</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">LOGIC SYSTEMS N3</span
+          ><span class="timetable-code">8080273</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">LOGIC SYSTEMS N5</span
+          ><span class="timetable-code">8080295</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">DIGITAL ELECTRONICS N5</span
+          ><span class="timetable-code">8080365</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ENGINEERING DRAWING N3</span
+          ><span class="timetable-code">8090283</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">FLUID MECHANICS N5</span
+          ><span class="timetable-code">8190205</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">FLUID MECHANICS N6</span
+          ><span class="timetable-code">8190216</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">PLUMBING THEORY N2 (Skills)</span
+          ><span class="timetable-code">11022056</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">PLATERS' THEORY N2 (Skills)</span
+          ><span class="timetable-code">11022182</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >AIRCRAFT MAINTENANCE THEORY N2 (Skills)</span
+          ><span class="timetable-code">11041102</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">AIRCRAFT MAINTENANCE THEORY N3</span
+          ><span class="timetable-code">11041113</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >CARPENTRY AND ROOFING THEORY N2 (Skills)</span
+          ><span class="timetable-code">11022192</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >PLANT OPERATION THEORY N2 (Skills)</span
+          ><span class="timetable-code">11040012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >INSTRUMENT TRADE THEORY N2 (Skills)</span
+          ><span class="timetable-code">11040452</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >RADIO AND TELEVISION THEORY N2 (Skills)</span
+          ><span class="timetable-code">11040832</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">LOSS CONTROL N6</span
+          ><span class="timetable-code">11041196</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >ELECTRICAL TRADE THEORY N2 (Skills)</span
+          ><span class="timetable-code">11041872</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ENGINEERING SCIENCE N1 (Skills)</span
+          ><span class="timetable-code">15070391</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">DIESEL TRADE THEORY N3</span
+          ><span class="timetable-code">11041823</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">CHEMISTRY N5</span
+          ><span class="timetable-code">15040105</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">CHEMICAL PLANT OPERATION N4</span
+          ><span class="timetable-code">8050004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">BUILDING ADMINISTRATION N6</span
+          ><span class="timetable-code">4090056</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >BUILDING AND STRUCTURAL CONSTRUCTION N4</span
+          ><span class="timetable-code">8060040</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ELECTROTECHNICS N6</span
+          ><span class="timetable-code">8080096</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >FAULT FINDING AND PROTECTIVE DEVICES N4</span
+          ><span class="timetable-code">8080104</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">COMMUNICATION-ELECTRONICS N6</span
+          ><span class="timetable-code">8080246</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">BUILDING AND CIVIL TECHNOLOGY N3</span
+          ><span class="timetable-code">11010273</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >MOTOR BODYWORK THEORY N2 (Skills)</span
+          ><span class="timetable-code">11040572</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >MOTOR ELECTRICAL THEORY N2 (Skills)</span
+          ><span class="timetable-code">11040612</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MOTOR TRADE THEORY N2 (Skills)</span
+          ><span class="timetable-code">11040662</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >MACHINES AND PROPERTIES OF METALS N4</span
+          ><span class="timetable-code">8190054</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >MECHANICAL AND DRAWING-OFFICE ORIENTATION</span
+          ><span class="timetable-code">8090184</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MECHANICAL DRAWING AND DESIGN N6</span
+          ><span class="timetable-code">8090086</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">MECHANOTECHNICS N5</span
+          ><span class="timetable-code">8190225</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">PAPERMAKING N4</span
+          ><span class="timetable-code">11022114</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >PLATING AND STRUCTURAL STEEL DRAWING N2 (Skills)</span
+          ><span class="timetable-code">8090102</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >PLATING AND STRUCTURAL STEEL DRAWING N4</span
+          ><span class="timetable-code">8090124</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >REFRIGERATION TRADE THEORY N2 (Skills)</span
+          ><span class="timetable-code">11041572</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">SUPERVISION IN INDUSTRY N3</span
+          ><span class="timetable-code">4111053</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">TOOLMAKERS' THEORY N2 (Skills)</span
+          ><span class="timetable-code">11022032</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >WASTE-WATER TREATMENT PRACTICE N3</span
+          ><span class="timetable-code">8120033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">QUANTITY SURVEYING N5</span
+          ><span class="timetable-code">2050013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">COMPUTER-AIDED DRAUGHTING</span
+          ><span class="timetable-code">6010035</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >STRENGTH OF MATERIALS AND STRUCTURES N6</span
+          ><span class="timetable-code">8060076</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">LOGIC SYSTEMS N4</span
+          ><span class="timetable-code">8080284</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-15</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">DIGITAL ELECTRONICS N4</span
+          ><span class="timetable-code">8080354</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-15</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ENGINEERING DRAWING N2 (Skills)</span
+          ><span class="timetable-code">8090272</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-15</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >PRODUCTION AND QUALITY CONTROL N4</span
+          ><span class="timetable-code">8140034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-15</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">POWER MACHINES N5</span
+          ><span class="timetable-code">8190045</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-15</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ELECTRO-TECHNOLOGY N3</span
+          ><span class="timetable-code">11040343</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-15</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">CHEMICAL TECHNOLOGY N6</span
+          ><span class="timetable-code">15040106</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-15</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >INDUSTRIAL ORGANISATION AND PLANNING N3</span
+          ><span class="timetable-code">4090113</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >BUILDING AND STRUCTURAL CONSTRUCTION N5</span
+          ><span class="timetable-code">8060154</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >BUILDING AND STRUCTURAL SURVEYING N4</span
+          ><span class="timetable-code">8060034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INDUSTRIAL INSTRUMENTS N4</span
+          ><span class="timetable-code">8080174</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">INDUSTRIAL INSTRUMENTS N5</span
+          ><span class="timetable-code">8080205</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">GENERAL DRAUGHTING</span
+          ><span class="timetable-code">8090194</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">POWER MACHINES N6</span
+          ><span class="timetable-code">8190046</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">QUANTITY SURVEYING N4</span
+          ><span class="timetable-code">2050004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">QUANTITY SURVEYING N6</span
+          ><span class="timetable-code">2050026</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">BUILDING ADMINISTRATION N5</span
+          ><span class="timetable-code">4090045</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">COMPUTER PRINCIPLES N4</span
+          ><span class="timetable-code">6400045</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >STRENGTH OF MATERIALS AND STRUCTURES N5</span
+          ><span class="timetable-code">8060065</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">CONTROL SYSTEMS N6</span
+          ><span class="timetable-code">8080016</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">ELECTRICAL DRAUGHTING</span
+          ><span class="timetable-code">8080625</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">AIRCRAFT METALWORK THEORY N3</span
+          ><span class="timetable-code">11021113</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-08-19</span>
+        </li>
+        <div class="date-group">
+          <div class="date-header">Thursday, August 7, 2025</div>
+          <li class="timetable-card">
+            <span class="timetable-subject">BUILDING DRAWING N3</span>
+            <span class="timetable-code">8090023</span>
+            <span class="timetable-paper"></span>
+            <span class="timetable-date">2025-08-07</span>
+          </li>
+          <li class="timetable-card">
+            <span class="timetable-subject"
+              >RADIO AND TELEVISION THEORY N3</span
+            >
+            <span class="timetable-code">11040843</span>
+            <span class="timetable-paper"></span>
+            <span class="timetable-date">2025-08-07</span>
+          </li>
+          <li class="timetable-card">
+            <span class="timetable-subject">RADIO THEORY N2 (Skills)</span>
+            <span class="timetable-code">11040862</span>
+            <span class="timetable-paper"></span>
+            <span class="timetable-date">2025-08-07</span>
+          </li>
+          <li class="timetable-card">
+            <span class="timetable-subject">RADIO THEORY N3</span>
+            <span class="timetable-code">11040873</span>
+            <span class="timetable-paper"></span>
+            <span class="timetable-date">2025-08-07</span>
+          </li>
+          <li class="timetable-card">
+            <span class="timetable-subject">REFRIGERATION TRADE THEORY N3</span>
+            <span class="timetable-code">11041583</span>
+            <span class="timetable-paper"></span>
+            <span class="timetable-date">2025-08-07</span>
+          </li>
+          <li class="timetable-card">
+            <span class="timetable-subject">ENGINEERING PHYSICS N5</span>
+            <span class="timetable-code">15070115</span>
+            <span class="timetable-paper"></span>
+            <span class="timetable-date">2025-08-07</span>
+          </li>
+          <li class="timetable-card">
+            <span class="timetable-subject"
+              >WATER AND WASTE-WATER TREATMENT PRACTICE N2 (Skills)</span
+            >
+            <span class="timetable-code">8120022</span>
+            <span class="timetable-paper"></span>
+            <span class="timetable-date">2025-08-07</span>
+          </li>
+          <li class="timetable-card">
+            <span class="timetable-subject">WELDERS' THEORY N2 (Skills)</span>
+            <span class="timetable-code">11022082</span>
+            <span class="timetable-paper"></span>
+            <span class="timetable-date">2025-08-07</span>
+          </li>
+        </div>
+      </ul>
+      <div id="noResults">No results found.</div>
+    </div>
+    <script>
+      const searchBar = document.getElementById("searchBar");
+      const timetableList = document.getElementById("timetableList");
+      const noResults = document.getElementById("noResults");
+      const sortDateBtn = document.getElementById("sortDate");
+      const dateSortIcon = document.getElementById("dateSortIcon");
+
+      // Capitalize the first letter of every word in the subject name
+      function titleCase(str) {
+        if (!str) return str;
+        return str.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+      }
+      function updateSubjectNamesCase() {
+        document.querySelectorAll(".timetable-subject").forEach((el) => {
+          el.textContent = titleCase(el.textContent.trim());
+        });
+      }
+      // Run on initial load
+      updateSubjectNamesCase();
+
+      let timetableData = Array.from(timetableList.children).map(
+        (card) => card.outerHTML
+      );
+      let dateAsc = true;
+
+      function renderList(htmlArr) {
+        timetableList.innerHTML = htmlArr.join("");
+        updateSubjectNamesCase();
+      }
+
+      function filterList() {
+        const filter = searchBar.value.toLowerCase();
+        let visibleRows = 0;
+        // Select all timetable cards, even if nested in .date-group
+        const cards = timetableList.querySelectorAll(".timetable-card");
+        cards.forEach((card) => {
+          const subject = card
+            .querySelector(".timetable-subject")
+            .textContent.toLowerCase();
+          const code = card
+            .querySelector(".timetable-code")
+            .textContent.toLowerCase();
+          if (subject.includes(filter) || code.includes(filter)) {
+            card.style.display = "";
+            visibleRows++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+        // Hide date groups with no visible cards
+        timetableList.querySelectorAll(".date-group").forEach((group) => {
+          const hasVisible = Array.from(
+            group.querySelectorAll(".timetable-card")
+          ).some((card) => card.style.display !== "none");
+          group.style.display = hasVisible ? "" : "none";
+        });
+        noResults.style.display = visibleRows === 0 ? "" : "none";
+      }
+
+      searchBar.addEventListener("keyup", filterList);
+
+      function formatDate(dateStr) {
+        const date = new Date(dateStr);
+        return date.toLocaleDateString("en-US", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+      }
+
+      sortDateBtn.addEventListener("click", function () {
+        let allCards = Array.from(document.querySelectorAll(".timetable-card"));
+        let dateGroups = {};
+        allCards.forEach((card) => {
+          const date = card.querySelector(".timetable-date").textContent.trim();
+          if (!dateGroups[date]) {
+            dateGroups[date] = [];
+          }
+          dateGroups[date].push(card);
+        });
+        Object.keys(dateGroups).forEach((date) => {
+          dateGroups[date].sort((a, b) => {
+            const sa = a
+              .querySelector(".timetable-subject")
+              .textContent.trim()
+              .toLowerCase();
+            const sb = b
+              .querySelector(".timetable-subject")
+              .textContent.trim()
+              .toLowerCase();
+            return sa.localeCompare(sb);
+          });
+        });
+        let sortedDates = Object.keys(dateGroups).sort((a, b) => {
+          return dateAsc ? a.localeCompare(b) : b.localeCompare(a);
+        });
+        timetableList.innerHTML = "";
+        sortedDates.forEach((date) => {
+          const dateGroup = document.createElement("div");
+          dateGroup.className = "date-group";
+          const dateHeader = document.createElement("div");
+          dateHeader.className = "date-header";
+          dateHeader.textContent = formatDate(date);
+          dateGroup.appendChild(dateHeader);
+          dateGroups[date].forEach((card) => {
+            dateGroup.appendChild(card);
+          });
+          timetableList.appendChild(dateGroup);
+        });
+        updateSubjectNamesCase();
+        dateAsc = !dateAsc;
+        dateSortIcon.textContent = dateAsc ? "↑" : "↓";
+        filterList();
+      });
+
+      sortDateBtn.classList.add("active");
+      (function initialSortByDate() {
+        let allCards = Array.from(document.querySelectorAll(".timetable-card"));
+        let dateGroups = {};
+        allCards.forEach((card) => {
+          const date = card.querySelector(".timetable-date").textContent.trim();
+          if (!dateGroups[date]) {
+            dateGroups[date] = [];
+          }
+          dateGroups[date].push(card);
+        });
+        Object.keys(dateGroups).forEach((date) => {
+          dateGroups[date].sort((a, b) => {
+            const sa = a
+              .querySelector(".timetable-subject")
+              .textContent.trim()
+              .toLowerCase();
+            const sb = b
+              .querySelector(".timetable-subject")
+              .textContent.trim()
+              .toLowerCase();
+            return sa.localeCompare(sb);
+          });
+        });
+        let sortedDates = Object.keys(dateGroups).sort((a, b) =>
+          a.localeCompare(b)
+        );
+        timetableList.innerHTML = "";
+        sortedDates.forEach((date) => {
+          const dateGroup = document.createElement("div");
+          dateGroup.className = "date-group";
+          const dateHeader = document.createElement("div");
+          dateHeader.className = "date-header";
+          dateHeader.textContent = formatDate(date);
+          dateGroup.appendChild(dateHeader);
+          dateGroups[date].forEach((card) => {
+            dateGroup.appendChild(card);
+          });
+          timetableList.appendChild(dateGroup);
+        });
+        updateSubjectNamesCase();
+      })();
+
+      function updatePaperLabelsMobile() {
+        if (window.innerWidth <= 700) {
+          document.querySelectorAll(".timetable-card").forEach((card) => {
+            const paper = card.querySelector(".timetable-paper");
+            if (paper && !paper.textContent.trim()) {
+              paper.style.setProperty("--show-paper-label", "none");
+            } else if (paper) {
+              paper.style.setProperty("--show-paper-label", "inline");
+            }
+          });
+        } else {
+          document.querySelectorAll(".timetable-paper").forEach((paper) => {
+            paper.style.setProperty("--show-paper-label", "inline");
+          });
+        }
+      }
+      // Call on load and on resize
+      updatePaperLabelsMobile();
+      window.addEventListener("resize", updatePaperLabelsMobile);
+    </script>
+  </body>
+</html>
