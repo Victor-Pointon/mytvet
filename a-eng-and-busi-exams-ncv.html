@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nov NCV 2025 Engineering Exam Timetable</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets-front/vendor/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./assets-front/css/theme.min.css" />
+    <link rel="shortcut icon" type="image/png" href="./favicon.png" />
+
+    <style>
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 32px 24px;
+      }
+      h1 {
+        color: #257bd1;
+        text-align: center;
+        margin-bottom: 32px;
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+      .input-group {
+        margin-bottom: 32px;
+      }
+      #searchBar {
+        font-size: 1.1rem;
+        border-radius: 0.5rem 0 0 0.5rem;
+        border: 1px solid #d1d5db;
+        padding: 14px 18px;
+        box-shadow: none;
+      }
+      .input-group-text {
+        background: #fff;
+        border-radius: 0 0.5rem 0.5rem 0;
+        border: 1px solid #d1d5db;
+        border-left: 0;
+        font-size: 1.3rem;
+        color: #257bd1;
+      }
+      .timetable-header {
+        display: flex;
+        align-items: center;
+        background: #f1f8fe;
+        border-radius: 0.75rem;
+        padding: 14px 24px;
+        font-weight: 600;
+        color: #257bd1;
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+        border: 1px solid #e0e0e0;
+      }
+      .th-subject {
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .th-code,
+      .th-paper,
+      .th-date {
+        flex: 0 0 120px;
+        min-width: 120px;
+        max-width: 120px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0 4px;
+      }
+      .timetable-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .timetable-card {
+        background: #fff;
+        /* border: 1px solid #e0e0e0; */
+        border-radius: 0.75rem;
+        margin-bottom: 3px;
+        /* box-shadow: 0 1px 4px rgba(37, 123, 209, 0.06); */
+        padding: 20px 24px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        transition: box-shadow 0.2s;
+      }
+      .timetable-card:hover {
+        box-shadow: 0 4px 16px rgba(37, 123, 209, 0.13);
+        border-color: #257bd1;
+      }
+      .timetable-subject {
+        flex: 1 1 220px;
+        min-width: 220px;
+        max-width: 100%;
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: #222;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding-left: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .timetable-code,
+      .timetable-paper,
+      .timetable-date {
+        flex: 0 0 120px;
+        min-width: 120px;
+        max-width: 120px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0 4px;
+      }
+      .timetable-paper {
+        margin-right: 0;
+      }
+      .timetable-date {
+        margin-left: 0;
+      }
+      #noResults {
+        display: none;
+        text-align: center;
+        color: #b00;
+        font-weight: bold;
+        margin-top: 32px;
+      }
+      @media (max-width: 700px) {
+        .container {
+          padding: 16px;
+          margin: 20px auto;
+        }
+        .timetable-header {
+          display: none; /* Hide the header on mobile */
+        }
+        .timetable-card {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 16px;
+          gap: 8px;
+          position: relative;
+        }
+        .timetable-subject {
+          min-width: 0;
+          flex-basis: auto;
+          width: 100%;
+          font-size: 1.05rem;
+          padding-bottom: 8px;
+          border-bottom: 1px solid #e0e0e0;
+          margin-bottom: 4px;
+        }
+        .timetable-code,
+        .timetable-paper,
+        .timetable-date {
+          min-width: 0;
+          max-width: 100%;
+          flex-basis: auto;
+          width: 100%;
+          justify-content: flex-start;
+          padding: 4px 0;
+          font-size: 0.95rem;
+        }
+        /* Add labels for mobile view */
+        .timetable-code::before {
+          content: "Code: ";
+          font-weight: 600;
+          color: #257bd1;
+          margin-right: 8px;
+        }
+        .timetable-paper::before {
+          display: var(--show-paper-label, inline);
+        }
+        .timetable-date::before {
+          content: "Exam Date: ";
+          font-weight: 600;
+          color: #257bd1;
+          margin-right: 8px;
+        }
+        /* Adjust search and sort buttons for mobile */
+        .input-group {
+          margin-bottom: 20px;
+        }
+        #searchBar {
+          font-size: 1rem;
+          padding: 12px 16px;
+        }
+        .btn {
+          font-size: 0.9rem;
+          padding: 8px 12px;
+        }
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 24px;
+        }
+      }
+      .date-group {
+        margin-bottom: 24px;
+      }
+      .date-group:last-child {
+        margin-bottom: 0;
+      }
+      .date-header {
+        background: #f1f8fe;
+        padding: 12px 24px;
+        border-radius: 0.75rem;
+        margin-bottom: 12px;
+        font-weight: 600;
+        color: #257bd1;
+        border: 1px solid #e0e0e0;
+        /* box-shadow: 0 2px 8px rgba(37, 123, 209, 0.10); */
+      }
+      .btn-outline-secondary#prevPageBtn:hover,
+      .btn-outline-secondary#prevPageBtn:focus {
+        background: none !important;
+        border-color: #6c757d !important;
+        color: #6c757d !important;
+        box-shadow: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button
+        onclick="history.back()"
+        id="prevPageBtn"
+        class="btn btn-outline-secondary btn-xs mb-2"
+        style="
+          font-size: 0.85rem;
+          padding: 3px 10px 3px 8px;
+          margin-bottom: 12px;
+        "
+      >
+        <i class="bi-arrow-left" style="font-size: 1em"></i> Prev
+      </button>
+      <div style="text-align: center; margin-bottom: 8px">
+        <a
+          class="navbar-brand"
+          href="./index.html"
+          aria-label="Space"
+          style="display: inline-block"
+        >
+          <img
+            class="navbar-brand-logo"
+            src="./assets-front/svg/logos/logo.svg"
+            alt="Mytvet dark logo"
+            width="136"
+            height="36"
+          />
+        </a>
+      </div>
+      <br />
+      <h1>
+        NCV Studies Exam Timetable <br />
+        <span class="text-warning">November 2025</span>
+        <br />
+      </h1>
+      <h4
+        style="
+          text-align: center;
+          color: #666;
+          margin-top: -18px;
+          margin-bottom: 28px;
+          font-weight: 500;
+        "
+      >
+        5 Nov - 11 Dec 2025
+      </h4>
+      <div class="input-group input-group-merge">
+        <input
+          type="text"
+          class="form-control"
+          id="searchBar"
+          placeholder="Search by subject name or code"
+          aria-label="Search by subject name or code"
+        />
+        <span class="input-group-text"><i class="bi-search"></i></span>
+      </div>
+      <div
+        style="
+          display: flex;
+          gap: 12px;
+          margin-bottom: 18px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        "
+      >
+        <div>
+          <a
+            id="downloadPDF"
+            class="btn btn-primary btn-sm"
+            href="https://docsend.com/view/f68q8mmbyab4zdni"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="bi-file-pdf me-1"></i> View PDF Timetable
+          </a>
+        </div>
+        <div style="display: flex; gap: 12px">
+          <button
+            id="sortDate"
+            class="btn btn-outline-primary btn-sm"
+            type="button"
+          >
+            Sort by Date <span id="dateSortIcon">↑</span>
+          </button>
+        </div>
+      </div>
+      <br />
+      <div class="timetable-header">
+        <span class="th-subject">Subject Name</span>
+        <span class="th-code">Code</span>
+        <span class="th-paper">Paper</span>
+        <span class="th-date">Exam Date</span>
+      </div>
+      <ul class="timetable-list" id="timetableList">
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Life Skills and Computer Literacy L2</span
+          ><span class="timetable-code">7601042</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Life Skills and Computer Literacy L3</span
+          ><span class="timetable-code">7601053</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-06</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Life Skills and Computer Literacy L4</span
+          ><span class="timetable-code">7601064</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-07</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematical Literacy L3</span
+          ><span class="timetable-code">10401023</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-10</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L3</span
+          ><span class="timetable-code">10501053</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-10</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematical Literacy L2</span
+          ><span class="timetable-code">10401012</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematical Literacy L4</span
+          ><span class="timetable-code">10401034</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L2</span
+          ><span class="timetable-code">10501042</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L4</span
+          ><span class="timetable-code">10501064</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-11</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematical Literacy L2</span
+          ><span class="timetable-code">10401012</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematical Literacy L4</span
+          ><span class="timetable-code">10401034</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L2</span
+          ><span class="timetable-code">10501042</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L4</span
+          ><span class="timetable-code">10501064</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-12</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >English First Additional Language L2</span
+          ><span class="timetable-code">4101102</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >English First Additional Language L3</span
+          ><span class="timetable-code">4101113</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >English First Additional Language L4</span
+          ><span class="timetable-code">4101124</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-13</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >English First Additional Language L2</span
+          ><span class="timetable-code">4101102</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >English First Additional Language L3</span
+          ><span class="timetable-code">4101113</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >English First Additional Language L4</span
+          ><span class="timetable-code">4101124</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-14</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematical Literacy L3</span
+          ><span class="timetable-code">10401023</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-17</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mathematics L3</span
+          ><span class="timetable-code">10501053</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-17</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Advanced Plant Production L4</span
+          ><span class="timetable-code">1011014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Civil and Structural Steel Work Detailing L2</span
+          ><span class="timetable-code">12050652</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Civil and Structural Steel Work Detailing L3</span
+          ><span class="timetable-code">12050663</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Civil and Structural Steel Work Detailing L4</span
+          ><span class="timetable-code">12050674</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electronic Control and Digital Electronics L2</span
+          ><span class="timetable-code">12041022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electronic Control and Digital Electronics L4</span
+          ><span class="timetable-code">12041042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electronics and Digital Concepts for Robotics L2</span
+          ><span class="timetable-code">10041042</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electronics and Digital Concepts for Robotics L4</span
+          ><span class="timetable-code">10041044</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Engineering Technology L2</span
+          ><span class="timetable-code">6012012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Food Preparation L2</span
+          ><span class="timetable-code">11011012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Food Preparation L4</span
+          ><span class="timetable-code">11011014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Human and Social Development L2</span
+          ><span class="timetable-code">5050022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Human and Social Development L4</span
+          ><span class="timetable-code">5050104</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Introduction to Information Systems L2</span
+          ><span class="timetable-code">10041002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Introduction to Law L2</span
+          ><span class="timetable-code">8021002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Law Procedures and Evidence L4</span
+          ><span class="timetable-code">8021004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Marketing Communication L2</span
+          ><span class="timetable-code">3041022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Marketing Communication L4</span
+          ><span class="timetable-code">3041024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Materials L2</span
+          ><span class="timetable-code">12010062</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Materials L4</span
+          ><span class="timetable-code">12010484</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Office Data Processing L2</span
+          ><span class="timetable-code">3016022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Office Data Processing L4</span
+          ><span class="timetable-code">3016024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Operations Management L2</span
+          ><span class="timetable-code">3021002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Operations Management L4</span
+          ><span class="timetable-code">3021004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Plant Production L2</span
+          ><span class="timetable-code">1011012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Process Chemistry L2</span
+          ><span class="timetable-code">6050044</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Process Chemistry L4</span
+          ><span class="timetable-code">6050044</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Professional Engineering Practice L4</span
+          ><span class="timetable-code">6012014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Pulp and Papermaking Technology L2</span
+          ><span class="timetable-code">6050372</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Pulp and Papermaking Technology L4</span
+          ><span class="timetable-code">6050394</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Science of Tourism L2</span
+          ><span class="timetable-code">11101042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Science of Tourism L4</span
+          ><span class="timetable-code">11101044</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Stored Programme Systems L4</span
+          ><span class="timetable-code">10040154</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">System Analysis and Design L4</span
+          ><span class="timetable-code">10041004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >The South African Health Care System L2</span
+          ><span class="timetable-code">9020042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >The South African Health Care System L4</span
+          ><span class="timetable-code">9020064</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Transport Economics L2</span
+          ><span class="timetable-code">11020282</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Transport Economics L4</span
+          ><span class="timetable-code">11020304</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-18</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Civil and Structural Steel Work Detailing L3</span
+          ><span class="timetable-code">12050663</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Civil and Structural Steel Work Detailing L4</span
+          ><span class="timetable-code">12050674</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Criminal Law L3</span
+          ><span class="timetable-code">8021003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electronic Control and Digital Electronics L3</span
+          ><span class="timetable-code">12041023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electronics and Digital Concepts for Robotics L3</span
+          ><span class="timetable-code">10041043</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Engineering Fabrication - Sheet Metal Work L3</span
+          ><span class="timetable-code">6031023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Food Preparation L3</span
+          ><span class="timetable-code">11011013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Human and Social Development L3</span
+          ><span class="timetable-code">5050063</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Introduction to Computers L2</span
+          ><span class="timetable-code">10040052</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Marketing Communication L3</span
+          ><span class="timetable-code">3041023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Material Technology L3</span
+          ><span class="timetable-code">12010273</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Materials L3</span
+          ><span class="timetable-code">12010273</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Office Data Processing L3</span
+          ><span class="timetable-code">3061023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Operations Management L3</span
+          ><span class="timetable-code">3021013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Plant Production L3</span
+          ><span class="timetable-code">1011013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Process Chemistry L3</span
+          ><span class="timetable-code">6050043</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Pulp and Papermaking Technology L3</span
+          ><span class="timetable-code">6050383</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Science of Tourism L3</span
+          ><span class="timetable-code">11101043</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Stored Programme Systems L3</span
+          ><span class="timetable-code">10040153</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">System Analysis and Design L3</span
+          ><span class="timetable-code">10041003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >The South African Health Care System L3</span
+          ><span class="timetable-code">9020053</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Transport Operations L3</span
+          ><span class="timetable-code">11020323</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-19</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Architectural Graphics and Technology L3</span
+          ><span class="timetable-code">12050633</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-20</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electronics and Digital Concepts for Robotics L3</span
+          ><span class="timetable-code">10041043</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-20</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Life Skills and Computer Literacy L2</span
+          ><span class="timetable-code">7601042</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-20</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Life Skills and Computer Literacy L4</span
+          ><span class="timetable-code">7601064</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-20</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Advertising and Promotions L2</span
+          ><span class="timetable-code">3041012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Advertising and Promotions L4</span
+          ><span class="timetable-code">3041014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Animal Production L2</span
+          ><span class="timetable-code">1011022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Animal Production L4</span
+          ><span class="timetable-code">1011042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Applied Engineering Technology L4</span
+          ><span class="timetable-code">6012014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Art and Science of Teaching L2</span
+          ><span class="timetable-code">5050012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Art and Science of Teaching L4</span
+          ><span class="timetable-code">5050094</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Business Practice L2</span
+          ><span class="timetable-code">3016002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Business Practice L4</span
+          ><span class="timetable-code">3016004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Client Service and Human Relations L2</span
+          ><span class="timetable-code">11101022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Client Service and Human Relations L4</span
+          ><span class="timetable-code">11101024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Construction Planning L2</span
+          ><span class="timetable-code">12010462</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Construction Planning L4</span
+          ><span class="timetable-code">12010464</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Data Communication and Networking L4</span
+          ><span class="timetable-code">10041014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electrical Principles & Practice L2</span
+          ><span class="timetable-code">12041002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electrical Principles and Practice L4</span
+          ><span class="timetable-code">12041004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Electronics L2</span
+          ><span class="timetable-code">10041012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Electrotechnology L2</span
+          ><span class="timetable-code">12040212</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Electrotechnology L4</span
+          ><span class="timetable-code">12040594</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Engineering Graphics and Technology L2</span
+          ><span class="timetable-code">12050622</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Engineering Systems L2</span
+          ><span class="timetable-code">6012022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Freight Logistics L2</span
+          ><span class="timetable-code">11020252</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Freight Logistics L4</span
+          ><span class="timetable-code">11020274</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Governance L4</span
+          ><span class="timetable-code">8011004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Instrumentation Technology L2</span
+          ><span class="timetable-code">6060452</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Instrumentation Technology L4</span
+          ><span class="timetable-code">6060474</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Introduction to Governance L2</span
+          ><span class="timetable-code">8011002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Management Practice L2</span
+          ><span class="timetable-code">3021002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Management Practice L4</span
+          ><span class="timetable-code">3021004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Mechanical Draughting and Technology L4</span
+          ><span class="timetable-code">12050694</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Process Technology L2</span
+          ><span class="timetable-code">6050342</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Process Technology L4</span
+          ><span class="timetable-code">6050364</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">The Human Body and Mind L2</span
+          ><span class="timetable-code">9020072</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">The Human Body and Mind L4</span
+          ><span class="timetable-code">9020094</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-21</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Architectural Graphics and Technology L2</span
+          ><span class="timetable-code">12050622</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-24</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Architectural Graphics and Technology L4</span
+          ><span class="timetable-code">12050644</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-24</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Principles of Computer Programming L3</span
+          ><span class="timetable-code">10041023</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-24</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Robotics and Industrial Automation L4</span
+          ><span class="timetable-code">10041054</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-24</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Robotics Fundamental L2</span
+          ><span class="timetable-code">10041052</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-24</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Criminal Justice Structures and Mandates L3</span
+          ><span class="timetable-code">8021013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Electrical Workmanship L3</span
+          ><span class="timetable-code">12041013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Engineering Fundamentals L2</span
+          ><span class="timetable-code">6021002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Engineering Processes L4</span
+          ><span class="timetable-code">6021004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Hospitality Generics L3</span
+          ><span class="timetable-code">11011003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Introduction to Robotics L3</span
+          ><span class="timetable-code">10041053</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Learning Psychology L3</span
+          ><span class="timetable-code">5050073</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Machine Manufacturing L3</span
+          ><span class="timetable-code">6030023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Marketing L3</span
+          ><span class="timetable-code">3041003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Multimedia Content L3</span
+          ><span class="timetable-code">10401073</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Plant and Equipment L3</span
+          ><span class="timetable-code">12030263</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Process Control L4</span
+          ><span class="timetable-code">6050414</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Public Health L3</span
+          ><span class="timetable-code">9020023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Soil Science L3</span
+          ><span class="timetable-code">1011003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Sustainable Tourism in SA and Regional Travel L3</span
+          ><span class="timetable-code">11101063</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Transport Economics L3</span
+          ><span class="timetable-code">11020293</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-25</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Architectural Graphics and Technology L2</span
+          ><span class="timetable-code">12050622</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Architectural Graphics and Technology L3</span
+          ><span class="timetable-code">12050633</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Architectural Graphics and Technology L4</span
+          ><span class="timetable-code">12050644</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Basic Principles of Computer Programming and Compu L3 L3</span
+          ><span class="timetable-code">10041062</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Computer-Integrated Manufacturing L4</span
+          ><span class="timetable-code">6030324</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Construction Supervision L4</span
+          ><span class="timetable-code">12010474</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Criminal Justice Process L4</span
+          ><span class="timetable-code">8021014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Economic Environment L2</span
+          ><span class="timetable-code">3011022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Economic Environment L4</span
+          ><span class="timetable-code">3011024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Electrical Workmanship L4</span
+          ><span class="timetable-code">12041014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Engineering Practice and Maintenance L3</span
+          ><span class="timetable-code">6021003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Farm Planning and Mechanisation L4</span
+          ><span class="timetable-code">1011044</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Financial Management L3</span
+          ><span class="timetable-code">3011013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Hospitality Generics L2</span
+          ><span class="timetable-code">11011002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Hospitality Generics L4</span
+          ><span class="timetable-code">11011004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Introduction to Technical Programming L3</span
+          ><span class="timetable-code">10041063</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Learning Psychology L2</span
+          ><span class="timetable-code">5050032</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Learning Psychology L4</span
+          ><span class="timetable-code">5050114</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Manual Manufacturing L3</span
+          ><span class="timetable-code">6030092</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Marketing L2</span
+          ><span class="timetable-code">3041002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Marketing L4</span
+          ><span class="timetable-code">3041004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Multimedia Basics L2</span
+          ><span class="timetable-code">10040162</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Multimedia Service L4</span
+          ><span class="timetable-code">10040184</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Office Practice L2</span
+          ><span class="timetable-code">3061012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Plant and Equipment L2</span
+          ><span class="timetable-code">12030252</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Principles of Criminal Justice L2</span
+          ><span class="timetable-code">8021012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Process Control L3</span
+          ><span class="timetable-code">6050403</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Public Health L2</span
+          ><span class="timetable-code">9020012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Public Health L4</span
+          ><span class="timetable-code">9020034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Soil Science L2</span
+          ><span class="timetable-code">1011004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Sustainable Tourism in SA & Internat Travel L4</span
+          ><span class="timetable-code">11101064</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Sustainable Tourism in SA L2</span
+          ><span class="timetable-code">11101062</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Technical Programming L4</span
+          ><span class="timetable-code">10041064</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Transport Operations L2</span
+          ><span class="timetable-code">11020312</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Transport Operations L4</span
+          ><span class="timetable-code">11020334</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Workshop Practice L2</span
+          ><span class="timetable-code">12041012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-26</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Agribusiness L3</span
+          ><span class="timetable-code">1011033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Automotive Repair and Maintenance L3</span
+          ><span class="timetable-code">6021033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Carpentry and Roof Work L3</span
+          ><span class="timetable-code">12030333</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Community Oriented Primary Care L3</span
+          ><span class="timetable-code">9011013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Concrete Structures L3</span
+          ><span class="timetable-code">12020343</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Consumer Behaviour L3</span
+          ><span class="timetable-code">3041003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Contact Centre Operations L3</span
+          ><span class="timetable-code">3011003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Criminology L3</span
+          ><span class="timetable-code">8021013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Drawing Office Procedures and Techniques L3</span
+          ><span class="timetable-code">12050713</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Early Childhood Development L3</span
+          ><span class="timetable-code">5030083</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electrical Systems & Construction L3</span
+          ><span class="timetable-code">12041033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Engineering Fabrication - Boiler Making L3</span
+          ><span class="timetable-code">6031013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Fitting and Turning L3</span
+          ><span class="timetable-code">6011043</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Graphic Design L3</span
+          ><span class="timetable-code">2020033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Hospitality Services L3</span
+          ><span class="timetable-code">11101033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Masonry L3</span
+          ><span class="timetable-code">12020353</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mechatronic Systems L3</span
+          ><span class="timetable-code">6024013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Physical Science L3</span
+          ><span class="timetable-code">11011073</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Plumbing L3</span
+          ><span class="timetable-code">12030373</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Project Management L3</span
+          ><span class="timetable-code">3018003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Refrigeration Practice L3</span
+          ><span class="timetable-code">6050035</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Renewable Energy Technologies L3</span
+          ><span class="timetable-code">12041043</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Roads L3</span
+          ><span class="timetable-code">12020363</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Theory of Policing Practices L3</span
+          ><span class="timetable-code">8011023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Tourism Operations L3</span
+          ><span class="timetable-code">11101073</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Welding L3</span
+          ><span class="timetable-code">6031013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Wholesale & Retail Level 3</span
+          ><span class="timetable-code">11030023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-27</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Agribusiness L2</span
+          ><span class="timetable-code">1011032</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Agribusiness L4</span
+          ><span class="timetable-code">1011042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Applied Policing L4</span
+          ><span class="timetable-code">8011024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Automotive Repair and Maintenance L2</span
+          ><span class="timetable-code">6021032</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Automotive Repair and Maintenance L4</span
+          ><span class="timetable-code">6021034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Carpentry and Roof Work L2</span
+          ><span class="timetable-code">12020122</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Carpentry and Roof Work L4</span
+          ><span class="timetable-code">12030504</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Community Oriented Primary Care L2</span
+          ><span class="timetable-code">9011012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Community Oriented Primary Care L4</span
+          ><span class="timetable-code">9011024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Concrete Structures L2</span
+          ><span class="timetable-code">12020124</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Concrete Structures L4</span
+          ><span class="timetable-code">12020514</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Consumer Behaviour L2</span
+          ><span class="timetable-code">3041002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Consumer Behaviour L4</span
+          ><span class="timetable-code">3041004</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Contact Centre Operations L2</span
+          ><span class="timetable-code">3011002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Contact Centre Operations L4</span
+          ><span class="timetable-code">10041032</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Criminology L2</span
+          ><span class="timetable-code">8021022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Criminology L4</span
+          ><span class="timetable-code">8021024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Drawing Office Procedures and Techniques L2</span
+          ><span class="timetable-code">12050702</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Drawing Office Procedures and Techniques L4</span
+          ><span class="timetable-code">12050724</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Early Childhood Development L2</span
+          ><span class="timetable-code">5030042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Early Childhood Development L4</span
+          ><span class="timetable-code">5030124</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electrical Systems & Construction L2</span
+          ><span class="timetable-code">12041032</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electrical Systems and Construction L4</span
+          ><span class="timetable-code">12041034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Engineering Fabrication - Boilermaking L4</span
+          ><span class="timetable-code">6031024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Engineering Fabrication - Sheet Metal Work L4</span
+          ><span class="timetable-code">6031024</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Engineering Fabrication L2</span
+          ><span class="timetable-code">6031002</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Entrepreneurship L2</span
+          ><span class="timetable-code">3021042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Fitting and Turning L2</span
+          ><span class="timetable-code">6011042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Fitting and Turning L4</span
+          ><span class="timetable-code">6011044</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Graphic Design L2</span
+          ><span class="timetable-code">2020012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Graphic Design L4</span
+          ><span class="timetable-code">2020034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Hospitality Services L2</span
+          ><span class="timetable-code">11101032</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Hospitality Services L4</span
+          ><span class="timetable-code">11101034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Introduction to Policing Practices L2</span
+          ><span class="timetable-code">8011022</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Introduction to Robotics L3</span
+          ><span class="timetable-code">10041053</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Masonry L2</span
+          ><span class="timetable-code">12020152</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Masonry L4</span
+          ><span class="timetable-code">12020524</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mechatronic Systems L2</span
+          ><span class="timetable-code">6014002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Mechatronic Systems L4</span
+          ><span class="timetable-code">6040334</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">New Venture Creation L2</span
+          ><span class="timetable-code">3011032</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">New Venture Creation L4</span
+          ><span class="timetable-code">3011034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Plumbing L2</span
+          ><span class="timetable-code">12020162</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Plumbing L4</span
+          ><span class="timetable-code">12030544</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Principles of Computer Programming L3</span
+          ><span class="timetable-code">10041023</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Project Management L4</span
+          ><span class="timetable-code">3018104</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Refrigeration and Air Conditioning Processes L4</span
+          ><span class="timetable-code">6050034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Refrigeration Principles L2</span
+          ><span class="timetable-code">6050052</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Renewable Energy Technologies L4</span
+          ><span class="timetable-code">12041044</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Renewable Energy Technologies L2</span
+          ><span class="timetable-code">12041042</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Roads L2</span
+          ><span class="timetable-code">12030152</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Roads L4</span
+          ><span class="timetable-code">12030534</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Tourism Operations L2</span
+          ><span class="timetable-code">11101072</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Tourism Operations L4</span
+          ><span class="timetable-code">11101074</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Welding L2</span
+          ><span class="timetable-code">6031012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Welding L4</span
+          ><span class="timetable-code">6031034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Wholesale & Retail Level 2</span
+          ><span class="timetable-code">11300012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Wholesale & Retail Level 4</span
+          ><span class="timetable-code">11300034</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-11-28</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Introduction to Systems Development L2</span
+          ><span class="timetable-code">10041022</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-12-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Life Skills and Computer Literacy L3</span
+          ><span class="timetable-code">7601053</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-12-01</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Engineering Graphics & Design L3</span
+          ><span class="timetable-code">6021023</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-12-02</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Financial Management L4</span
+          ><span class="timetable-code">3011014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-02</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Office Practice L3</span
+          ><span class="timetable-code">3061013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-02</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Physical Science L3</span
+          ><span class="timetable-code">10201003</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-02</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Computer Programming L4</span
+          ><span class="timetable-code">10041024</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-12-03</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Drawing Office Procedures and Techniques L2</span
+          ><span class="timetable-code">12050702</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-03</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Drawing Office Procedures and Techniques L4</span
+          ><span class="timetable-code">12050724</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-03</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electronics and Digital Concepts for Robotics L2</span
+          ><span class="timetable-code">10041042</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-03</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electronics and Digital Concepts for Robotics L4</span
+          ><span class="timetable-code">10041044</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-03</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Engineering Fabrication L2</span
+          ><span class="timetable-code">6031002</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-03</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Financial Management L2</span
+          ><span class="timetable-code">3011012</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-03</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Personal Assistance L4</span
+          ><span class="timetable-code">3061044</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-03</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Applied Accounting L2</span
+          ><span class="timetable-code">3011002</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Applied Accounting L4</span
+          ><span class="timetable-code">3011004</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-12-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Computer Programming L4</span
+          ><span class="timetable-code">10041024</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">New Venture Creation L3</span
+          ><span class="timetable-code">3011033</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Physical Science L2</span
+          ><span class="timetable-code">10201002</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-12-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Physical Science L4</span
+          ><span class="timetable-code">10021004</span
+          ><span class="timetable-paper">(1st paper)</span
+          ><span class="timetable-date">2025-12-04</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Applied Accounting L4</span
+          ><span class="timetable-code">3011004</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Office Practice L4</span
+          ><span class="timetable-code">3061014</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Physical Science L2</span
+          ><span class="timetable-code">10201002</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Physical Science L4</span
+          ><span class="timetable-code">10021004</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-05</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Advertising and Promotions L3</span
+          ><span class="timetable-code">3041013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Animal Production L3</span
+          ><span class="timetable-code">1011023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Applied Accounting L3</span
+          ><span class="timetable-code">3011003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Art and Science of Teaching L3</span
+          ><span class="timetable-code">5050053</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Client Service and Human Relations L3</span
+          ><span class="timetable-code">11101023</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Computer Hardware and Software L3</span
+          ><span class="timetable-code">10041013</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Construction Planning L3</span
+          ><span class="timetable-code">12010253</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Electrical Principles and Practice L3</span
+          ><span class="timetable-code">12041003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Electrotechnology L3</span
+          ><span class="timetable-code">12040423</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Engineering Graphics & Design L3</span
+          ><span class="timetable-code">6021023</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Freight Logistics L3</span
+          ><span class="timetable-code">11020263</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Governance L3</span
+          ><span class="timetable-code">8011003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Instrumentation Technology L3</span
+          ><span class="timetable-code">6060463</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Management Practice L3</span
+          ><span class="timetable-code">3021003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Mechanical Draughting and Technology L4</span
+          ><span class="timetable-code">12050694</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Process Technology L3</span
+          ><span class="timetable-code">6050353</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">The Human Body and Mind L3</span
+          ><span class="timetable-code">9020083</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-08</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Business Practice L3</span
+          ><span class="timetable-code">3061003</span
+          ><span class="timetable-paper"></span
+          ><span class="timetable-date">2025-12-09</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Drawing Office Procedures and Techniques L3</span
+          ><span class="timetable-code">12050713</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-09</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Robotics and Industrial Automation L4</span
+          ><span class="timetable-code">10041054</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-09</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Robotics Fundamental L2</span
+          ><span class="timetable-code">10041052</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-09</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Basic Principles of Computer Programming and Compu L3</span
+          ><span class="timetable-code">10041062</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-10</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Introduction to Systems Development L2</span
+          ><span class="timetable-code">10041022</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-10</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject">Technical Programming L4</span
+          ><span class="timetable-code">10041064</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-10</span>
+        </li>
+        <li class="timetable-card">
+          <span class="timetable-subject"
+            >Introduction to Technical Programming L3</span
+          ><span class="timetable-code">10041063</span
+          ><span class="timetable-paper">(2nd paper)</span
+          ><span class="timetable-date">2025-12-11</span>
+        </li>
+      </ul>
+      <div id="noResults">No results found.</div>
+    </div>
+    <script>
+      const searchBar = document.getElementById("searchBar");
+      const timetableList = document.getElementById("timetableList");
+      const noResults = document.getElementById("noResults");
+      const sortDateBtn = document.getElementById("sortDate");
+      const dateSortIcon = document.getElementById("dateSortIcon");
+
+      // Capitalize the first letter of every word in the subject name
+      function titleCase(str) {
+        if (!str) return str;
+        return str.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+      }
+      function updateSubjectNamesCase() {
+        document.querySelectorAll(".timetable-subject").forEach((el) => {
+          el.textContent = titleCase(el.textContent.trim());
+        });
+      }
+      // Run on initial load
+      updateSubjectNamesCase();
+
+      let timetableData = Array.from(timetableList.children).map(
+        (card) => card.outerHTML
+      );
+      let dateAsc = true;
+
+      function renderList(htmlArr) {
+        timetableList.innerHTML = htmlArr.join("");
+        updateSubjectNamesCase();
+      }
+
+      function filterList() {
+        const filter = searchBar.value.toLowerCase();
+        let visibleRows = 0;
+        // Select all timetable cards, even if nested in .date-group
+        const cards = timetableList.querySelectorAll(".timetable-card");
+        cards.forEach((card) => {
+          const subject = card
+            .querySelector(".timetable-subject")
+            .textContent.toLowerCase();
+          const code = card
+            .querySelector(".timetable-code")
+            .textContent.toLowerCase();
+          if (subject.includes(filter) || code.includes(filter)) {
+            card.style.display = "";
+            visibleRows++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+        // Hide date groups with no visible cards
+        timetableList.querySelectorAll(".date-group").forEach((group) => {
+          const hasVisible = Array.from(
+            group.querySelectorAll(".timetable-card")
+          ).some((card) => card.style.display !== "none");
+          group.style.display = hasVisible ? "" : "none";
+        });
+        noResults.style.display = visibleRows === 0 ? "" : "none";
+      }
+
+      searchBar.addEventListener("keyup", filterList);
+
+      function formatDate(dateStr) {
+        const date = new Date(dateStr);
+        return date.toLocaleDateString("en-US", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+      }
+
+      sortDateBtn.addEventListener("click", function () {
+        let allCards = Array.from(document.querySelectorAll(".timetable-card"));
+        let dateGroups = {};
+        allCards.forEach((card) => {
+          const date = card.querySelector(".timetable-date").textContent.trim();
+          if (!dateGroups[date]) {
+            dateGroups[date] = [];
+          }
+          dateGroups[date].push(card);
+        });
+        Object.keys(dateGroups).forEach((date) => {
+          dateGroups[date].sort((a, b) => {
+            const sa = a
+              .querySelector(".timetable-subject")
+              .textContent.trim()
+              .toLowerCase();
+            const sb = b
+              .querySelector(".timetable-subject")
+              .textContent.trim()
+              .toLowerCase();
+            return sa.localeCompare(sb);
+          });
+        });
+        let sortedDates = Object.keys(dateGroups).sort((a, b) => {
+          return dateAsc ? a.localeCompare(b) : b.localeCompare(a);
+        });
+        timetableList.innerHTML = "";
+        sortedDates.forEach((date) => {
+          const dateGroup = document.createElement("div");
+          dateGroup.className = "date-group";
+          const dateHeader = document.createElement("div");
+          dateHeader.className = "date-header";
+          dateHeader.textContent = formatDate(date);
+          dateGroup.appendChild(dateHeader);
+          dateGroups[date].forEach((card) => {
+            dateGroup.appendChild(card);
+          });
+          timetableList.appendChild(dateGroup);
+        });
+        updateSubjectNamesCase();
+        dateAsc = !dateAsc;
+        dateSortIcon.textContent = dateAsc ? "↑" : "↓";
+        filterList();
+      });
+
+      sortDateBtn.classList.add("active");
+      (function initialSortByDate() {
+        let allCards = Array.from(document.querySelectorAll(".timetable-card"));
+        let dateGroups = {};
+        allCards.forEach((card) => {
+          const date = card.querySelector(".timetable-date").textContent.trim();
+          if (!dateGroups[date]) {
+            dateGroups[date] = [];
+          }
+          dateGroups[date].push(card);
+        });
+        Object.keys(dateGroups).forEach((date) => {
+          dateGroups[date].sort((a, b) => {
+            const sa = a
+              .querySelector(".timetable-subject")
+              .textContent.trim()
+              .toLowerCase();
+            const sb = b
+              .querySelector(".timetable-subject")
+              .textContent.trim()
+              .toLowerCase();
+            return sa.localeCompare(sb);
+          });
+        });
+        let sortedDates = Object.keys(dateGroups).sort((a, b) =>
+          a.localeCompare(b)
+        );
+        timetableList.innerHTML = "";
+        sortedDates.forEach((date) => {
+          const dateGroup = document.createElement("div");
+          dateGroup.className = "date-group";
+          const dateHeader = document.createElement("div");
+          dateHeader.className = "date-header";
+          dateHeader.textContent = formatDate(date);
+          dateGroup.appendChild(dateHeader);
+          dateGroups[date].forEach((card) => {
+            dateGroup.appendChild(card);
+          });
+          timetableList.appendChild(dateGroup);
+        });
+        updateSubjectNamesCase();
+      })();
+
+      function updatePaperLabelsMobile() {
+        if (window.innerWidth <= 700) {
+          document.querySelectorAll(".timetable-card").forEach((card) => {
+            const paper = card.querySelector(".timetable-paper");
+            if (paper && !paper.textContent.trim()) {
+              paper.style.setProperty("--show-paper-label", "none");
+            } else if (paper) {
+              paper.style.setProperty("--show-paper-label", "inline");
+            }
+          });
+        } else {
+          document.querySelectorAll(".timetable-paper").forEach((paper) => {
+            paper.style.setProperty("--show-paper-label", "inline");
+          });
+        }
+      }
+      // Call on load and on resize
+      updatePaperLabelsMobile();
+      window.addEventListener("resize", updatePaperLabelsMobile);
+    </script>
+  </body>
+</html>
