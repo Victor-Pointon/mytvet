@@ -794,7 +794,7 @@
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="phone" class="form-label">Phone Number *</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                    <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9+\-\s()]+" title="Please enter only numbers, spaces, hyphens, parentheses, and plus signs" required>
                   </div>
                 </div>
                 
@@ -886,10 +886,15 @@
                   <p>Thank you for your interest in joining our team. We have received your application for the <strong>${formData.get(
                     "job-title"
                   )}</strong> position.</p>
-                  <p>A confirmation email has been sent to <strong>${formData.get(
+                  <p><strong>Next Steps:</strong></p>
+                  <ul class="text-start">
+                    <li>Your application has been submitted to our hiring team</li>
+                    <li>We will review your application within 5-7 business days</li>
+                    <li>If selected, we will contact you via email or phone</li>
+                  </ul>
+                  <p><small class="text-muted">Application submitted to: ${formData.get(
                     "email"
-                  )}</strong>.</p>
-                  <p>Our team will review your application and contact you within 5-7 business days.</p>
+                  )}</small></p>
                 </div>
               `;
 
@@ -962,6 +967,14 @@
           document.addEventListener("keydown", function (e) {
             if (e.key === "Escape" && modal.style.display === "block") {
               closeCustomModal();
+            }
+          });
+
+          // Phone number validation - prevent letters
+          document.addEventListener("input", function (e) {
+            if (e.target.name === "phone") {
+              // Remove any non-numeric characters except +, -, (, ), and spaces
+              e.target.value = e.target.value.replace(/[^0-9+\-\s()]/g, "");
             }
           });
         });
