@@ -413,62 +413,40 @@
                     </tbody>
                   </table>
                 </div>
-                <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="jobModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="jobModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="jobModalLabel">
-                          Job Title
-                        </h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body" id="jobModalBody">
-                        <!-- Job description will be inserted here -->
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-success me-2"
-                          onclick="submitApplication()"
-                        >
-                          <i class="bi bi-check-circle me-2"></i>Submit
-                          Application
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-secondary me-2"
-                          onclick="backToJobDescription()"
-                        >
-                          <i class="bi bi-arrow-left me-2"></i>Back to Job
-                          Details
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-outline-secondary"
-                          data-dismiss="modal"
-                        >
-                          <i class="bi bi-x me-2"></i>Close
-                        </button>
-                      </div>
+                <!-- Custom Modal -->
+                <div id="customModal" class="custom-modal">
+                  <div class="custom-modal-content">
+                    <div class="custom-modal-header">
+                      <h5 id="customModalTitle">Job Title</h5>
+                      <button
+                        type="button"
+                        class="custom-modal-close"
+                        onclick="closeCustomModal()"
+                      >
+                        <i class="bi bi-x"></i>
+                      </button>
+                    </div>
+                    <div class="custom-modal-body" id="customModalBody">
+                      <!-- Job description will be inserted here -->
+                    </div>
+                    <div class="custom-modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-primary me-2"
+                        onclick="applyForJob()"
+                      >
+                        Apply
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        onclick="closeCustomModal()"
+                      >
+                        Close
+                      </button>
                     </div>
                   </div>
                 </div>
-                <!-- End Modal -->
                 <style>
                   .job-title-link {
                     color: #007bff;
@@ -479,6 +457,86 @@
                     text-decoration: underline;
                   }
 
+                  /* Custom Modal Styles */
+                  .custom-modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 9999;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    overflow-y: auto;
+                    -webkit-overflow-scrolling: touch;
+                  }
+
+                  .custom-modal-content {
+                    background-color: #fff;
+                    margin: 2% auto;
+                    padding: 0;
+                    border-radius: 8px;
+                    width: 90%;
+                    max-width: 800px;
+                    max-height: 90vh;
+                    overflow-y: auto;
+                    position: relative;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                  }
+
+                  .custom-modal-header {
+                    padding: 1rem 1.5rem;
+                    border-bottom: 1px solid #dee2e6;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: #f8f9fa;
+                    border-radius: 8px 8px 0 0;
+                  }
+
+                  .custom-modal-header h5 {
+                    margin: 0;
+                    font-weight: 600;
+                    color: #333;
+                  }
+
+                  .custom-modal-close {
+                    background: none;
+                    border: none;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    color: #666;
+                    padding: 0;
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    transition: background-color 0.2s;
+                  }
+
+                  .custom-modal-close:hover {
+                    background-color: #e9ecef;
+                    color: #333;
+                  }
+
+                  .custom-modal-body {
+                    padding: 1.5rem;
+                    max-height: 60vh;
+                    overflow-y: auto;
+                  }
+
+                  .custom-modal-footer {
+                    padding: 1rem 1.5rem;
+                    border-top: 1px solid #dee2e6;
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 0.5rem;
+                    background-color: #f8f9fa;
+                    border-radius: 0 0 8px 8px;
+                  }
+
                   /* Touch-friendly improvements */
                   @media (max-width: 768px) {
                     input[type="file"] {
@@ -487,6 +545,35 @@
                     .btn {
                       min-height: 44px;
                       padding: 12px 20px;
+                    }
+
+                    /* Mobile custom modal improvements */
+                    .custom-modal-content {
+                      margin: 1rem;
+                      width: calc(100% - 2rem);
+                      max-height: calc(100vh - 2rem);
+                    }
+
+                    .custom-modal-body {
+                      padding: 1rem;
+                      max-height: 50vh;
+                    }
+
+                    .custom-modal-footer {
+                      padding: 1rem;
+                      flex-direction: column;
+                    }
+
+                    .custom-modal-footer .btn {
+                      width: 100%;
+                      margin-bottom: 0.5rem;
+                    }
+
+                    /* Prevent body scroll when modal is open */
+                    body.modal-open {
+                      overflow: hidden;
+                      position: fixed;
+                      width: 100%;
                     }
                   }
                 </style>
@@ -714,8 +801,8 @@
 
         // Custom modal functions
         function openCustomModal(jobKey) {
-          var modalTitle = document.getElementById("jobModalLabel");
-          var modalBody = document.getElementById("jobModalBody");
+          var modalTitle = document.getElementById("customModalTitle");
+          var modalBody = document.getElementById("customModalBody");
 
           if (jobDescriptions[jobKey]) {
             modalTitle.textContent = jobDescriptions[jobKey].title;
@@ -725,24 +812,23 @@
             console.log("Setting modal title:", jobDescriptions[jobKey].title);
           }
 
-          // Show Bootstrap modal
-          var modal = new bootstrap.Modal(document.getElementById("jobModal"));
-          modal.show();
+          // Show custom modal
+          var customModal = document.getElementById("customModal");
+          customModal.style.display = "block";
+          document.body.classList.add("modal-open");
         }
 
         function closeCustomModal() {
-          // Hide Bootstrap modal
-          var modal = bootstrap.Modal.getInstance(
-            document.getElementById("jobModal")
-          );
-          if (modal) {
-            modal.hide();
-          }
+          // Hide custom modal
+          var customModal = document.getElementById("customModal");
+          customModal.style.display = "none";
+          document.body.classList.remove("modal-open");
         }
 
         function applyForJob() {
-          var modalTitle = document.getElementById("jobModalLabel").textContent;
-          var modalBody = document.getElementById("jobModalBody");
+          var modalTitle =
+            document.getElementById("customModalTitle").textContent;
+          var modalBody = document.getElementById("customModalBody");
 
           // Create application form HTML
           var formHTML = `
@@ -827,7 +913,7 @@
           modalBody.innerHTML = formHTML;
 
           // Update modal footer to show submit button
-          var modalFooter = document.querySelector(".modal-footer");
+          var modalFooter = document.querySelector(".custom-modal-footer");
           modalFooter.innerHTML = `
             <button type="button" class="btn btn-success me-2" onclick="submitApplication()">
               <i class="bi bi-check-circle me-2"></i>Submit Application
@@ -835,7 +921,7 @@
             <button type="button" class="btn btn-secondary me-2" onclick="backToJobDescription()">
               <i class="bi bi-arrow-left me-2"></i>Back to Job Details
             </button>
-            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+            <button type="button" class="btn btn-outline-secondary" onclick="closeCustomModal()">
               <i class="bi bi-x me-2"></i>Close
             </button>
           `;
@@ -869,7 +955,7 @@
             .then((response) => {
               if (response.ok) {
                 // Show success message
-                var modalBody = document.getElementById("jobModalBody");
+                var modalBody = document.getElementById("customModalBody");
                 modalBody.innerHTML = `
                 <div class="text-center">
                   <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
@@ -890,7 +976,9 @@
               `;
 
                 // Update footer
-                var modalFooter = document.querySelector(".modal-footer");
+                var modalFooter = document.querySelector(
+                  ".custom-modal-footer"
+                );
                 modalFooter.innerHTML = `
                 <button type="button" class="btn btn-primary" onclick="closeCustomModal()">
                   Close
@@ -914,7 +1002,8 @@
 
         function backToJobDescription() {
           // Get the current job key from the modal title
-          var modalTitle = document.getElementById("jobModalLabel").textContent;
+          var modalTitle =
+            document.getElementById("customModalTitle").textContent;
           var jobKey = "";
 
           // Find the job key based on title
@@ -927,11 +1016,11 @@
 
           if (jobKey) {
             // Restore original job description
-            var modalBody = document.getElementById("jobModalBody");
+            var modalBody = document.getElementById("customModalBody");
             modalBody.innerHTML = jobDescriptions[jobKey].body;
 
             // Restore original footer
-            var modalFooter = document.querySelector(".modal-footer");
+            var modalFooter = document.querySelector(".custom-modal-footer");
             modalFooter.innerHTML = `
               <button type="button" class="btn btn-primary me-2" onclick="applyForJob()">
                 Apply
@@ -952,6 +1041,51 @@
               e.target.value = e.target.value.replace(/[^0-9+\-\s()]/g, "");
             }
           });
+
+          // Custom modal event handlers for mobile
+          var customModal = document.getElementById("customModal");
+          if (customModal) {
+            // Handle custom modal hidden event
+            customModal.addEventListener("hidden.bs.modal", function () {
+              // Restore body scroll when modal is hidden
+              document.body.style.overflow = "";
+              document.body.style.position = "";
+              document.body.style.width = "";
+            });
+
+            // Handle custom modal shown event
+            customModal.addEventListener("shown.bs.modal", function () {
+              // Ensure custom modal is properly positioned on mobile
+              var customModalDialog = customModal.querySelector(
+                ".custom-modal-content"
+              );
+              if (customModalDialog) {
+                customModalDialog.style.margin = "1rem auto";
+              }
+            });
+
+            // Handle backdrop clicks
+            customModal.addEventListener("click", function (e) {
+              if (e.target === customModal) {
+                closeCustomModal();
+              }
+            });
+          }
+
+          // Prevent custom modal from freezing on touch devices
+          if ("ontouchstart" in window) {
+            // Add touch-specific handling
+            document.addEventListener(
+              "touchstart",
+              function (e) {
+                // Prevent zoom on double tap
+                if (e.target.closest("#customModal")) {
+                  e.preventDefault();
+                }
+              },
+              { passive: false }
+            );
+          }
         });
       </script>
     </main>
