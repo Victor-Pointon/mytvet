@@ -413,41 +413,125 @@
                     </tbody>
                   </table>
                 </div>
-                <!-- Custom Modal -->
-                <div id="customModal" class="custom-modal">
+                <!-- Modal -->
+                <div class="custom-modal" id="jobModal">
                   <div class="custom-modal-content">
                     <div class="custom-modal-header">
-                      <h5 id="customModalTitle">Job Title</h5>
+                      <h5 class="custom-modal-title" id="jobModalLabel">
+                        Job Title
+                      </h5>
                       <button
                         type="button"
                         class="custom-modal-close"
                         onclick="closeCustomModal()"
                       >
-                        <i class="bi bi-x"></i>
+                        &times;
                       </button>
                     </div>
-                    <div class="custom-modal-body" id="customModalBody">
+                    <div class="custom-modal-body" id="jobModalBody">
                       <!-- Job description will be inserted here -->
                     </div>
                     <div class="custom-modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-primary me-2"
-                        onclick="applyForJob()"
+                      <div
+                        class="d-grid gap-2 d-md-flex justify-content-md-end"
                       >
-                        Apply
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        onclick="closeCustomModal()"
-                      >
-                        Close
-                      </button>
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                          onclick="applyForJob()"
+                        >
+                          <i class="bi bi-send me-2"></i>Apply
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          onclick="closeCustomModal()"
+                        >
+                          <i class="bi bi-x me-2"></i>Close
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <!-- End Modal -->
                 <style>
+                  .custom-modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1050;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                  }
+                  .custom-modal-content {
+                    background-color: #fefefe;
+                    margin: 100px auto 20px auto;
+                    padding: 0;
+                    border: 1px solid #888;
+                    width: 90%;
+                    max-width: 600px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    max-height: calc(100vh - 120px);
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                  }
+                  .custom-modal-header {
+                    padding: 10px 15px;
+                    min-height: 45px;
+                    align-items: flex-start;
+                    border-radius: 12px 12px 0 0;
+                  }
+                  .custom-modal-title {
+                    margin: 0;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    flex: 1;
+                    padding-right: 40px;
+                    word-wrap: break-word;
+                    line-height: 1.3;
+                    color: #333;
+                    display: block;
+                    visibility: visible;
+                    position: relative;
+                    z-index: 1;
+                  }
+                  .custom-modal-close {
+                    background: none;
+                    border: none;
+                    font-size: 26px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    color: #aaa;
+                    padding: 5px;
+                    min-width: 32px;
+                    min-height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    position: absolute;
+                    right: 15px;
+                    top: 12px;
+                  }
+                  .custom-modal-close:hover {
+                    color: #000;
+                  }
+                  .custom-modal-body {
+                    padding: 15px 20px;
+                    overflow-y: auto;
+                    flex-grow: 1;
+                    max-height: calc(100vh - 180px);
+                  }
+                  .custom-modal-footer {
+                    padding: 12px 20px;
+                    border-top: 1px solid #dee2e6;
+                    text-align: right;
+                    flex-shrink: 0;
+                  }
                   .job-title-link {
                     color: #007bff;
                     text-decoration: none;
@@ -457,123 +541,121 @@
                     text-decoration: underline;
                   }
 
-                  /* Custom Modal Styles */
-                  .custom-modal {
-                    display: none;
-                    position: fixed;
-                    z-index: 9999;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    overflow-y: auto;
-                    -webkit-overflow-scrolling: touch;
-                  }
-
-                  .custom-modal-content {
-                    background-color: #fff;
-                    margin: 2% auto;
-                    padding: 0;
-                    border-radius: 8px;
-                    width: 90%;
-                    max-width: 800px;
-                    max-height: 90vh;
-                    overflow-y: auto;
-                    position: relative;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-                  }
-
-                  .custom-modal-header {
-                    padding: 1rem 1.5rem;
-                    border-bottom: 1px solid #dee2e6;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    background-color: #f8f9fa;
-                    border-radius: 8px 8px 0 0;
-                  }
-
-                  .custom-modal-header h5 {
-                    margin: 0;
-                    font-weight: 600;
-                    color: #333;
-                  }
-
-                  .custom-modal-close {
-                    background: none;
-                    border: none;
-                    font-size: 1.5rem;
-                    cursor: pointer;
-                    color: #666;
-                    padding: 0;
-                    width: 30px;
-                    height: 30px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    transition: background-color 0.2s;
-                  }
-
-                  .custom-modal-close:hover {
-                    background-color: #e9ecef;
-                    color: #333;
-                  }
-
-                  .custom-modal-body {
-                    padding: 1.5rem;
-                    max-height: 60vh;
-                    overflow-y: auto;
-                  }
-
-                  .custom-modal-footer {
-                    padding: 1rem 1.5rem;
-                    border-top: 1px solid #dee2e6;
-                    display: flex;
-                    justify-content: flex-end;
-                    gap: 0.5rem;
-                    background-color: #f8f9fa;
-                    border-radius: 0 0 8px 8px;
+                  /* Mobile Optimizations */
+                  @media (max-width: 768px) {
+                    .custom-modal-content {
+                      width: 95%;
+                      margin: 80px auto 10px auto;
+                      max-height: calc(100vh - 90px);
+                      border-radius: 12px;
+                    }
+                    .custom-modal-header {
+                      padding: 10px 15px;
+                      min-height: 45px;
+                      align-items: flex-start;
+                    }
+                    .custom-modal-title {
+                      font-size: 1rem;
+                      line-height: 1.2;
+                      word-wrap: break-word;
+                      padding-right: 40px;
+                      flex: 1;
+                    }
+                    .custom-modal-close {
+                      font-size: 22px;
+                      padding: 6px;
+                      min-width: 36px;
+                      min-height: 36px;
+                      right: 8px;
+                      top: 8px;
+                      background: rgba(255, 255, 255, 0.95);
+                      border-radius: 50%;
+                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    }
+                    .custom-modal-body {
+                      padding: 12px 15px;
+                      max-height: calc(100vh - 160px);
+                    }
+                    .custom-modal-footer {
+                      padding: 10px 15px;
+                      text-align: center;
+                    }
+                    .custom-modal-footer .btn {
+                      margin: 2px;
+                      width: 100%;
+                      margin-bottom: 6px;
+                      padding: 10px 15px;
+                      font-size: 0.9rem;
+                    }
+                    .custom-modal-footer .btn:last-child {
+                      margin-bottom: 0;
+                    }
+                    .form-control-lg {
+                      font-size: 16px; /* Prevents zoom on iOS */
+                      padding: 10px 12px;
+                    }
+                    .application-form h6 {
+                      font-size: 1rem;
+                      margin-bottom: 12px;
+                    }
+                    .application-form p {
+                      font-size: 0.85rem;
+                      margin-bottom: 15px;
+                    }
+                    .form-label {
+                      font-size: 0.85rem;
+                      font-weight: 500;
+                      margin-bottom: 6px;
+                    }
+                    .alert {
+                      font-size: 0.8rem;
+                      padding: 10px;
+                      margin-bottom: 15px;
+                    }
+                    .form-text {
+                      font-size: 0.75rem;
+                    }
+                    .mb-3 {
+                      margin-bottom: 12px !important;
+                    }
+                    .row {
+                      margin-left: -8px;
+                      margin-right: -8px;
+                    }
+                    .col-md-6 {
+                      padding-left: 8px;
+                      padding-right: 8px;
+                    }
                   }
 
                   /* Touch-friendly improvements */
                   @media (max-width: 768px) {
+                    .custom-modal-close {
+                      font-size: 28px;
+                      padding: 6px;
+                      min-width: 40px;
+                      min-height: 40px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      position: absolute;
+                      right: 8px;
+                      top: 8px;
+                      background: rgba(255, 255, 255, 0.9);
+                      border-radius: 50%;
+                      z-index: 10;
+                    }
+                    .custom-modal-header {
+                      position: relative;
+                      padding-right: 50px;
+                      border-radius: 12px 12px 0 0;
+                    }
                     input[type="file"] {
                       padding: 8px;
                     }
                     .btn {
                       min-height: 44px;
                       padding: 12px 20px;
-                    }
-
-                    /* Mobile custom modal improvements */
-                    .custom-modal-content {
-                      margin: 1rem;
-                      width: calc(100% - 2rem);
-                      max-height: calc(100vh - 2rem);
-                    }
-
-                    .custom-modal-body {
-                      padding: 1rem;
-                      max-height: 50vh;
-                    }
-
-                    .custom-modal-footer {
-                      padding: 1rem;
-                      flex-direction: column;
-                    }
-
-                    .custom-modal-footer .btn {
-                      width: 100%;
-                      margin-bottom: 0.5rem;
-                    }
-
-                    /* Prevent body scroll when modal is open */
-                    body.modal-open {
-                      overflow: hidden;
-                      position: fixed;
-                      width: 100%;
                     }
                   }
                 </style>
@@ -801,8 +883,9 @@
 
         // Custom modal functions
         function openCustomModal(jobKey) {
-          var modalTitle = document.getElementById("customModalTitle");
-          var modalBody = document.getElementById("customModalBody");
+          var modal = document.getElementById("jobModal");
+          var modalTitle = document.getElementById("jobModalLabel");
+          var modalBody = document.getElementById("jobModalBody");
 
           if (jobDescriptions[jobKey]) {
             modalTitle.textContent = jobDescriptions[jobKey].title;
@@ -812,23 +895,19 @@
             console.log("Setting modal title:", jobDescriptions[jobKey].title);
           }
 
-          // Show custom modal
-          var customModal = document.getElementById("customModal");
-          customModal.style.display = "block";
-          document.body.classList.add("modal-open");
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
         }
 
         function closeCustomModal() {
-          // Hide custom modal
-          var customModal = document.getElementById("customModal");
-          customModal.style.display = "none";
-          document.body.classList.remove("modal-open");
+          var modal = document.getElementById("jobModal");
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Restore scrolling
         }
 
         function applyForJob() {
-          var modalTitle =
-            document.getElementById("customModalTitle").textContent;
-          var modalBody = document.getElementById("customModalBody");
+          var modalTitle = document.getElementById("jobModalLabel").textContent;
+          var modalBody = document.getElementById("jobModalBody");
 
           // Create application form HTML
           var formHTML = `
@@ -915,15 +994,17 @@
           // Update modal footer to show submit button
           var modalFooter = document.querySelector(".custom-modal-footer");
           modalFooter.innerHTML = `
-            <button type="button" class="btn btn-success me-2" onclick="submitApplication()">
-              <i class="bi bi-check-circle me-2"></i>Submit Application
-            </button>
-            <button type="button" class="btn btn-secondary me-2" onclick="backToJobDescription()">
-              <i class="bi bi-arrow-left me-2"></i>Back to Job Details
-            </button>
-            <button type="button" class="btn btn-outline-secondary" onclick="closeCustomModal()">
-              <i class="bi bi-x me-2"></i>Close
-            </button>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button type="button" class="btn btn-success" onclick="submitApplication()">
+                <i class="bi bi-check-circle me-2"></i>Submit Application
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="backToJobDescription()">
+                <i class="bi bi-arrow-left me-2"></i>Back to Job Details
+              </button>
+              <button type="button" class="btn btn-outline-secondary" onclick="closeCustomModal()">
+                <i class="bi bi-x me-2"></i>Close
+              </button>
+            </div>
           `;
         }
 
@@ -955,7 +1036,7 @@
             .then((response) => {
               if (response.ok) {
                 // Show success message
-                var modalBody = document.getElementById("customModalBody");
+                var modalBody = document.getElementById("jobModalBody");
                 modalBody.innerHTML = `
                 <div class="text-center">
                   <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
@@ -1002,8 +1083,7 @@
 
         function backToJobDescription() {
           // Get the current job key from the modal title
-          var modalTitle =
-            document.getElementById("customModalTitle").textContent;
+          var modalTitle = document.getElementById("jobModalLabel").textContent;
           var jobKey = "";
 
           // Find the job key based on title
@@ -1016,7 +1096,7 @@
 
           if (jobKey) {
             // Restore original job description
-            var modalBody = document.getElementById("customModalBody");
+            var modalBody = document.getElementById("jobModalBody");
             modalBody.innerHTML = jobDescriptions[jobKey].body;
 
             // Restore original footer
@@ -1034,6 +1114,20 @@
 
         // Close modal when clicking outside
         document.addEventListener("DOMContentLoaded", function () {
+          var modal = document.getElementById("jobModal");
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+              closeCustomModal();
+            }
+          });
+
+          // Close with escape key
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && modal.style.display === "block") {
+              closeCustomModal();
+            }
+          });
+
           // Phone number validation - prevent letters
           document.addEventListener("input", function (e) {
             if (e.target.name === "phone") {
@@ -1041,51 +1135,6 @@
               e.target.value = e.target.value.replace(/[^0-9+\-\s()]/g, "");
             }
           });
-
-          // Custom modal event handlers for mobile
-          var customModal = document.getElementById("customModal");
-          if (customModal) {
-            // Handle custom modal hidden event
-            customModal.addEventListener("hidden.bs.modal", function () {
-              // Restore body scroll when modal is hidden
-              document.body.style.overflow = "";
-              document.body.style.position = "";
-              document.body.style.width = "";
-            });
-
-            // Handle custom modal shown event
-            customModal.addEventListener("shown.bs.modal", function () {
-              // Ensure custom modal is properly positioned on mobile
-              var customModalDialog = customModal.querySelector(
-                ".custom-modal-content"
-              );
-              if (customModalDialog) {
-                customModalDialog.style.margin = "1rem auto";
-              }
-            });
-
-            // Handle backdrop clicks
-            customModal.addEventListener("click", function (e) {
-              if (e.target === customModal) {
-                closeCustomModal();
-              }
-            });
-          }
-
-          // Prevent custom modal from freezing on touch devices
-          if ("ontouchstart" in window) {
-            // Add touch-specific handling
-            document.addEventListener(
-              "touchstart",
-              function (e) {
-                // Prevent zoom on double tap
-                if (e.target.closest("#customModal")) {
-                  e.preventDefault();
-                }
-              },
-              { passive: false }
-            );
-          }
         });
       </script>
     </main>
