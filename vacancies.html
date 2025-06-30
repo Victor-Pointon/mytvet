@@ -467,19 +467,17 @@
                   }
                   .custom-modal-content {
                     background-color: #fefefe;
-                    margin: 1% auto;
+                    margin: 20px auto;
                     padding: 0;
                     border: 1px solid #888;
                     width: 90%;
                     max-width: 600px;
                     border-radius: 8px;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    max-height: 85vh;
+                    max-height: calc(100vh - 40px);
                     display: flex;
                     flex-direction: column;
                     position: relative;
-                    top: 50%;
-                    transform: translateY(-50%);
                   }
                   .custom-modal-header {
                     padding: 12px 20px;
@@ -524,7 +522,7 @@
                     padding: 15px 20px;
                     overflow-y: auto;
                     flex-grow: 1;
-                    max-height: calc(85vh - 120px);
+                    max-height: calc(100vh - 180px);
                   }
                   .custom-modal-footer {
                     padding: 12px 20px;
@@ -544,11 +542,9 @@
                   /* Mobile Optimizations */
                   @media (max-width: 768px) {
                     .custom-modal-content {
-                      width: 96%;
-                      margin: 0.5% auto;
-                      max-height: 90vh;
-                      top: 50%;
-                      transform: translateY(-50%);
+                      width: 95%;
+                      margin: 10px auto;
+                      max-height: calc(100vh - 20px);
                     }
                     .custom-modal-header {
                       padding: 10px 15px;
@@ -575,7 +571,7 @@
                     }
                     .custom-modal-body {
                       padding: 12px 15px;
-                      max-height: calc(90vh - 110px);
+                      max-height: calc(100vh - 140px);
                     }
                     .custom-modal-footer {
                       padding: 10px 15px;
@@ -916,14 +912,27 @@
                 <input type="hidden" name="form-name" value="job-application" />
                 <input type="hidden" name="job-title" value="${modalTitle}" />
                 
-                <div class="row g-3">
-                  <div class="col-12 col-md-6">
-                    <label for="firstName" class="form-label">First Name *</label>
-                    <input type="text" class="form-control form-control-lg" id="firstName" name="firstName" required>
+                <div class="row">
+                  <div class="col-md-3 mb-3">
+                    <label for="title" class="form-label">Title *</label>
+                    <select class="form-control" id="title" name="title" required>
+                      <option value="">Select Title</option>
+                      <option value="Mr">Mr</option>
+                      <option value="Miss">Miss</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Ms">Ms</option>
+                      <option value="Dr">Dr</option>
+                      <option value="Prof">Prof</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
-                  <div class="col-12 col-md-6">
+                  <div class="col-md-4 mb-3">
+                    <label for="firstName" class="form-label">First Name *</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                  </div>
+                  <div class="col-md-5 mb-3">
                     <label for="lastName" class="form-label">Last Name *</label>
-                    <input type="text" class="form-control form-control-lg" id="lastName" name="lastName" required>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
                   </div>
                 </div>
                 
@@ -966,7 +975,7 @@
                 </div>
                 
                 <div class="alert alert-info mt-3">
-                  <small><strong>Note:</strong> After submitting this form, you will receive a confirmation email. Our team will review your application and contact you within 5-7 business days.</small>
+                  <small><strong>Note:</strong> After submitting this form,our team will review your application and contact you within 5-7 business days.</small>
                 </div>
               </form>
             </div>
@@ -1190,6 +1199,15 @@
     >
       <input type="hidden" name="form-name" value="job-application" />
       <input type="hidden" name="job-title" />
+      <select name="title">
+        <option value="Mr">Mr</option>
+        <option value="Miss">Miss</option>
+        <option value="Mrs">Mrs</option>
+        <option value="Ms">Ms</option>
+        <option value="Dr">Dr</option>
+        <option value="Prof">Prof</option>
+        <option value="Other">Other</option>
+      </select>
       <input name="firstName" type="text" />
       <input name="lastName" type="text" />
       <input name="email" type="email" />
