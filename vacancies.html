@@ -527,21 +527,25 @@
                   @media (max-width: 768px) {
                     .custom-modal-content {
                       width: 95%;
-                      margin: 2% auto;
-                      max-height: 95vh;
+                      margin: 1% auto;
+                      max-height: 98vh;
                     }
                     .custom-modal-header {
-                      padding: 12px 15px;
+                      padding: 8px 12px;
+                      min-height: 50px;
                     }
                     .custom-modal-title {
-                      font-size: 1.1rem;
+                      font-size: 1rem;
+                      line-height: 1.2;
+                      word-wrap: break-word;
+                      max-width: calc(100% - 60px);
                     }
                     .custom-modal-body {
-                      padding: 15px;
-                      max-height: calc(95vh - 100px);
+                      padding: 12px;
+                      max-height: calc(98vh - 120px);
                     }
                     .custom-modal-footer {
-                      padding: 12px 15px;
+                      padding: 8px 12px;
                       text-align: center;
                     }
                     .custom-modal-footer .btn {
@@ -581,13 +585,23 @@
                   /* Touch-friendly improvements */
                   @media (max-width: 768px) {
                     .custom-modal-close {
-                      font-size: 32px;
-                      padding: 8px;
-                      min-width: 44px;
-                      min-height: 44px;
+                      font-size: 28px;
+                      padding: 6px;
+                      min-width: 40px;
+                      min-height: 40px;
                       display: flex;
                       align-items: center;
                       justify-content: center;
+                      position: absolute;
+                      right: 8px;
+                      top: 8px;
+                      background: rgba(255, 255, 255, 0.9);
+                      border-radius: 50%;
+                      z-index: 10;
+                    }
+                    .custom-modal-header {
+                      position: relative;
+                      padding-right: 50px;
                     }
                     input[type="file"] {
                       padding: 8px;
