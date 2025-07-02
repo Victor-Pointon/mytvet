@@ -740,6 +740,17 @@
                                   " target="_blank">
                                   <img alt="Mytvet SA" data-inject-svg src="/assets/img/download.svg">
                                 </a>
+                              </td>
+                              <td>
+                                <!-- Video Solution Column -->
+                                <div class="tooltip " data-toggle="tooltip" data-placement="top"
+                                  title="Video solution available">
+                                  <i class="bi bi-play-circle text-primary"></i>
+                                </div>
+                                <a href="#" class="video-solution-link" onclick="openVideoModal('bricklaying-n1-apr-2024')">
+                                  Video
+                                </a>
+                              </td>
                             </tr>
                             <tr>
                               <td>Aug
@@ -1626,6 +1637,17 @@
                                   " target="_blank">
                                   <img alt="Mytvet SA" data-inject-svg src="/assets/img/download.svg">
                                 </a>
+                              </td>
+                              <td>
+                                <!-- Video Solution Column -->
+                                <div class="tooltip " data-toggle="tooltip" data-placement="top"
+                                  title="Video solution available">
+                                  <i class="bi bi-play-circle text-primary"></i>
+                                </div>
+                                <a href="#" class="video-solution-link" onclick="openVideoModal('bricklaying-n2-apr-2024')">
+                                  Video
+                                </a>
+                              </td>
                             </tr>
                             <tr>
                               <td>Aug
@@ -2591,6 +2613,99 @@
     <script>
       document.querySelectorAll('a[target="_blank"]').forEach(link => {
         link.setAttribute('rel', 'noopener');
+      });
+    </script>
+
+    <!-- Video Solutions Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="videoModalLabel">Video Solution</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="videoContainer">
+              <!-- Video will be loaded here -->
+            </div>
+            <div class="mt-3">
+              <h6 id="videoTitle"></h6>
+              <p id="videoDescription" class="text-muted"></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a href="#" id="downloadVideoLink" class="btn btn-primary" target="_blank">
+              <i class="bi bi-download me-2"></i>Download Video
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Solutions Data -->
+    <script>
+      const videoSolutions = {
+        'bricklaying-n1-apr-2024': {
+          title: 'Bricklaying and Plastering N1 - April 2024 Video Solution',
+          description: 'Complete step-by-step video solution for the April 2024 N1 exam paper. Covers all questions with detailed explanations.',
+          videoUrl: 'https://www.youtube.com/embed/EXAMPLE_VIDEO_ID_1',
+          downloadUrl: 'https://payf.st/video-solution-n1-apr-2024'
+        },
+        'bricklaying-n2-apr-2024': {
+          title: 'Bricklaying and Plastering N2 - April 2024 Video Solution',
+          description: 'Complete step-by-step video solution for the April 2024 N2 exam paper. Covers all questions with detailed explanations.',
+          videoUrl: 'https://www.youtube.com/embed/EXAMPLE_VIDEO_ID_2',
+          downloadUrl: 'https://payf.st/video-solution-n2-apr-2024'
+        }
+        // Add more video solutions here as needed
+      };
+
+      function openVideoModal(videoId) {
+        const videoData = videoSolutions[videoId];
+        if (!videoData) {
+          alert('Video solution not available yet.');
+          return;
+        }
+
+        // Update modal content
+        document.getElementById('videoTitle').textContent = videoData.title;
+        document.getElementById('videoDescription').textContent = videoData.description;
+        document.getElementById('downloadVideoLink').href = videoData.downloadUrl;
+
+        // Load video using Plyr
+        const videoContainer = document.getElementById('videoContainer');
+        videoContainer.innerHTML = `
+          <div class="plyr__video-embed" id="player">
+            <iframe
+              src="${videoData.videoUrl}?origin=https://www.mytvet.co.za&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+              allowfullscreen
+              allowtransparency
+              allow="autoplay"
+            ></iframe>
+          </div>
+        `;
+
+        // Initialize Plyr player
+        const player = new Plyr('#player', {
+          youtube: {
+            noCookie: true
+          }
+        });
+
+        // Show modal
+        $('#videoModal').modal('show');
+      }
+
+      // Clean up player when modal is closed
+      $('#videoModal').on('hidden.bs.modal', function () {
+        const player = Plyr.get('#player');
+        if (player) {
+          player.destroy();
+        }
+        document.getElementById('videoContainer').innerHTML = '';
       });
     </script>
 </body>
