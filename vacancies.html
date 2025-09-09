@@ -98,24 +98,13 @@
                     >Guidance</a
                   >
                   <!-- Mega Menu -->
-                  <div class="hs-mega-menu hs-position-right w-100"></div>
+                  <div
+                    class="hs-mega-menu hs-position-right w-100"
+                  ></div>
                 </li>
                 <!-- End Pages -->
 
                 <!-- Blog -->
-                <li class="hs-has-sub-menu nav-item">
-                  <a
-                    href="contact.html"
-                    id="blogMegaMenu"
-                    class="hs-mega-menu-invoker nav-link"
-                    role="button"
-                    aria-expanded="false"
-                    >Contact Us</a
-                  >
-                  <!-- Mega Menu -->
-                  <div class="hs-sub-menu" aria-labelledby="blogMegaMenu"></div>
-                  <!-- End Mega Menu -->
-                </li>
                 <li class="hs-has-sub-menu nav-item">
                   <a
                     href="exam-timetable.html"
@@ -334,7 +323,22 @@
                   ></div>
                   <!-- End Mega Menu -->
                 </li>
-                <!-- End Vacancies -->
+                <li class="hs-has-sub-menu nav-item">
+                  <a
+                    href="contact.html"
+                    id="contactMenu"
+                    class="hs-mega-menu-invoker nav-link"
+                    role="button"
+                    aria-expanded="false"
+                    >Contact Us</a
+                  >
+                  <!-- Mega Menu -->
+                  <div
+                    class="hs-sub-menu"
+                    aria-labelledby="contactMenu"
+                  ></div>
+                  <!-- End Mega Menu -->
+                </li>
               </ul>
             </div>
           </div>
@@ -435,13 +439,21 @@
                       <div
                         class="d-grid gap-2 d-md-flex justify-content-md-end"
                       >
-                        <button
+                        <!-- <button
                           type="button"
                           class="btn btn-primary"
                           onclick="applyForJob()"
                         >
                           <i class="bi bi-send me-2"></i>Apply
-                        </button>
+                        </button> -->
+                        <a
+                          href="https://forms.gle/R5qa5eKG1rgm4gG46"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="btn btn-primary"
+                        >
+                          <i class="bi bi-send me-2"></i>Apply
+                        </a>
                         <button
                           type="button"
                           class="btn btn-secondary"
@@ -1289,7 +1301,14 @@
                     <i class="bi-instagram"></i>
                   </a>
                 </li>
-  
+                <li class="list-inline-item">
+                  <a
+                    class="btn btn-icon btn-sm btn-soft-light rounded-circle"
+                    href="https://www.youtube.com/@MytvetSA" target="_blank"
+                  >
+                    <i class="bi-youtube"></i>
+                  </a>
+                </li>
               </ul>
               <!-- End Socials -->
             </div>
